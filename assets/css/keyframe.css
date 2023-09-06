@@ -1,0 +1,18 @@
+@keyframes search {
+    from {
+        transform: translateY(-150px);
+    }
+    to {
+        transform: translateY(0);
+
+    }
+}
+
+@keyframes mobile_menu {
+    from {
+        opacity: 0.7;
+    }
+    to {
+        opacity: 1;
+    }
+}

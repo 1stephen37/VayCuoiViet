@@ -1,0 +1,82 @@
+.banner {
+    width: 100%;
+    height: 20rem;
+    margin-top: 2rem;
+    font-size: 6.4rem;
+    background: linear-gradient(83deg, rgba(1, 67, 90, 0.40) 0%, rgba(1, 67, 90, 0.05) 100%);
+    justify-content: center;
+    align-items: center;
+    font-family: great;
+    text-transform: capitalize;
+    flex-direction: column;
+    position: relative;
+}
+
+.banner .heading {
+    opacity: 0.8;
+}
+
+.banner .vector {
+    width: 30rem;
+    position: absolute;
+    bottom: 1.5rem;
+}
+
+.box-grid {
+    width: var(--width-web);
+    margin: var(--margin-section-desktop);
+}
+
+.box-grid .login {
+    text-align: center;
+    margin: 4rem;
+    font-size: 6.4rem;
+    font-family: great;
+}
+
+.box-grid .form-deli {
+    width: 100%;
+    height: 100%;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-grid .form-deli .label label,
+.box-grid .form-deli .type_deli label {
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+.box-grid .form-deli .label label span {
+    color: red;
+}
+
+.box-grid .form-deli .type_deli {
+    gap: 2rem;
+}
+
+.box-grid .form-deli .submit_btn {
+    width: 22rem;
+    height: 5rem;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+    outline: none   ;
+    font-size: 2rem;
+}
+
+.box-grid .form-deli .address input,
+.box-grid .form-deli .email input,
+.box-grid .form-deli .name input {
+    width: 200px;
+}
+
+.box-grid .left .form-deli .label label {
+    font-size: 2rem;
+
+}
+
+

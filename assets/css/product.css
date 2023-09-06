@@ -1,0 +1,287 @@
+.banner {
+    width: 100%;
+    height: 20rem;
+    margin-top: 2rem;
+    font-size: 6.4rem;
+    background: linear-gradient(83deg, rgba(1, 67, 90, 0.40) 0%, rgba(1, 67, 90, 0.05) 100%);   
+    justify-content: center;
+    align-items: center;
+    font-family: great;
+    text-transform: capitalize;
+    flex-direction: column;
+    position: relative;
+}
+
+.banner .heading {
+    opacity: 0.8;
+}
+
+.banner .vector {
+    width: 51rem;
+    position: absolute;
+    bottom: 2rem;
+}
+
+.section1 {
+    width: var(--width-web);
+    margin: 0 auto;
+    margin-top: 10rem;
+    height: 100rem;
+    justify-content: space-between;
+    gap: 3.6rem;
+}
+
+.section1 .left {
+    width: 50%;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.section1 .left .main-img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.section1 .left .main-img img {
+    border-radius: 1rem;
+}
+
+.section1 .left .sub-img {
+    width: auto;
+    height: 10rem;
+    gap: 0.5rem;
+}
+
+.section1 .right {
+    width: 56rem;
+}
+
+.section1 .right .heading {
+    margin-top: 3rem;
+    font-size: 4rem;
+}
+
+.section1 .right .stars {
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.section1 .right .stars .star {
+    font-size: 2.6rem;
+    color: var(--primary-color);
+}
+
+.section1 .right .des {
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.9);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section1 .right .price {
+    font-size: 2rem;
+}
+
+.sell {
+    margin-top: 4rem;
+}
+
+.rent {
+    margin-top: 2rem;
+}
+
+.section1 .right .price span {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.section1 .right .cart { 
+    margin-top: 3rem; 
+    gap: 2rem;
+}
+
+.section1 .right .cart .count { 
+    font-size: 2.4rem;
+    color: #fff;
+    width: 6rem;
+    height: 5.6rem;
+    background: var(--primary-color);
+    text-align:center;
+    line-height: 5.6rem;
+    border-radius: 1rem;
+}
+
+.section1 .right .cart .button { 
+    width: auto;
+    heigh: auto;
+}
+
+.section1 .right .cart .button a {
+    display: block;
+    font-size: 2.4rem;
+    width: 25rem;
+    height: 5.6rem;
+    background: var(--primary-color);
+    text-align:center;
+    line-height: 5.6rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
+
+.section1 .right .detail {
+    width: 32.2rem;
+    height: 11.2rem;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.section1 .right .detail .flex { 
+    height: 2.5rem;
+    gap: 1.5rem;
+}
+
+.section1 .right .detail .flex .icon {
+    width: 2.4rem;
+}
+
+.section1 .right .detail .flex .title {
+    font-size: 2rem;
+}
+
+.section1 .right .share {
+    margin-top: 3rem;
+    gap: 1.5rem;
+    height: 5.8rem;
+    align-items: center;
+    width: auto;
+}
+
+.section1 .right .share .title {
+    font-size: 2rem;
+}
+
+.section1 .right .share .icon {
+    width: 2.5rem;
+}
+
+.section2 {
+    width: var(--width-web);
+    margin: 0 auto;
+    margin-top: 10rem;
+    height: 58rem;
+}
+
+.section2 .heading {
+    font-size: 4rem;
+    font-family: great;
+    text-transform: capitalize;
+    width: 32rem;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.section2 .heading .vector {
+    position: absolute;
+    top: 2.5rem;
+}
+
+.section2 .box-sp {
+    flex-direction: column;
+    margin-top: 4rem;
+    border: 1px solid #407283;
+    border-radius: 2rem;
+}
+
+.section2 .box-sp .box {
+    justify-content: space-between;
+    height: 5.6rem;
+    line-height: 5.6rem;
+
+}
+
+.section2 .box-sp .box:first-child .detail {
+    border-radius: 2rem 0 0 0;
+}
+
+.section2 .box-sp .box:last-child .detail {
+    border-radius: 0 0 0 2rem;
+}
+
+.section2 .box-sp .box .detail {
+    font-size: 2rem;
+    width: 30rem;
+    background-color: #01435AE6;
+    color: rgba(255,255,255,0.9);
+    text-align: center;
+}
+
+.section2 .box-sp .box .des { 
+    font-size: 2rem;
+    text-align: center;
+    width: 77rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.section3 {
+    width: var(--width-web);
+    margin: 0 auto;
+    margin-top: 10rem;
+    height: 90rem;
+}
+
+.section3 .heading {
+    font-size: 4rem;
+    font-family: great;
+    text-transform: capitalize;
+    width: 34rem;
+    position: relative;
+    height: 7rem;
+}
+
+.section3 .heading .vector  {
+    position: absolute;
+    top: 3.5rem;
+}
+
+.section3 .box-sp {
+    width: 100%;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 3rem;
+}
+
+.section3 .box-sp .box {        
+    height: 61rem;
+}   
+
+.section3 .box-sp .box .img {
+    width: 37rem;
+}
+
+.section3 .box-sp .box .des {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.section3 .button {
+    width: 18rem;
+    height: 6.4rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+    text-align: center;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 2rem;
+    font-size: 2rem;
+    line-height: 6.4rem;
+    cursor: pointer;
+}
+

@@ -1,0 +1,237 @@
+
+        <?php
+
+        session_start();
+        ob_start();
+
+        require_once 'model/connectdb.php';
+        require_once 'model/sanpham.php';
+        require_once 'model/danhmuc.php';
+        require_once 'model/donhang.php';
+        require_once 'model/user.php';
+
+
+            require_once 'view/src/head.php';
+
+            require_once 'view/src/header.php';
+
+            if(isset($_GET['act']) && ($_GET['act'] != '')) {
+
+                $page = $_GET['act'];
+
+                switch ($page) {
+                    case 'about':
+                        include_once 'view/about.php';
+                        break;
+                    case 'dress':
+
+                        if(isset($_GET['danhmuc']) && ($_GET['danhmuc'] > 0) ) {
+                            $danhmuc = $_GET['danhmuc'];
+                        } else {
+                            $danhmuc = 1;
+                        }
+
+                        $sp = getall_sp($danhmuc, 0);;
+                        $all_cata = getall_dm();
+
+                        if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
+
+//                            unset($_SESSION['cart']);
+
+                            $count = $_POST['count_product'];
+
+                            if (isset($_GET['buyid']) && ($_GET['buyid'] > 0)) {
+
+                                $buyid = $_GET['buyid'];
+
+                                $in4 = getonesp($buyid);
+
+                                $arrayCart = [];
+
+                                $check = true;
+
+                                extract($in4);
+                                $i = 0;
+                                if(isset($_SESSION['cart']) && ($_SESSION['cart'] != '')) {
+
+                                    foreach ($_SESSION['cart'] as $item) {
+                                        if ($item['id'] == $buyid) {
+                                            $sl = $item['count'] + 1;
+                                            $_SESSION['cart'][$i]['count'] = $sl;
+//                                        $item[$i]['count'] = 2;
+//                                        $_SESSION['cart'][]
+                                            $check = false;
+                                            break;
+                                        }
+                                        $i++;
+                                    }
+
+                                }
+
+
+                                if ($check) {
+                                    $_SESSION['cart'][] = [
+                                        'id' => $id,
+                                        'price' => $price,
+                                        'name' => $name,
+                                        'id_cata' => $id_cata,
+                                        'size' => $size,
+                                        'count' => $count
+                                    ];
+                                }
+
+                            }
+                        }
+
+                        include_once 'view/dress.php';
+                        break;
+                    case 'product':
+                        if(isset($_GET['idproduct']) && ($_GET['idproduct'] > 0) ) {
+
+                            $idproduct = $_GET['idproduct'];
+                            $detail = get_detail($idproduct);
+
+                            include_once 'view/product.php';
+
+                        } else {
+                            header('location: index.php?act=index');
+                        }
+
+                        break;
+                    case 'thuvien':
+                        include_once 'view/thuvien.php';
+                        break;
+                    case 'logout':
+                        if(isset($_SESSION['cart']) && $_SESSION['cart'] != '') {
+                            unset($_SESSION['cart']);
+                        }
+                        if(isset($_SESSION['user']) && $_SESSION['user'] != '') {
+                           unset($_SESSION['user']);
+                        }
+                        if(isset($_SESSION['admin']) && $_SESSION['admin'] != '') {
+                            unset($_SESSION['admin']);
+                        }
+                        include_once 'view/home.php';
+                        break;
+                    case 'contact':
+                        include_once 'view/contact.php';
+                        break;
+                    case 'pay':
+
+//                        if(isset($_GET['pay']) && ($_GET['pay'] != 0)) {
+
+                            if(isset($_POST['payBtn']) && ($_POST['payBtn'])) {
+
+                                $id = $_SESSION['user']['id'];
+                                $total = $_SESSION['total'];
+                                $name = $_SESSION['user']['Name'];
+                                $address = $_SESSION['user']['address'];
+                                $email = $_SESSION['user']['Email'];
+                                $tel = $_SESSION['user']['Phone'];
+
+
+                                $check = taodonhang($id,$total,$name,$address,$email,$tel);
+
+                                foreach ($_SESSION['cart'] as $item) {
+                                    if(is_array($item)) {
+                                        extract($item);
+                                    }
+
+                                    $thanhtien = $price * $count;
+
+                                    addtocart($check,$id,$thanhtien,$count);
+                                }
+
+                                header("location: index.php?act=index");
+
+                            }
+
+//                            foreach ($_SESSION['cart'] as $cart) {
+//
+//                            }
+
+//                        }
+                        include_once 'view/pay.php';
+                        break;
+                    case 'cart':
+                        include_once 'view/cart.php';
+                        break;
+                    case 'admin':
+                        include_once 'view/admin.php';
+                        break;
+                    case 'error':
+                        include_once 'view/error.php';
+                        break;
+                    case 'login':
+
+                        if(isset($_POST['sign_in_submit']) && $_POST['sign_in_submit']) {
+
+                            $user = $_POST['user_name_sign_in'];
+                            $pass = $_POST['user_password_sign_in'];
+
+                            $in4 = checkuser($user,$pass);
+
+                            if($in4 == 0) {
+                                require_once 'view/error.php';
+                            } else if($in4) {
+//                                $_SESSION['user_name'] = $in4['id'];
+//                                $_SESSION['user_passWord'] = $in4['PassWord'];
+//                                $_SESSION['Name'] = $in4['Name'];
+//                                $_SESSION['role'] = $in4['role'];
+
+                                if($in4['role'] == 1) {
+                                    $_SESSION['admin'] = $in4;
+                                    header('location: admin/index.php?act=admin');
+                                } else {
+                                    $_SESSION['user'] = $in4;
+                                    header('location: user/index.php');
+                                }
+                            }
+
+//                            require_once 'view/' . $_GET['act'] . '.php';
+//
+//                            require_once 'view/check.php';
+
+                        }
+                        break;
+                    case 'signup':
+
+                        if(isset($_POST['sign-in']) && $_POST['sign-in']) {
+
+                            $Newuser = $_POST['user_name_sign_up'];
+                            $Newpass = $_POST['pass_name_sign_up'];
+
+                            $ceateUser = Newuser($Newuser, $Newpass);
+
+                            if($ceateUser) {
+                                header( 'location:index.php?act=index');
+                            } else {
+                                header( 'location:index.php?act=error');
+                            }
+
+                        }
+
+                        break;
+                    case 'index':
+                        include_once 'view/home.php';
+                        break;
+                    default:
+                        include_once 'view/home.php';
+                }
+            } else {
+                require_once 'view/home.php';
+            }
+
+            require_once 'view/src/footer.php';
+
+//            if($_SESSION['user']) {
+//                require_once 'view/src/foot_login.php';
+//            } else {
+//                require_once 'view/src/foot.php';
+//            }
+
+            require_once 'view/src/foot.php';
+
+
+        ?>
+

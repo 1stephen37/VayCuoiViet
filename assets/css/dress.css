@@ -1,0 +1,328 @@
+.banner {
+    width: 100%;
+    height: 20rem;
+    margin-top: 2rem;
+    font-size: 6.4rem;
+    background: linear-gradient(83deg, rgba(1, 67, 90, 0.40) 0%, rgba(1, 67, 90, 0.05) 100%);   
+    justify-content: center;
+    align-items: center;
+    font-family: great;
+    text-transform: capitalize;
+    flex-direction: column;
+    position: relative;
+}
+
+.banner .heading {
+    opacity: 0.8;
+}
+
+.banner .vector {
+    width: 27rem;
+    position: absolute;
+    bottom: 2rem;
+}
+
+.dress-des {
+    width: var(--width-web);
+    margin: 0 auto;
+    margin-top: 5rem;
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.filter {
+    width: var(--width-web);
+    margin: 0 auto;
+    margin-top: 5rem;
+    height: 10rem;
+    background: var(--primary-color);
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    /* gap: 8rem; */
+}
+
+.filter .type {
+    gap: 1.5rem;
+    
+}
+
+.filter .arrange .detail,
+.filter .type .detail {
+    color: #fff;
+    font-size: 2rem;
+    line-height: 5.5rem;
+}
+
+.filter .type .input {
+    width: 22rem;
+    height: 5.5rem;
+}
+
+.filter .type .input select {
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 1rem;
+    outline: none;
+}
+
+.filter .search-fillter {
+    gap: 1.5rem;
+}
+
+.filter .search-fillter .input {
+    width: 22rem;
+    height: 5.5rem;
+}
+
+.filter .search-fillter .input input {
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 1rem;
+    outline: none;
+}
+
+.filter .search-fillter .icon {
+    color: #fff;
+    font-size: 3.5rem;
+    line-height: 5.5rem;
+    cursor: pointer;
+}
+
+.filter .arrange {
+    gap: 1.5rem;
+}
+
+.filter .arrange .input {
+    width: 22rem;
+    height: 5.5rem;
+}
+
+.filter .arrange .input select {
+    outline: none;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.box-sp {
+    width: var(--width-web);
+    margin: 5rem auto 0 auto;
+    height: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr;
+    row-gap: 4rem;
+    column-gap: 4rem;
+}
+
+.box-sp .box {        
+    height: auto;
+}   
+
+.box-sp .box .img {
+    width: 100%;
+    position: relative;
+    border-radius: 1rem;
+}
+
+.box-sp .box .img img {
+    border-radius: 1rem;
+}
+
+.box-sp .box .img:hover .effect {
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.box-sp .box .img .effect .view {
+    display: none;
+}
+
+.box-sp .box .img .effect .addCart {
+    display: none;
+}
+
+.box-sp .box .img:hover .effect .view {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    color: #ccc;
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 12rem;
+}
+
+.box-sp .box .img:hover .effect .addCart {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    color: #ccc;
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 12rem;
+    font-size: 2rem;
+    outline: none;
+    border: none;
+}
+
+.box-sp .box .des {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+    color: var(--primary-color);
+}
+
+.box-sp .box .price {
+    font-size: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.page {
+    width: var(--width-web);
+    margin: 0 auto;
+    margin-top: 5rem;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1.6rem;
+}
+
+.page .cricle {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    background: var(--primary-color);
+    text-align: center;
+    line-height: 5rem;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.page .cricle:hover {
+    background: #ccc;
+    color: var(--primary-color);
+}
+
+@media (max-width: 46.23em) {
+    .banner {
+        font-size: 4rem;
+        height: 10rem;
+        margin: var(--margin-banner-mobile);
+    }
+
+    .banner .vector {
+        width: 17rem;
+        bottom: 0;
+    }
+
+    .dress-des {
+        width: var(--width-mobile);
+        font-size: var(--mobile-font-size);
+        margin: var(--margin-section-mobile);
+    }
+
+    .filter {
+        width: var(--width-mobile);
+        padding: 0;
+        background: none;
+        flex-direction: column;
+        height: auto;
+        gap: 3rem;
+    }
+
+    .filter .type {
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .filter .arrange .detail, .filter .type .detail {
+        color: #000;
+        flex: 1;
+    }
+
+    .filter .type .detail {
+        width: 15rem;
+    }
+
+    .filter .type .input {
+        width: auto;
+    }
+
+    .filter .arrange {
+        gap: 2rem;
+    }
+
+    .filter .search-fillter .icon {
+        color: #000;
+    }
+
+    .filter .search-fillter .input input {
+        outline: none;
+        border: none;
+    }
+
+    .filter .type {
+
+    }
+
+    .filter .type .input select {
+        width: 18rem;
+        background: var(--primary-color);
+        color: #fff;
+
+    }
+
+    .filter .arrange .input select {
+        background: var(--primary-color);
+        color: #fff;
+    }
+
+    .box-sp {
+        width: var(--width-mobile);
+        grid-template-columns: 1fr;
+    }
+
+    .page {
+        width: var(--width-mobile);
+    }
+
+    .page .cricle {
+        /*display: none;*/
+    }
+
+    .page .cricle:nth-child(3),
+    .page .cricle:nth-child(4),
+    .page .cricle:nth-child(7),
+    .page .cricle:nth-child(6){
+        display: none;
+    }
+
+
+}
+
+@media (min-width: 47em) and (max-width:80em) {
+    /*.banner {*/
+    /*    font-size: 4rem;*/
+
+    /*}*/
+
+
+}

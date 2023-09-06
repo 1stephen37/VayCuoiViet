@@ -1,0 +1,213 @@
+.banner {
+    width: 100%;
+    height: 20rem;
+    margin-top: 2rem;
+    font-size: 6.4rem;
+    background: linear-gradient(83deg, rgba(1, 67, 90, 0.40) 0%, rgba(1, 67, 90, 0.05) 100%);
+    justify-content: center;
+    align-items: center;
+    font-family: great;
+    text-transform: capitalize;
+    flex-direction: column;
+    position: relative;
+}
+
+.banner .heading .des {
+    width: 40rem;
+}
+
+.banner .heading {
+    opacity: 0.8;
+}
+
+.banner .vector {
+    width: 42rem;
+    position: absolute;
+    bottom: 1.5rem;
+}
+
+.section1 {
+    width: var(--width-web);
+    margin: 0 auto;
+    margin-top: 10rem;
+    height: 77rem;
+    grid-template-columns: 34rem 38rem 40rem;
+    grid-template-rows: 100%;
+    column-gap: 2.5rem;
+}
+
+.section1 .heading {
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.section1 .heading .des {
+    font-size: 2rem;
+}
+
+.section1 .heading .title {
+    font-size: 6.4rem;
+    font-weight: bold;
+}
+
+.section1 .mid {
+    flex-direction: column;
+    gap: 4.5rem;
+}
+
+.section1 .mid .des {
+    font-size: 2rem;
+}
+
+.section1 .right {
+    font-size: 2rem;
+}
+
+.section2 {
+    width: var(--width-web);
+    margin: 0 auto;
+    margin-top: 10rem;
+    justify-content: space-between;
+    gap: 10.8rem;
+    position: relative;
+}
+
+.section2 .left {
+    width: 47.5rem;
+    height: 40rem;
+    border-radius: 1rem;
+    background: url(../img/about/2.svg) no-repeat;
+    background-size: contain;
+}
+
+
+.section2 .left .background {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    background: rgba(0, 0, 0, 0.20);
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+    letter-spacing: 0.12rem;
+}
+
+.section2 .left .background .des {
+    width: 35rem;
+    text-align: center;
+}
+
+.section2 .vector {
+    transform: rotate(90deg);
+    position: absolute;
+    top: 20rem;
+    left: 37.5rem;
+    width: 31.9rem;
+    height: 1.2rem;
+}
+
+.section2 .right {
+    width: 58rem;
+    height: 40rem;
+    font-size: 2rem;
+    padding: 2rem 1rem;
+}
+
+.section3 {
+    width: var(--width-web);
+    margin: 0 auto;
+    margin-top: 10rem;
+    height: 85rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section3 .left {
+    width: auto;
+    height: 85rem;
+}
+
+.section3 .right {
+    width: 56rem;
+    height: 40rem;
+}
+
+.section3 .right .heading {
+    font-size: 4rem;
+    font-family: great;
+    text-transform: capitalize;
+    position: relative;
+    height: 9rem;
+}
+
+.section3 .right .vector {
+    width: 36rem;
+    position: absolute;
+    bottom: 0rem;
+}
+
+.section3 .right .detail {
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+
+.section3 .right .because {
+    width: 48rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.section3 .right .because .line {
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.section3 .right .because .line .icon {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+    background: rgba(0, 0, 0, 0.70);
+}
+
+.section3 .right .because .line .detail {
+    margin-top: 0;
+    width: 45rem;
+}
+
+.section4 {
+    width: var(--width-web);
+    margin: 0 auto;
+    margin-top: 10rem;
+    height: 20rem;
+}
+
+.section4 .heading {
+    /* text-align: center; */
+    position: relative;
+    width: 25rem;
+    margin: 0 auto;
+    font-size: 4rem;
+    text-transform: capitalize;
+    font-family: great;
+    height: 6rem;
+}
+
+.section4 .heading .vector {
+    position: absolute;
+    /* height: 1rem; */
+    bottom: -1.5rem;
+}
+
+.section4 .detail {
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-align: center;
+}

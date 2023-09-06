@@ -1,0 +1,261 @@
+.banner {
+    width: 100%;
+    height: 20rem;
+    margin-top: 2rem;
+    font-size: 6.4rem;
+    background: linear-gradient(83deg, rgba(1, 67, 90, 0.40) 0%, rgba(1, 67, 90, 0.05) 100%);   
+    justify-content: center;
+    align-items: center;
+    font-family: great;
+    text-transform: capitalize;
+    flex-direction: column;
+    position: relative;
+}
+
+.banner .heading {
+    opacity: 0.8;
+}
+
+.banner .vector {
+    width: 27rem;
+    position: absolute;
+    bottom: 3rem;
+}
+
+.section1 {
+    width: var(--width-web);
+    margin: 0 auto;
+    margin-top: 5rem;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.section1 .main-img {
+    width: 78rem;
+    margin: 0 auto;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.section1 .sub-img {
+    width: 78rem;
+    height: 20rem;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1.5rem;
+}
+
+.section1 .sub-img .img-3 {
+    width: 100%;
+    height: 20rem;
+    border-radius: 1rem;
+}
+
+.section1 .heading {
+    font-size: 4rem;
+    font-family: great;
+    margin: 0 auto;
+    margin-top: 3rem;
+    position: relative;
+    width: 28rem;
+    height: 8rem;
+}
+
+.section1 .heading::first-letter {
+    text-transform: capitalize;
+}
+
+.section1 .heading .vector {
+    width: 27rem;
+    position: absolute;
+    bottom: 0rem;
+}
+
+.section2 {
+    width: 100%;
+    height: 90rem;
+    margin-top: 10rem;
+    background: url(../img/libary/bg1.svg) no-repeat center center;
+    background-size: contain;
+    z-index: -1;
+    position: relative;
+}
+
+.section2 .background {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.section2 .background .heading {
+    font-size: 4rem;
+    font-family: great;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 3rem;
+    position: absolute;
+    width: 23rem;
+    height: 8rem;
+    text-transform: capitalize;
+    top: 14rem;
+    left: 99rem;
+    z-index: 1;
+}
+
+.section2 .background .heading .vector {
+    width: 23rem;
+    position: absolute;
+    bottom: 0.2rem;
+}
+
+.section2 .img {
+    z-index: 1;
+    width: 40rem;
+    height: 50rem;
+    background: url(../img/libary/img1.svg) center no-repeat;
+    position: absolute;
+    left: 48rem;
+    top: 12rem;
+}
+
+.section2 .img .background {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.section2 .background .detail {
+    position: absolute;
+    top: 28rem;
+    left: 97rem;
+    color: #fff;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+.section2 .background .button {
+    position: absolute;
+    top: 35rem;
+    left: 102.5rem;
+    color: #fff;
+    background: var(--primary-color);
+    font-size: 2rem;
+    padding: 2rem 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.section3 {
+    width: 100%;
+    height: 90rem;
+    background: url(../img/libary/bg2.svg) no-repeat center center;
+    background-size: contain;
+    z-index: -1;
+    position: relative;
+}
+
+.section3 .background {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+.section3 .background .heading {
+    font-size: 4rem;
+    font-family: great;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 3rem;
+    position: absolute;
+    width: 25rem;
+    height: 8rem;
+    text-transform: capitalize;
+    top: 14rem;
+    left: 83.5rem;
+    z-index: 1;
+}
+
+.section3 .background .heading .vector {
+    width: 25rem;
+    position: absolute;
+    bottom: 0rem;
+}
+
+.section3 .background .box3 {
+    width: var(--width-web);
+    margin: 0 auto;
+    position: absolute;
+    color: #fff;
+    top: 29rem;
+    left: 37.5rem;
+    gap: 4.5rem;
+}
+
+.section3 .background .box3 .box {
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.section3 .background .box3 .box .des {
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+@media (max-width: 46.23em) {
+    .banner {
+        font-size: 4rem;
+        height: 10rem;
+        margin: var(--margin-banner-mobile);
+    }
+
+    .banner .vector {
+        width: 17rem;
+        bottom: 0;
+    }
+
+    .section1 {
+        width: var(--width-mobile);
+        height: auto;
+        margin: var(--margin-section-mobile);
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section1 .main-img {
+        width: 100%;
+    }
+
+    .section1 .sub-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .section1 .sub-img .img-3 {
+        width: auto;
+        height: auto;
+    }
+
+    .section1 .heading {
+        width: auto;
+        font-size: var(--font-size-heading);
+    }
+
+    .section1 .heading .vector {
+        width: 22rem;
+        bottom: 1.5rem;
+    }
+
+    .section2 {
+
+    }
+
+}
+
+@media (min-width: 47em) and (max-width:80em) {
+
+
+
+}
