@@ -27,9 +27,6 @@ if(isset($_GET['act']) && ($_GET['act'] != '')) {
                         ';
             break;
         default:
-            echo '
-                <link rel="stylesheet" type="text/css" href="assets/js/index.js">
-                        ';
             break;
 
     }

@@ -45,9 +45,35 @@
 
     </div>
 
-    <div class="mobile-menu flex">
+    <div class="mobile-menu flex close">
 
+        <a href="../index.php?act=about" class="nav_mobile">
+            Về chúng tối
+        </a>
 
+        <a href="../index.php?act=thuvien" class="nav_mobile">
+            Thư viện
+        </a>
+
+        <a href="../index.php?act=contact" class="nav_mobile">
+            Liên hệ
+        </a>
+
+        <a href="../index.php?act=dress" class="nav_mobile">
+            Váy cưới
+        </a>
+
+        <a href="../index.php?act=error" class="nav_mobile">
+            Quay - Chụp ảnh cưới
+        </a>
+
+        <a href="../index.php?act=error" class="nav_mobile">
+            Makeup
+        </a>
+
+        <a href="user/index.php" class="nav_mobile">
+            Tài khoản
+        </a>
 
     </div>
 

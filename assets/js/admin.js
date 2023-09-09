@@ -43,6 +43,50 @@ function open_cata () {
     window.open(`index.php?act=dress&danhmuc=${Catalog.value}`, '_self');
 }
 
+const mobile_icon = document.querySelector("header .nav .icon-mobile");
+
+const mobile_menu = document.querySelector("header .mobile-menu");
+
+mobile_menu.innerHTML = `
+    
+     <a href="../index.php?act=about" class="nav_mobile">
+            Về chúng tối
+        </a>
+
+        <a href="../index.php?act=thuvien" class="nav_mobile">
+            Thư viện
+        </a>
+  
+        <a href="../index.php?act=contact" class="nav_mobile">
+            Liên hệ
+        </a>
+
+        <a href="../index.php?act=dress" class="nav_mobile">
+            Váy cưới
+        </a>
+
+        <a href="../index.php?act=error" class="nav_mobile">
+            Quay - Chụp ảnh cưới
+        </a>
+
+        <a href="../index.php?act=error" class="nav_mobile">
+            Makeup
+        </a>
+
+        <a href="admin/index.php" class="nav_mobile">
+            Tài khoản
+        </a>
+    
+`;
+
+mobile_icon.addEventListener('click', function () {
+    if (mobile_menu.classList.contains('close')) {
+        mobile_menu.classList.remove('close');
+    } else {
+        mobile_menu.classList.add('close');
+    }
+});
+
 
 
 

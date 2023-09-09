@@ -46,9 +46,10 @@
         require_once 'default.php';
     }
 
+    require_once '../view/user_src/footer.php';
+
     require_once '../view/user_src/foot.php';
 
-    require_once '../view/user_src/footer.php';
 
 
 ?>

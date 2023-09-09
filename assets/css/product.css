@@ -46,12 +46,27 @@
 
 .section1 .left .main-img img {
     border-radius: 1rem;
+    box-shadow: 0 0 1px #000;
 }
 
 .section1 .left .sub-img {
     width: auto;
     height: 10rem;
     gap: 0.5rem;
+}
+
+.section1 .left .sub-img .img {
+    cursor: pointer;
+}
+
+.section1 .left #mirror {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    background: url("../../upload/ADALIE – 23LP516.jpg");
+    transform: translate( -50%, -50% );
 }
 
 .section1 .right {

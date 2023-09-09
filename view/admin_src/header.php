@@ -45,11 +45,7 @@
 
     </div>
 
-    <div class="mobile-menu flex">
-
-
-
-    </div>
+    <div class="mobile-menu flex close"></div>
 
     <div id="search-input" class="search flex close">
 
@@ -64,7 +60,7 @@
     </div>
 
     <div id="sub-menu" class="sub-menu flex">
-        <a href="index.php?act=dress">Mua - Thuê váy cưới</a>
+        <a href="../index.php?act=dress">Mua - Thuê váy cưới</a>
         <a href="">Makeup</a>
         <a href="">Quay phim - chụp ảnh</a>
     </div>

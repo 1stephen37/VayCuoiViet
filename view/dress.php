@@ -1,3 +1,65 @@
+<?php
+
+if(isset($_GET['danhmuc']) && ($_GET['danhmuc'] > 0) ) {
+    $danhmuc = $_GET['danhmuc'];
+} else {
+    $danhmuc = 1;
+}
+
+$sp = getall_sp($danhmuc, 0);;
+$all_cata = getall_dm();
+
+if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
+
+//                            unset($_SESSION['cart']);
+
+    $count = $_POST['count_product'];
+
+    if (isset($_GET['buyid']) && ($_GET['buyid'] > 0)) {
+
+        $buyid = $_GET['buyid'];
+
+        $in4 = getonesp($buyid);
+
+        $arrayCart = [];
+
+        $check = true;
+
+        extract($in4);
+        $i = 0;
+        if(isset($_SESSION['cart']) && ($_SESSION['cart'] != '')) {
+
+            foreach ($_SESSION['cart'] as $item) {
+                if ($item['id'] == $buyid) {
+                    $sl = $item['count'] + 1;
+                    $_SESSION['cart'][$i]['count'] = $sl;
+//                                        $item[$i]['count'] = 2;
+//                                        $_SESSION['cart'][]
+                    $check = false;
+                    break;
+                }
+                $i++;
+            }
+
+        }
+
+
+        if ($check) {
+            $_SESSION['cart'][] = [
+                'id' => $id,
+                'price' => $price,
+                'name' => $name,
+                'id_cata' => $id_cata,
+                'size' => $size,
+                'count' => $count
+            ];
+        }
+
+    }
+}
+
+?>
+
 <div class="banner flex">
 
     <div class="heading">
@@ -32,14 +94,22 @@
 
         <?php
 
-            $danhmuc = '';
+            $select_danhmuc = '';
 
             foreach ($all_cata as $item) {
                 extract($item);
 
-                $danhmuc .= '
+                if($id == $danhmuc ) {
+                    $select_danhmuc .= '
+                    <option selected value="'.$id.'">'.$name.'</option>
+                ';
+                } else {
+                    $select_danhmuc .= '
                     <option value="'.$id.'">'.$name.'</option>
                 ';
+                }
+
+
             }
 
         ?>
@@ -49,7 +119,7 @@
 <!--                <option value="">Váy cưới làm lễ</option>-->
 <!--                <option value="">Váy cưới truyền thống</option>-->
 <!--                <option value="">Váy cưới dòng đền</option>-->
-                <?=$danhmuc?>
+                <?=$select_danhmuc?>
             </select>
         </div>
 

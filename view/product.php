@@ -1,5 +1,15 @@
 <?php
-    extract($detail);
+
+    $idproduct = $_GET['idproduct'];
+
+    $detail = get_detail($idproduct);
+
+    if(is_array($detail)) {
+        extract($detail);
+    }
+
+    $img_src = 'upload/'. $img;
+
 ?>
 
 <div class="banner flex">
@@ -21,6 +31,8 @@
         <div class="main-img">
             <img src="upload/<?=$img?>" alt="" class="img-full">
         </div>
+
+        <div class="close" id="mirror" style="background: url('<?=$img_src?>')"></div>
 
         <div class="sub-img flex">
 

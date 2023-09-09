@@ -24,72 +24,11 @@
                         include_once 'view/about.php';
                         break;
                     case 'dress':
-
-                        if(isset($_GET['danhmuc']) && ($_GET['danhmuc'] > 0) ) {
-                            $danhmuc = $_GET['danhmuc'];
-                        } else {
-                            $danhmuc = 1;
-                        }
-
-                        $sp = getall_sp($danhmuc, 0);;
-                        $all_cata = getall_dm();
-
-                        if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
-
-//                            unset($_SESSION['cart']);
-
-                            $count = $_POST['count_product'];
-
-                            if (isset($_GET['buyid']) && ($_GET['buyid'] > 0)) {
-
-                                $buyid = $_GET['buyid'];
-
-                                $in4 = getonesp($buyid);
-
-                                $arrayCart = [];
-
-                                $check = true;
-
-                                extract($in4);
-                                $i = 0;
-                                if(isset($_SESSION['cart']) && ($_SESSION['cart'] != '')) {
-
-                                    foreach ($_SESSION['cart'] as $item) {
-                                        if ($item['id'] == $buyid) {
-                                            $sl = $item['count'] + 1;
-                                            $_SESSION['cart'][$i]['count'] = $sl;
-//                                        $item[$i]['count'] = 2;
-//                                        $_SESSION['cart'][]
-                                            $check = false;
-                                            break;
-                                        }
-                                        $i++;
-                                    }
-
-                                }
-
-
-                                if ($check) {
-                                    $_SESSION['cart'][] = [
-                                        'id' => $id,
-                                        'price' => $price,
-                                        'name' => $name,
-                                        'id_cata' => $id_cata,
-                                        'size' => $size,
-                                        'count' => $count
-                                    ];
-                                }
-
-                            }
-                        }
-
                         include_once 'view/dress.php';
                         break;
                     case 'product':
                         if(isset($_GET['idproduct']) && ($_GET['idproduct'] > 0) ) {
 
-                            $idproduct = $_GET['idproduct'];
-                            $detail = get_detail($idproduct);
 
                             include_once 'view/product.php';
 

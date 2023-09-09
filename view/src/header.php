@@ -71,9 +71,31 @@
             Makeup
         </a>
 
-        <a class="nav_mobile">
-            Đăng nhập
-        </a>
+        <?php
+
+            if(isset($_SESSION['user']) && $_SESSION['user'] != '') {
+                echo '
+                     <a href="user/index.php" class="nav_mobile">
+                        Tài Khoản
+                     </a>
+                ';
+            } else if(isset($_SESSION['admin']) && $_SESSION['admin'] != '') {
+                echo '
+                     <a href="admin/index.php" class="nav_mobile">
+                        Tài Khoản
+                     </a>
+                ';
+            } else {
+                echo '
+                     <a id="login_mobile" class="nav_mobile">
+                         Đăng nhập
+                     </a>
+                ';
+            }
+
+        ?>
+
+
 
     </div>
 

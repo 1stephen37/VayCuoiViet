@@ -394,11 +394,6 @@ footer .copyright {
         text-align: center;
     }
 
-
-    header .mobile-menu {
-
-    }
-
     header .header_cart {
         display: none;
     }
@@ -507,11 +502,6 @@ footer .copyright {
         line-height: 7rem;
         width: 5rem;
         text-align: center;
-    }
-
-    header .mobile-menu {
-        display: block;
-
     }
 
     footer {
