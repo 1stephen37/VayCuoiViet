@@ -1,55 +1,33 @@
 <?php
-function themdm($name, $detail) : bool{
-    $conn=connectdb();
+function themdm($name, $detail) {
     $sql = "INSERT INTO `catalog` (`id`, `name`, `detail`, `count`) VALUES (NULL, '".$name."', '".$detail."', '');";
-    // use exec() because no results are returned
-    $conn->exec($sql);
-    return true;
+    return handle($sql);
 }
 
-function deldm($id){
-    $conn=connectdb();
+function deldm($id) {
     $sql = "DELETE FROM `catalog` WHERE id=".$id;
     // use exec() because no results are returned
-    $conn->exec($sql);
-    return true;
+    return handle($sql);
 }
 
 function updatedm($id,$name, $detail){
-    $conn=connectdb();
-//    $sql = "UPDATE `catalog` SET tendm='".$tendm."' WHERE id=".$id;
     $sql = "UPDATE `catalog` SET `name` = '$name', `detail` = '$detail' WHERE `id` = $id";
-    // Prepare statement
-    $stmt = $conn->prepare($sql);
-    // execute the query
-    $stmt->execute();
-//    $conn->exec($sql);
+    return handle($sql);
 }
 
 function getonedm($id){
-    $conn=connectdb();
-    $stmt = $conn->prepare("SELECT * FROM catalog WHERE id=".$id);
-    $stmt->execute();
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $kq=$stmt->fetchAll();
-    return $kq;
+    $sql = "SELECT * FROM catalog WHERE id=".$id;
+    return getOne($sql);
 }
 
 function getall_dm(){
-    $conn=connectdb();
-    $stmt = $conn->prepare("SELECT * FROM `catalog`");
-    $stmt->execute();
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $kq=$stmt->fetchAll();
-    return $kq;
+    $sql = "SELECT * FROM `catalog`";
+    return getAll($sql);
 }
 
 function check_foregin($id_cata) {
-    $conn=connectdb();
-    $stmt = $conn->prepare("SELECT * FROM `product` WHERE `id_cata` = ".$id_cata);
-    $stmt->execute();
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $kq=$stmt->fetchAll();
+    $sql = "SELECT * FROM `product` WHERE `id_cata` = ".$id_cata;
+    $kq = getAll($sql);
     return count($kq);
 }
 

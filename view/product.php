@@ -4,11 +4,39 @@
 
     $detail = get_detail($idproduct);
 
+    $imgs = getImage_full($idproduct);
+
+//    echo count($img);
+
     if(is_array($detail)) {
         extract($detail);
     }
 
-    $img_src = 'upload/'. $img;
+    $sub_img = '';
+
+    if(count($imgs) > 0) {
+
+        foreach ($imgs as $img) {
+
+            if($_SESSION['danhmuc'] == 1) {
+                $sub_img .= '
+                 <div class="img">
+                    <img style="height: 12rem;" src="upload/'.$img['name'].'" alt="" class="img-full">
+                 </div>
+                ';
+            } else {
+                $sub_img .= '
+                 <div class="img">
+                    <img style="height: 10rem;" src="upload/'.$img['name'].'" alt="" class="img-full">
+                 </div>
+                ';
+            }
+
+
+        }
+
+    }
+
 
 ?>
 
@@ -29,32 +57,30 @@
     <div class="left flex">
 
         <div class="main-img">
-            <img src="upload/<?=$img?>" alt="" class="img-full">
+            <img src="upload/<?=$imgs[0]['name']?>" alt="" class="img-full">
         </div>
 
-        <div class="close" id="mirror" style="background: url('<?=$img_src?>')"></div>
+        <div class="close" id="mirror" style="background: url('upload/<?=$imgs[0]['name']?>')"></div>
 
         <div class="sub-img flex">
 
-            <div class="img">
-                <img src="upload/<?=$img?>" alt="" class="img-full">
-            </div>
+<!--            <div class="img">-->
+<!--                <img src="assets/img/product/sub-1.svg" alt="" class="img-full">-->
+<!--            </div>-->
+<!---->
+<!--            <div class="img">-->
+<!--                <img src="assets/img/product/sub-1.svg" alt="" class="img-full">-->
+<!--            </div>-->
+<!---->
+<!--            <div class="img">-->
+<!--                <img src="assets/img/product/sub-1.svg" alt="" class="img-full">-->
+<!--            </div>-->
+<!---->
+<!--            <div class="img">-->
+<!--                <img src="assets/img/product/sub-1.svg" alt="" class="img-full">-->
+<!--            </div>-->
 
-            <div class="img">
-                <img src="assets/img/product/sub-1.svg" alt="" class="img-full">
-            </div>
-
-            <div class="img">
-                <img src="assets/img/product/sub-1.svg" alt="" class="img-full">
-            </div>
-
-            <div class="img">
-                <img src="assets/img/product/sub-1.svg" alt="" class="img-full">
-            </div>
-
-            <div class="img">
-                <img src="assets/img/product/sub-1.svg" alt="" class="img-full">
-            </div>
+            <?=$sub_img?>
 
         </div>
 

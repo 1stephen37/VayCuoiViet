@@ -28,8 +28,7 @@
                         break;
                     case 'product':
                         if(isset($_GET['idproduct']) && ($_GET['idproduct'] > 0) ) {
-
-
+                            
                             include_once 'view/product.php';
 
                         } else {

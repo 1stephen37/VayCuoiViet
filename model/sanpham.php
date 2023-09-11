@@ -69,24 +69,32 @@ function get_hot_sp($hot){
 //     return $kq;
 // }
 
-function getall_sp($iddm, $view) :array {
-    $conn=connectdb();
-    $sql = "SELECT * FROM product where 1";
-//    $sql = "SELECT * FROM product LIMIT 3";
+function getall_sp($iddm, $page) :array {
+    switch ($page) {
+        case 1: {
+            $number = 0;
+            break;
+        }
+        case 2: {
+            $number = 12;
+            break;
+        }
+        default: {
+            $number = 0;
+            break;
+        }
+    }
+    $sql = "SELECT * FROM product WHERE";
     if($iddm>0){
-        $sql.=" and `id_cata`=".$iddm;
+        $sql.=" `id_cata`=".$iddm . " LIMIT " . $number . ",12";
         // iddm='".$iddm."'"
     }
-    if($view==1){
-        $sql.=" order by view desc";
-    }else{
-        $sql.=" order by id desc";
-    }
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $kq=$stmt->fetchAll();
-    return $kq;
+//    if($view==1){
+//        $sql.=" order by view desc";
+//    }else{
+//        $sql.=" order by id desc";
+//    }
+    return getAll($sql);
 }
 
     function del_product($id){
@@ -102,13 +110,19 @@ function get_Page() {
     $sql = "SELECT * FROM product where 1";
 }
 
+function getImage($id_product) {
+    $sql = "SELECT * FROM img where id_product=" . $id_product . " LIMIT 1";
+    return getOne($sql);
+}
+
+function getImage_full($id_product) {
+    $sql = "SELECT * FROM img where id_product=" . $id_product;
+    return getAll($sql);
+}
+
 function get_detail($id) {
-    $conn=connectdb();
-    $stmt = $conn->prepare("SELECT * FROM product WHERE id=" . $id);
-    $stmt->execute();
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $kq=$stmt->fetch();
-    return $kq;
+    $sql = "SELECT * FROM product WHERE id=" . $id;
+    return getOne($sql);
 }
 
 ?>

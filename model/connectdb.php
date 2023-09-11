@@ -14,4 +14,29 @@
         echo "Connection failed: " . $e->getMessage();
         }
     }
+
+    function getAll($sql) {
+        $conn = connectdb();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $kq=$stmt->fetchAll();
+        return $kq;
+    }
+
+    function getOne($sql) {
+        $conn = connectdb();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $kq=$stmt->fetch();
+        return $kq;
+    }
+
+    function handle($sql) {
+        $conn = connectdb();
+        $conn->exec($sql);
+        return $conn;
+    }
+
 ?>
