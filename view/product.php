@@ -27,7 +27,7 @@
             } else {
                 $sub_img .= '
                  <div class="img">
-                    <img style="height: 10rem;" src="upload/'.$img['name'].'" alt="" class="img-full">
+                    <img style="height: 12rem;" src="upload/'.$img['name'].'" alt="" class="img-full">
                  </div>
                 ';
             }

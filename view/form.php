@@ -80,9 +80,9 @@
                 <form id="form-sign-in" method="POST" action="index.php?act=login" class="form-sign-in flex">
 
                     <div class="input flex">
-                        <label for="user_name">Tài Khoản</label>
+                        <label for="user_name">Email</label>
 
-                        <input id="user_name_sign_in" name="user_name_sign_in" placeholder="Nhập tài khoản của bạn" type="text">
+                        <input id="email_sign_in" name="email_sign_in" placeholder="Nhập tài khoản của bạn" type="text">
                     </div>
 
                     <div class="input flex">
@@ -99,6 +99,10 @@
 
                 <div class="quest">
                     không có tài khoản ?
+                </div>
+
+                <div class="miss">
+                    quên mật khẩu ?
                 </div>
 
 
@@ -182,6 +186,14 @@
             <img src="assets/img/popup/linked.svg" alt="" class="img-full">
 
         </div>
+
+    </div>
+
+</div>
+
+<div id="miss_pass" class="miss_pass close">
+
+    <div class="container">
 
     </div>
 

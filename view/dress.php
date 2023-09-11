@@ -18,6 +18,8 @@ if(isset($_GET['page']) && ($_GET['page'] > 0) ) {
 $sp = getall_sp($danhmuc, $page);
 $all_cata = getall_dm();
 
+//var_dump($sp);
+
 if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 
 //                            unset($_SESSION['cart']);
@@ -204,42 +206,46 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 
         }
 
+    } else {
+
+        foreach($sp as $item) {
+
+            extract($item);
+
+            $img = getImage($id);
+
+            $page .= '
+        <div class="box">
+
+            <div class="img">
+                <img src="upload/'.$img['name'].'" alt="" class="img-full">
+                <span class="effect flex">
+                    <a href="index.php?act=product&idproduct='.$id.'" class="view">
+                        chi tiết
+                    </a>
+                    <form action="index.php?act=dress&buyid='.$id.'" method="post">
+                        <input type="text" name="count_product" value="1" value="" hidden>
+                        <input type="submit" name="buy_btn" class="addCart" value="mua ngay">
+                    </form>
+                </span>
+            </div>
+
+            <div class="des">
+                '.$name.'
+            </div>
+
+            <div class="price">
+                '.number_format($price,0, ',', '.').' VNĐ'.'
+            </div>
+
+        </div>
+        ';
+
+        }
+
     }
 
-//    foreach($sp as $item) {
-//
-//        extract($item);
-//
-//        $img = getImage($id);
-//
-//        $page .= '
-//        <div class="box">
-//
-//            <div class="img">
-//                <img src="upload/'.$img['name'].'" alt="" class="img-full">
-//                <span class="effect flex">
-//                    <a href="index.php?act=product&idproduct='.$id.'" class="view">
-//                        chi tiết
-//                    </a>
-//                    <form action="index.php?act=dress&buyid='.$id.'" method="post">
-//                        <input type="text" name="count_product" value="1" value="" hidden>
-//                        <input type="submit" name="buy_btn" class="addCart" value="mua ngay">
-//                    </form>
-//                </span>
-//            </div>
-//
-//            <div class="des">
-//                '.$name.'
-//            </div>
-//
-//            <div class="price">
-//                '.number_format($price,0, ',', '.').' VNĐ'.'
-//            </div>
-//
-//        </div>
-//        ';
-//
-//    }
+
 
 
 

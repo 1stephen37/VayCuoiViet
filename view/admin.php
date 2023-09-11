@@ -82,7 +82,7 @@
             //                };
 
             if($_SESSION['admin']) {
-                echo($_SESSION['admin']['UserName']);
+                echo($_SESSION['admin']['Name']);
             }
 
             ?>

@@ -28,9 +28,9 @@
 //     return $kq;
 // }
 
-function checkuser($user,$pass){
+function checkuser($email,$pass){
     $conn=connectdb();
-    $stmt = $conn->prepare("SELECT * FROM user WHERE UserName='".$user."' AND PassWord ='".$pass."'");
+    $stmt = $conn->prepare("SELECT * FROM user WHERE Email='".$email."' AND PassWord ='".$pass."'");
     $stmt->execute();
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $kq = '';

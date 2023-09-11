@@ -61,7 +61,6 @@ const sign_up_container = document.querySelector('.sign-up .container');
 
 button_sign_up.addEventListener('click', function () {
     sign_up_form.classList.remove('close');
-    console.log(sign_up_form);
 });
 
 sign_up_form.addEventListener('click', function () {
@@ -72,28 +71,46 @@ sign_up_container.addEventListener("click", function (event) {
     event.stopPropagation()
 })
 
+const miss_button = document.querySelector('.sign-in .container .content .right .miss');
+
+const miss = document.getElementById('miss_pass');
+
+const miss_container = document.querySelector('.miss_pass .container');
+
+miss_button.addEventListener('click', function(e) {
+    miss.classList.remove('close');
+});
+
+miss.addEventListener('click', function() {
+    miss.classList.add('close');
+})
+
+miss_container.addEventListener('click', function (e) {
+    e.stopPropagation();
+})
+
 function show() {
     console.log("13123");
 }
 
 function chek_form_sign_in() {
 
-    const user_name_sign_in = document.getElementById('user_name_sign_in');
+    const email_sign_in = document.getElementById('email_sign_in');
 
     const user_password_sign_in = document.getElementById('user_password_sign_in');
 
-    if (user_name_sign_in.value === '') {
-        user_name_sign_in.placeholder = 'Bạn phải nhập tài khoản';
-        user_name_sign_in.focus();
+    if (email_sign_in.value === '') {
+        email_sign_in.placeholder = 'Bạn phải nhập tài khoản';
+        email_sign_in.focus();
         return false;
     }
 
-    // if(user_name_sign_in.value == 'admin') {
+    // if(email_sign_in.value == 'admin') {
     //     alert('user_name  goi');
     //     return false;
     // }
 
-    if (user_password_sign_in.value == 'admin123' && user_name_sign_in.value == 'admin') {
+    if (user_password_sign_in.value == 'admin123' && email_sign_in.value == 'admin') {
         // window.open('index.php?act=admin', '_self');
         alert('10 diem lun goi');
     }

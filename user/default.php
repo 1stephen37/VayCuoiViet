@@ -78,7 +78,7 @@
             //                };
 
             if($_SESSION['user']) {
-                echo($_SESSION['user']['UserName']);
+                echo($_SESSION['user']['Name']);
             }
 
             ?>

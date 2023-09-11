@@ -104,10 +104,10 @@
 
                         if(isset($_POST['sign_in_submit']) && $_POST['sign_in_submit']) {
 
-                            $user = $_POST['user_name_sign_in'];
+                            $email = $_POST['email_sign_in'];
                             $pass = $_POST['user_password_sign_in'];
 
-                            $in4 = checkuser($user,$pass);
+                            $in4 = checkuser($email,$pass);
 
                             if($in4 == 0) {
                                 require_once 'view/error.php';
