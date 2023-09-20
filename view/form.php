@@ -191,10 +191,37 @@
 
 </div>
 
-<div id="miss_pass" class="miss_pass close">
+<div id="miss_pass" class="miss_pass ">
 
     <div class="container">
+
+        <div class="heading">
+
+            <div class="des">
+                Nhập email
+            </div>
+
+            <div class="vector">
+                <img src="assets/img/section/Vector 7.svg" alt="" class="img-full">
+            </div>
+
+        </div>
+
+        <div class="input">
+
+            <input type="text">
+
+        </div>
+
+        <div class="button">
+
+            Gửi mail
+
+        </div>
+
+
 
     </div>
 
 </div>
+

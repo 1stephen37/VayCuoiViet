@@ -12,10 +12,40 @@
 }
 
 .miss_pass .container {
-    width: 80rem;
-    height: 80rem;
+    width: 40rem;
+    height: 40rem;
     background: var(--primary-color);
     /* z-index: 1; */
     border-radius: 1rem;
     padding: 5rem 0;
+}
+
+.miss_pass .container .heading {
+    font-size: var(--font-size-heading);
+    font-family: great;
+    width: 15rem;
+    margin: 0 auto;
+    position: relative;
+    color: #fff;
+}
+
+.miss_pass .container .heading .vector {
+    position: absolute;
+    top: 0;
+
+}
+
+.miss_pass .container .input {
+    margin: 2rem auto 0 auto;
+    width: 10rem;
+}
+
+.miss_pass .container .button {
+    width: 10rem;
+    background: #fff;
+    color: #000;
+    margin: 2rem auto 0 auto;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 2rem;
 }
