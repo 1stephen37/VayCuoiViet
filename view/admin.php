@@ -43,13 +43,6 @@
         </div>
 
         <div class="admin-link">
-            <i class="fa-solid fa-tag"></i>
-            <a href="index.php?act=brand">
-                thương hiệu
-            </a>
-        </div>
-
-        <div class="admin-link">
             <i class="fa-sharp fa-solid fa-truck-fast"></i>
             <a href="index.php?act=order">
                 đơn hàng

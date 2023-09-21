@@ -114,7 +114,6 @@
                     }
 
                     default: {
-
                         require_once 'view.php';
                         break;
                     }

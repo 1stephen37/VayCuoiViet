@@ -13,6 +13,8 @@
 
     require_once '../model/user.php';
 
+    require_once '../model/DAO.php';
+
     require_once '../view/admin_src/head.php';
 
     require_once '../view/admin_src/header.php';
@@ -35,11 +37,6 @@
 
             case 'user': {
                 require_once 'user/index.php';
-                break;
-            }
-
-            case 'brand': {
-                require_once 'brand/index.php';
                 break;
             }
 

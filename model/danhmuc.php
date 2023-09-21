@@ -16,13 +16,13 @@ function updatedm($id,$name, $detail){
 }
 
 function getonedm($id){
-    $sql = "SELECT * FROM catalog WHERE id=".$id;
-    return getOne($sql);
+    $sql = "SELECT * FROM catalog WHERE id= (?)";
+    return pdo_query_one($sql, $id);
 }
 
 function getall_dm(){
     $sql = "SELECT * FROM `catalog`";
-    return getAll($sql);
+    return pdo_query($sql);
 }
 
 function check_foregin($id_cata) {

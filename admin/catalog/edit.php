@@ -35,7 +35,7 @@
             </label>
             <input type="text" name="id" disabled value="
             <?php
-                    echo $dm1[0]["id"];
+                    echo $dm1["id"];
             ?>
             ">
         </div>
@@ -46,7 +46,7 @@
             </label>
             <input type="text" name="edit_name" value="
                 <?php
-                    echo $dm1[0]["name"];
+                    echo $dm1["name"];
                 ?>
             ">
         </div>
@@ -57,7 +57,7 @@
             </label>
             <input type="text" name="edit_detail" value="
                  <?php
-                    echo $dm1[0]["detail"];
+                    echo $dm1["detail"];
                 ?>
             ">
         </div>

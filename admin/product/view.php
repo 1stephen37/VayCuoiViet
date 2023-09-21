@@ -29,7 +29,7 @@
 
     <?php
 
-        $product = getall_sp(0, 0);
+        $product = getall_sp(1, 1);
 
         $view = '';
 

@@ -209,7 +209,7 @@
 
         <div class="input">
 
-            <input type="text">
+            <input type="text" class="img-full">
 
         </div>
 

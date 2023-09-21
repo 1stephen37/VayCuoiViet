@@ -100,6 +100,9 @@
                     case 'error':
                         include_once 'view/error.php';
                         break;
+                    case 'miss_pass':
+                        include_once 'model/account.php';
+                        break;
                     case 'login':
 
                         if(isset($_POST['sign_in_submit']) && $_POST['sign_in_submit']) {
