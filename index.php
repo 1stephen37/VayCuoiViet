@@ -5,6 +5,7 @@
         ob_start();
 
         require_once 'model/connectdb.php';
+        require_once "model/DAO.php";
         require_once 'model/sanpham.php';
         require_once 'model/danhmuc.php';
         require_once 'model/donhang.php';

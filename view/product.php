@@ -318,6 +318,19 @@
 
 </section>
 
+<div class="form-comment">
+
+    <form method="post" action="index.php?act=post_comment&id=<?=$idproduct?>" class="form-container">
+
+
+        <button type="submit">
+            Gửi nhận xét
+        </button>
+
+    </form>
+
+</div>
+
 <section class="section3">
 
     <div class="heading">
