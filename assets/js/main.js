@@ -172,6 +172,17 @@ mobile_icon.addEventListener('click', function () {
 });
 
 
+function check_mail_miss() {
+
+    const email_miss = document.querySelector('.miss_pass .container .input input');
+
+    if(email_miss.value === '') {
+        return false;
+    } else {
+        console.log(email_miss.value);
+        return true;
+    }
+}
 
 
 

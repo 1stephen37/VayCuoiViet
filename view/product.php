@@ -318,18 +318,32 @@
 
 </section>
 
-<div class="form-comment">
+<form method="post" action="index.php?act=post_comment&id=<?=$idproduct?>" class="form-comment">
 
-    <form method="post" action="index.php?act=post_comment&id=<?=$idproduct?>" class="form-container">
+    <div class="heading">
+
+        <div class="left">
+            Bình luận
+        </div>
+
+        <div class="right">
+
+        </div>
+
+    </div>
+
+    <div class="flex">
+
+        <input type="text">
+
+    </div>
+
+    <button type="submit">
+        Gửi nhận xét
+    </button>
 
 
-        <button type="submit">
-            Gửi nhận xét
-        </button>
-
-    </form>
-
-</div>
+</form>
 
 <section class="section3">
 

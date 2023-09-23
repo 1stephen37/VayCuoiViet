@@ -191,9 +191,9 @@
 
 </div>
 
-<div id="miss_pass" class="miss_pass ">
+<div id="miss_pass" class="miss_pass close">
 
-    <div class="container">
+    <form action="index.php?act=miss_pass" method="post" class="container">
 
         <div class="heading">
 
@@ -209,19 +209,15 @@
 
         <div class="input">
 
-            <input type="text" class="img-full">
+            <input name="email_miss" type="email" class="img-full">
 
         </div>
 
-        <div class="button">
-
-            Gửi mail
-
-        </div>
+        <input value="Gửi mail" name="missBtn" onclick="return check_mail_miss();" type="submit"  class="button">
 
 
 
-    </div>
+    </form>
 
 </div>
 

@@ -247,10 +247,14 @@
     font-weight: bold;
 }
 
+.form-comment {
+    width: var(--width-web);
+    margin: var(--margin-section-desktop);
+}
+
 .section3 {
     width: var(--width-web);
-    margin: 0 auto;
-    margin-top: 10rem;
+    margin: var(--margin-section-desktop);
     height: 90rem;
 }
 
