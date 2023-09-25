@@ -104,7 +104,15 @@
                     case 'miss_pass':
 //                        if(isset($_POST['missBtn']) && ($_POST['missBtn'])) {
 //                        }
-                        include_once 'view/miss_pass.php';
+                        if(isset($_POST['email_miss']) && ($_POST['email_miss'] != '')) {
+
+                            $id_user = check_user($_POST['email_miss']);
+
+                            include_once 'view/miss_pass.php';
+
+                        } else {
+                            include_once 'view/error.php';
+                        }
                         break;
                     case 'login':
 

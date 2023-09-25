@@ -215,8 +215,6 @@
 
         <input value="Gửi mail" name="missBtn" onclick="return check_mail_miss();" type="submit"  class="button">
 
-
-
     </form>
 
 </div>

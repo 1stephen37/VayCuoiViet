@@ -44,9 +44,13 @@
         $code .= $randomNumber;
     }
 
+
+
     $_SESSION['code'] = $code;
 
     echo $code;
+
+    $check = '';
 
 //    $content = '';
 

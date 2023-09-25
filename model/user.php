@@ -75,4 +75,14 @@ function getuserinfo($user,$pass){
     return $kq;
 }
 
+function post_reset($reset,$user) {
+    $sql = "UPDATE `user` SET `reset` = (?) WHERE `id` = (?)";
+    return pdo_execute($sql,$reset ,$user);
+}
+
+function check_user($email) {
+    $sql = "SELECT `id` FROM `user` WHERE `Email` = (?)";
+    return pdo_execute($sql,$email);
+}
+
 ?>
