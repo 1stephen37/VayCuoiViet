@@ -85,6 +85,12 @@
                     <link rel="stylesheet" type="text/css" href="assets/css/pay.css">
                 ';
                 break;
+            case 'miss_pass':
+                echo '
+                    <title>Mật khẩu</title>
+                    <link rel="stylesheet" type="text/css" href="assets/css/miss_pass.css">
+                ';
+                break;
             default:
                 echo '
                     <title>Váy Cưới Việt</title>

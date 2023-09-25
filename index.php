@@ -102,11 +102,9 @@
                         include_once 'view/error.php';
                         break;
                     case 'miss_pass':
-                        if(isset($_POST['missBtn']) && ($_POST['missBtn'])) {
-                            include_once 'model/miss_pass.php';
-                        } else {
-                            header('location: index.php');
-                        }
+//                        if(isset($_POST['missBtn']) && ($_POST['missBtn'])) {
+//                        }
+                        include_once 'view/miss_pass.php';
                         break;
                     case 'login':
 

@@ -94,7 +94,12 @@
                 $_SESSION['total'] = 0;
 
                 foreach ($_SESSION['cart'] as $item ) {
+
                     extract($item);
+
+                    $id_product = $id;
+
+                    $img_src = getImage($id_product);
 
                     $thanhtien = $price * $count;
 
@@ -113,7 +118,7 @@
                     
                                     <div class="product flex">
                                         <div class="img">
-                                            <img src="upload/'.$name.'.jpg" alt="" class="img-full">
+                                            <img src="upload/'.$img_src['name'].'." alt="" class="img-full">
                                         </div>
                                         <div class="des">
                                             '.$name.'

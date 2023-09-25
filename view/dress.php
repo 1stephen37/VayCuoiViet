@@ -192,7 +192,7 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
                     </a>
                     <form action="index.php?act=dress&buyid='.$id.'" method="post">
                         <input type="text" name="count_product" value="1" value="" hidden>
-                        <input type="submit" name="buy_btn" class="addCart" value="mua ngay">                
+                        <input type="submit" name="contact_btn" class="addCart" value="Liên hệ">                            
                     </form>
                 </span>
             </div>
@@ -244,9 +244,6 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
         }
 
     }
-
-
-
 
 
     ?>
