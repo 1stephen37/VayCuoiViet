@@ -34,38 +34,31 @@
 //    echo 'Error: ' . $mail->ErrorInfo;
 //}
 
-    $min = 1; // Giá trị nhỏ nhất trong dãy số
-    $max = 10; // Giá trị lớn nhất trong dãy số
-    $code = '';
 
-    for($i = 0; $i < 6; $i++) {
-        $randomNumber =  mt_rand($min, $max);
 
-        $code .= $randomNumber;
+    function reder_code() {
+        $min = 1; // Giá trị nhỏ nhất trong dãy số
+        $max = 10; // Giá trị lớn nhất trong dãy số
+        $ouput = '';
+
+        for($i = 0; $i < 6; $i++) {
+            $randomNumber =  mt_rand($min, $max);
+
+            $ouput .= $randomNumber;
+        }
+        return $ouput;
     }
 
-//    echo $_SESSION['id_user_miss']['id'];
+    if(!isset($_SESSION['code_miss'])) {
+        $_SESSION['code_miss'] = '';
+        $_SESSION['code_miss'] = reder_code();
+    }
 
-//    $_SESSION['code'] = $code;
-
-    $boll_miss = post_reset($code,$_SESSION['id_user_miss']['id']);
+    $boll_miss = post_reset($_SESSION['code_miss'],$_SESSION['id_user_miss']['id']);
 
     $reset_code = get_reset($_SESSION['id_user_miss']['id']);
 
-
-
-//    if($boll_miss) {
-//        echo 'sussel';
-//    } else {
-//        echo 'false';
-//    }
-
-//    echo $code;
-
     $check = '';
-
-//    $content = '';
-
 
     $content = '
     
@@ -79,18 +72,19 @@
 
     ';
 
-    if(isset($_GET['author']) ) {
+    if(isset($_GET['author'])) {
 
-        echo 'dadas';
+        remove_reset(null,$_SESSION['id_user_miss']['id']);
+
+
+        unset($_SESSION['code_miss']);
 
         $code_input = $_POST['codeValue'];
 
-        echo $code_input;
-
-        if($code_input == $reset_code) {
+        if($code_input === $reset_code['reset']) {
             $content = '
-                
-            <form method="post" action="index.php?act=miss_pass&reset=true" class="section1 flex">
+
+                <form method="post" action="index.php?act=reset_pass" class="section1 flex">
 
     <div class="input flex">
 
@@ -135,14 +129,6 @@
 
     }
 
-    if(isset($_POST['codeBtn']) && ($_POST['codeBtn'])) {
-
-
-
-
-
-
-    }
 
 
 ?>

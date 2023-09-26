@@ -110,9 +110,14 @@
 
                             include_once 'view/miss_pass.php';
 
+                        } else if(isset($_POST['codeBtn']) && ($_POST['codeBtn'])) {
+                            require_once 'view/miss_pass.php';
                         } else {
                             include_once 'view/error.php';
                         }
+                        break;
+                    case 'reset_pass':
+                        require_once 'view/reset_pass.php';
                         break;
                     case 'login':
 

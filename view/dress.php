@@ -171,7 +171,7 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 
     <?php
 
-    $page = '';
+    $output = '';
 
     if($danhmuc == 1) {
 
@@ -181,7 +181,7 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 
         $img = getImage($id);
 
-        $page .= '
+        $output .= '
         <div class="box">
     
             <div class="img">
@@ -214,7 +214,7 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 
             $img = getImage($id);
 
-            $page .= '
+            $output .= '
         <div class="box">
 
             <div class="img">
@@ -245,10 +245,28 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 
     }
 
+    $count = count_product_byCata($danhmuc);
+
+    $count_page = 0;
+
+    if($count['COUNT(id)'] < 12)  {
+        $count_page = 1;
+    } else if($count['COUNT(id)'] > 12 && $count['COUNT(id)'] < 24 ) {
+        $count_page = 2;
+    }
+
+    $page_link = '';
+
+    for($i = 1; $i <= $count_page; $i++ ) {
+        $page_link .= '
+           <a href="index.php?act=dress&danhmuc='.$danhmuc.'&page='.$i.'" class="cricle">'.$i.'</a>
+        ';
+    }
 
     ?>
 
-    <?=$page?>
+    <?=$output?>
+
 
 
 
@@ -257,40 +275,43 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 
 <section class="page flex">
 
-    <a href="index.php?act=dress&page=1" class="cricle">
-        1
-    </a>
+<!--    <a href="index.php?act=dress&page=1" class="cricle">-->
+<!--        1-->
+<!--    </a>-->
+<!---->
+<!--    <a href="index.php?act=dress&page=2" class="cricle">-->
+<!--        2-->
+<!--    </a>-->
+<!---->
+<!--    <div class="cricle">-->
+<!--        3-->
+<!--    </div>-->
+<!---->
+<!--    <div class="cricle">-->
+<!--        4-->
+<!--    </div>-->
+<!---->
+<!--    <div class="cricle">-->
+<!--        ...-->
+<!--    </div>-->
+<!---->
+<!--    <div class="cricle">-->
+<!--        14-->
+<!--    </div>-->
+<!---->
+<!--    <div class="cricle">-->
+<!--        15-->
+<!--    </div>-->
+<!---->
+<!--    <div class="cricle">-->
+<!--        16-->
+<!--    </div>-->
+<!---->
 
-    <a href="index.php?act=dress&page=2" class="cricle">
-        2
-    </a>
+    <?=$page_link?>
 
-    <div class="cricle">
-        3
-    </div>
-
-    <div class="cricle">
-        4
-    </div>
-
-    <div class="cricle">
-        ...
-    </div>
-
-    <div class="cricle">
-        14
-    </div>
-
-    <div class="cricle">
-        15
-    </div>
-
-    <div class="cricle">
-        16
-    </div>
-
-    <div class="cricle">
+    <a href="<?php echo 'index.php?act=dress&danhmuc='.$danhmuc.'&page='.$i.''?>" class="cricle">
         <i class="fa-solid fa-chevron-right"></i>
-    </div>
+    </a>
 
 </section>

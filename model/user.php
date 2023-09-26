@@ -75,6 +75,16 @@ function getuserinfo($user,$pass){
     return $kq;
 }
 
+function reset_pass($user,$pass) {
+    $sql = "UPDATE `user` SET `PassWord` = (?) WHERE `id` = (?)";
+    return pdo_execute($sql,$pass ,$user);
+}
+
+function remove_reset($reset,$user) {
+    $sql = "UPDATE `user` SET `reset` = (?) WHERE `id` = (?)";
+    return pdo_execute($sql,$reset ,$user);
+}
+
 function post_reset($reset,$user) {
     $sql = "UPDATE `user` SET `reset` = (?) WHERE `id` = (?)";
     return pdo_execute($sql,$reset ,$user);
@@ -82,7 +92,7 @@ function post_reset($reset,$user) {
 
 function get_reset($user) {
     $sql = "SELECT `reset` FROM `user` WHERE `id` = (?)";
-    return pdo_query_one($sql);
+    return pdo_query_one($sql,$user);
 }
 
 function check_user($email) {

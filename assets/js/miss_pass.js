@@ -48,5 +48,12 @@ function checkPass() {
         return false;
     }
 
-    // return true;
+    return true;
 }
+
+//
+// setTimeout(function() {
+//     var xhttp = new XMLHttpRequest();
+//     xhttp.open("GET", "remove_seset_code.php", true);
+//     xhttp.send();
+// }, 300000)

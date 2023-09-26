@@ -87,8 +87,14 @@
                 break;
             case 'miss_pass':
                 echo '
-                    <title>Mật khẩu</title>
+                    <title>Quên Mật Khẩu</title>
                     <link rel="stylesheet" type="text/css" href="assets/css/miss_pass.css">
+                ';
+                break;
+            case 'reset_pass':
+                echo '
+                    <title>Đặt Lại Mật khẩu</title>
+                    <link rel="stylesheet" type="text/css" href="assets/css/reset_pass.css">
                 ';
                 break;
             default:

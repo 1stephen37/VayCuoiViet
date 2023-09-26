@@ -69,7 +69,7 @@ function get_hot_sp($hot){
 //     return $kq;
 // }
 
-function getall_sp($iddm, $page) :array {
+function getall_sp($iddm, $page) {
     switch ($page) {
         case 1: {
             $number = 0;
@@ -97,13 +97,18 @@ function getall_sp($iddm, $page) :array {
     return getAll($sql);
 }
 
-    function del_product($id){
-        $conn=connectdb();
-        $sql = "DELETE FROM `product` WHERE id=".$id;
-        // use exec() because no results are returned
-        $conn->exec($sql);
-        return true;
-    }
+function count_product_byCata($id_cata) {
+    $sql = "SELECT COUNT(id) FROM `product` WHERE `id_cata` = (?);";
+    return pdo_query_one($sql, $id_cata);
+}
+
+function del_product($id){
+    $conn=connectdb();
+    $sql = "DELETE FROM `product` WHERE id=".$id;
+    // use exec() because no results are returned
+    $conn->exec($sql);
+    return true;
+}
 
 function get_Page() {
     $conn=connectdb();
