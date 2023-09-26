@@ -80,9 +80,14 @@ function post_reset($reset,$user) {
     return pdo_execute($sql,$reset ,$user);
 }
 
+function get_reset($user) {
+    $sql = "SELECT `reset` FROM `user` WHERE `id` = (?)";
+    return pdo_query_one($sql);
+}
+
 function check_user($email) {
     $sql = "SELECT `id` FROM `user` WHERE `Email` = (?)";
-    return pdo_execute($sql,$email);
+    return pdo_query_one($sql,$email);
 }
 
 ?>

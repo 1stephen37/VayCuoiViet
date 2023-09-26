@@ -106,7 +106,7 @@
 //                        }
                         if(isset($_POST['email_miss']) && ($_POST['email_miss'] != '')) {
 
-                            $id_user = check_user($_POST['email_miss']);
+                            $_SESSION['id_user_miss'] = check_user($_POST['email_miss']);
 
                             include_once 'view/miss_pass.php';
 

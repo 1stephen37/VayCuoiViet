@@ -44,11 +44,23 @@
         $code .= $randomNumber;
     }
 
+//    echo $_SESSION['id_user_miss']['id'];
+
+//    $_SESSION['code'] = $code;
+
+    $boll_miss = post_reset($code,$_SESSION['id_user_miss']['id']);
+
+    $reset_code = get_reset($_SESSION['id_user_miss']['id']);
 
 
-    $_SESSION['code'] = $code;
 
-    echo $code;
+//    if($boll_miss) {
+//        echo 'sussel';
+//    } else {
+//        echo 'false';
+//    }
+
+//    echo $code;
 
     $check = '';
 
@@ -68,11 +80,14 @@
     ';
 
     if(isset($_GET['author']) ) {
+
+        echo 'dadas';
+
         $code_input = $_POST['codeValue'];
 
         echo $code_input;
 
-        if($code_input == $_SESSION['code']) {
+        if($code_input == $reset_code) {
             $content = '
                 
             <form method="post" action="index.php?act=miss_pass&reset=true" class="section1 flex">
