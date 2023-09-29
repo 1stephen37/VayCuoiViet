@@ -190,9 +190,8 @@
 
 .section2 {
     width: var(--width-web);
-    margin: 0 auto;
-    margin-top: 10rem;
-    height: 58rem;
+    margin: var(--margin-section-desktop);
+    height: auto;
 }
 
 .section2 .heading {
@@ -250,6 +249,50 @@
 .form-comment {
     width: var(--width-web);
     margin: var(--margin-section-desktop);
+    position: relative;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-comment .heading {
+
+}
+
+.form-comment .heading .left {
+    font-size: 4rem;
+    font-family: great;
+}
+
+.form-comment .heading .left .vector {
+    width: 18rem;
+}
+
+.form-comment .flex {
+
+}
+
+.form-comment .flex textarea {
+    width: 70%;
+    height: 10rem;
+    outline: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 1rem;
+}
+
+.form-comment .button {
+
+}
+
+.form-comment .non-comment {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-comment .non-comment .button {
+
 }
 
 .section3 {

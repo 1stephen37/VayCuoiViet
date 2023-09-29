@@ -184,6 +184,15 @@ function check_mail_miss() {
     }
 }
 
+const content_keyword = document.querySelector("input[name = 'search_content']");
+
+const btn_search = document.getElementById('btn_search');
+
+btn_search.addEventListener('click', function() {
+    const str = "index.php?act=search&keyword=" + content_keyword.value;
+   window.open(str, "_self");
+});
+
 
 
 

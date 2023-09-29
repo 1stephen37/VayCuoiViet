@@ -102,10 +102,10 @@
     <div id="search-input" class="search flex close">
 
         <div class="input">
-            <input placeholder="Tìm kiếm sản phẩm" class="img-full" name="search" type="text">
+            <input placeholder="Tìm kiếm sản phẩm" class="img-full" name="search_content" type="text">
         </div>
 
-        <div class="icon">
+        <div id="btn_search" class="icon">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
 

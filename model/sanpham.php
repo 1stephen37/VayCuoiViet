@@ -97,6 +97,11 @@ function getall_sp($iddm, $page) {
     return getAll($sql);
 }
 
+function getIdCata($id_product) {
+    $sql = "SELECT id_cata FROM `product` WHERE id = (?)";
+    return pdo_query_value($sql,$id_product);
+}
+
 function count_product_byCata($id_cata) {
     $sql = "SELECT COUNT(id) FROM `product` WHERE `id_cata` = (?);";
     return pdo_query_one($sql, $id_cata);

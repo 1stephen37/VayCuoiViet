@@ -6,6 +6,31 @@
 
     $imgs = getImage_full($idproduct);
 
+    $id_cata = getIdCata($idproduct);
+
+    $sp_lienquan = get_product_lienquan($id_cata,$idproduct);
+
+    $html_sp_lienquan = '';
+
+    foreach ($sp_lienquan as $sp) {
+
+        $img_lienquan = getImage($sp['id']);
+
+        $html_sp_lienquan .= '
+        <div class="box">
+
+            <div class="img">
+                <img src="upload/'.$img_lienquan['name'].'" alt="" class="img-full">
+            </div>
+
+            <div class="des">
+                '.$sp['name'].'
+            </div>
+
+        </div>
+        ';
+    }
+
 //    echo count($img);
 
     if(is_array($detail)) {
@@ -318,30 +343,55 @@
 
 </section>
 
-<form method="post" action="index.php?act=post_comment&id=<?=$idproduct?>" class="form-comment">
+
+<form method="post" action="index.php?act=post_comment&id=<?=$idproduct?>" class="form-comment flex">
+
+    <div class="non-comment flex close">
+
+        <div class="button">đăng nhập để comment</div>
+
+    </div>
 
     <div class="heading">
 
         <div class="left">
-            Bình luận
+
+            <div class="des">
+                Bình Luận
+            </div>
+
+            <div class="vector">
+                <img src="assets/img/product/Vector 2.svg" alt="" class="img-full">
+            </div>
+
         </div>
 
         <div class="right">
+            <div class="avatar">
 
+            </div>
+
+            <div class="name">
+
+            </div>
         </div>
 
     </div>
 
     <div class="flex">
 
-        <input type="text">
+        <textarea name="comment_content"> </textarea>
+
+        <div class="infor">
+
+
+        </div>
 
     </div>
 
-    <button type="submit">
-        Gửi nhận xét
-    </button>
-
+    <div class="button">
+        <input type="submit" value="gửi comment">
+    </div>
 
 </form>
 
@@ -361,41 +411,31 @@
 
     <div class="box-sp">
 
-        <div class="box">
+        <?=$html_sp_lienquan?>
 
-            <div class="img">
-                <img src="assets/img/product/1.svg" alt="" class="img-full">
-            </div>
-
-            <div class="des">
-                DIOR - 23LP512
-            </div>
-
-        </div>
-
-        <div class="box">
-
-            <div class="img">
-                <img src="assets/img/product/1.svg" alt="" class="img-full">
-            </div>
-
-            <div class="des">
-                OHARA - 23LP522
-            </div>
-
-        </div>
-
-        <div class="box">
-
-            <div class="img">
-                <img src="assets/img/product/1.svg" alt="" class="img-full">
-            </div>
-
-            <div class="des">
-                MALLORIE - 23LP518
-            </div>
-
-        </div>
+<!--        <div class="box">-->
+<!---->
+<!--            <div class="img">-->
+<!--                <img src="assets/img/product/1.svg" alt="" class="img-full">-->
+<!--            </div>-->
+<!---->
+<!--            <div class="des">-->
+<!--                OHARA - 23LP522-->
+<!--            </div>-->
+<!---->
+<!--        </div>-->
+<!---->
+<!--        <div class="box">-->
+<!---->
+<!--            <div class="img">-->
+<!--                <img src="assets/img/product/1.svg" alt="" class="img-full">-->
+<!--            </div>-->
+<!---->
+<!--            <div class="des">-->
+<!--                MALLORIE - 23LP518-->
+<!--            </div>-->
+<!---->
+<!--        </div>-->
 
     </div>
 

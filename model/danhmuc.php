@@ -31,4 +31,9 @@ function check_foregin($id_cata) {
     return count($kq);
 }
 
+function get_product_lienquan($id_cata,$id_product) {
+    $sql = "SELECT * FROM `product` WHERE `id_cata` = (?) AND id <> (?) LIMIT 3";
+    return pdo_query($sql,$id_cata, $id_product);
+}
+
 ?>
