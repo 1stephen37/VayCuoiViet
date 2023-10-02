@@ -169,6 +169,7 @@
                         }
 
                         break;
+
                     case 'index':
                         include_once 'view/home.php';
                         break;

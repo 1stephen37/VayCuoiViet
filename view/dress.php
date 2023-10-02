@@ -69,6 +69,149 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
     }
 }
 
+
+
+    $count = count_product_byCata($danhmuc);
+
+    $count_page = 0;
+
+    if($count['COUNT(id)'] < 12)  {
+        $count_page = 1;
+    } else if($count['COUNT(id)'] > 12 && $count['COUNT(id)'] < 24 ) {
+        $count_page = 2;
+    }
+
+    $page_link = '';
+
+    for($i = 1; $i <= $count_page; $i++ ) {
+        $page_link .= '
+               <a href="index.php?act=dress&danhmuc='.$danhmuc.'&page='.$i.'" class="cricle">'.$i.'</a>
+            ';
+    }
+
+    if(isset($_GET['keyword']) && ($_GET['keyword'] != '') ) {
+        $key_word = $_GET['keyword'];
+
+        $title = "Kết quả tìm kím của từ khóa: " . $key_word;
+
+        $product_search = search_product_name($key_word);
+
+        $output = '';
+
+        foreach($product_search as $item) {
+
+            extract($item);
+
+            $img = getImage($id);
+
+            $output .= '
+        <div class="box">
+    
+            <div class="img">
+                <img src="upload/'.$img['name'].'" alt="" class="img-full">
+                <span class="effect flex">
+                    <a href="index.php?act=product&idproduct='.$id.'" class="view">
+                        chi tiết
+                    </a>
+                    <form action="index.php?act=dress&buyid='.$id.'" method="post">
+                        <input type="text" name="count_product" value="1" value="" hidden>
+                        <input type="submit" name="contact_btn" class="addCart" value="Liên hệ">                            
+                    </form>
+                </span>
+            </div>
+    
+            <div class="des">
+                '.$name.'
+            </div>
+         
+        </div>
+        ';
+
+        }
+
+
+    } else {
+        $output = '';
+
+        if($danhmuc == 1) {
+
+            foreach($sp as $item) {
+
+                extract($item);
+
+                $img = getImage($id);
+
+                $output .= '
+        <div class="box">
+    
+            <div class="img">
+                <img src="upload/'.$img['name'].'" alt="" class="img-full">
+                <span class="effect flex">
+                    <a href="index.php?act=product&idproduct='.$id.'" class="view">
+                        chi tiết
+                    </a>
+                    <form action="index.php?act=dress&buyid='.$id.'" method="post">
+                        <input type="text" name="count_product" value="1" value="" hidden>
+                        <input type="submit" name="contact_btn" class="addCart" value="Liên hệ">                            
+                    </form>
+                </span>
+            </div>
+    
+            <div class="des">
+                '.$name.'
+            </div>
+         
+        </div>
+        ';
+
+            }
+
+        } else {
+
+            foreach($sp as $item) {
+
+                extract($item);
+
+                $img = getImage($id);
+
+                $output .= '
+        <div class="box">
+
+            <div class="img">
+                <img src="upload/'.$img['name'].'" alt="" class="img-full">
+                <span class="effect flex">
+                    <a href="index.php?act=product&idproduct='.$id.'" class="view">
+                        chi tiết
+                    </a>
+                    <form action="index.php?act=dress&buyid='.$id.'" method="post">
+                        <input type="text" name="count_product" value="1" value="" hidden>
+                        <input type="submit" name="buy_btn" class="addCart" value="mua ngay">
+                    </form>
+                </span>
+            </div>
+
+            <div class="des">
+                '.$name.'
+            </div>
+
+            <div class="price">
+                '.number_format($price,0, ',', '.').' VNĐ'.'
+            </div>
+
+        </div>
+        ';
+
+            }
+
+        }
+    }
+
+    if($output == '') {
+        $output = "<h1>rất tiếc ! chúng tôi không tìm thấy sản phẩm mang tên :" . $key_word . "</h1>";
+    }
+
+
+
 ?>
 
 <div class="banner flex">
@@ -169,107 +312,7 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 
 <section class="box-sp grid">
 
-    <?php
-
-    $output = '';
-
-    if($danhmuc == 1) {
-
-        foreach($sp as $item) {
-
-        extract($item);
-
-        $img = getImage($id);
-
-        $output .= '
-        <div class="box">
-    
-            <div class="img">
-                <img src="upload/'.$img['name'].'" alt="" class="img-full">
-                <span class="effect flex">
-                    <a href="index.php?act=product&idproduct='.$id.'" class="view">
-                        chi tiết
-                    </a>
-                    <form action="index.php?act=dress&buyid='.$id.'" method="post">
-                        <input type="text" name="count_product" value="1" value="" hidden>
-                        <input type="submit" name="contact_btn" class="addCart" value="Liên hệ">                            
-                    </form>
-                </span>
-            </div>
-    
-            <div class="des">
-                '.$name.'
-            </div>
-         
-        </div>
-        ';
-
-        }
-
-    } else {
-
-        foreach($sp as $item) {
-
-            extract($item);
-
-            $img = getImage($id);
-
-            $output .= '
-        <div class="box">
-
-            <div class="img">
-                <img src="upload/'.$img['name'].'" alt="" class="img-full">
-                <span class="effect flex">
-                    <a href="index.php?act=product&idproduct='.$id.'" class="view">
-                        chi tiết
-                    </a>
-                    <form action="index.php?act=dress&buyid='.$id.'" method="post">
-                        <input type="text" name="count_product" value="1" value="" hidden>
-                        <input type="submit" name="buy_btn" class="addCart" value="mua ngay">
-                    </form>
-                </span>
-            </div>
-
-            <div class="des">
-                '.$name.'
-            </div>
-
-            <div class="price">
-                '.number_format($price,0, ',', '.').' VNĐ'.'
-            </div>
-
-        </div>
-        ';
-
-        }
-
-    }
-
-    $count = count_product_byCata($danhmuc);
-
-    $count_page = 0;
-
-    if($count['COUNT(id)'] < 12)  {
-        $count_page = 1;
-    } else if($count['COUNT(id)'] > 12 && $count['COUNT(id)'] < 24 ) {
-        $count_page = 2;
-    }
-
-    $page_link = '';
-
-    for($i = 1; $i <= $count_page; $i++ ) {
-        $page_link .= '
-           <a href="index.php?act=dress&danhmuc='.$danhmuc.'&page='.$i.'" class="cricle">'.$i.'</a>
-        ';
-    }
-
-    ?>
-
     <?=$output?>
-
-
-
-
 
 </section>
 

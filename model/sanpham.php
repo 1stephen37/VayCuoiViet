@@ -97,6 +97,11 @@ function getall_sp($iddm, $page) {
     return getAll($sql);
 }
 
+function search_product_name($name) {
+    $sql = "SELECT * FROM `product` WHERE `name` LIKE CONCAT('%', ?, '%')";
+    return pdo_query($sql,$name);
+}
+
 function getIdCata($id_product) {
     $sql = "SELECT id_cata FROM `product` WHERE id = (?)";
     return pdo_query_value($sql,$id_product);
