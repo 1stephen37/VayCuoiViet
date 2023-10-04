@@ -10,7 +10,7 @@
         require_once 'model/danhmuc.php';
         require_once 'model/donhang.php';
         require_once 'model/user.php';
-
+        require_once 'model/comment.php';
 
             require_once 'view/src/head.php';
 

@@ -62,6 +62,74 @@
 
     }
 
+    $comments = get_comment_by_id_product($idproduct);
+
+    $comment_html = '';
+
+    if($comments) {
+        foreach ($comments as $comment) {
+            extract($comment);
+
+            $comment_html .= '
+                <div class="comment-content flex">
+
+            <div class="left flex">
+
+                <div class="flex">
+                    <div class="avatar flex">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="name flex">
+                        <p>
+                            '.$_SESSION['user']['name'].'
+                        </p>
+                    </div>
+                </div>
+
+
+                <i class="date-time">
+                    '.$date.'
+                </i>
+
+
+            </div>
+
+            <div class="right">
+                '.$content.'
+            </div>
+
+        </div>
+            ';
+
+        }
+    } else {
+        $comment_html .= ' 
+            <h1 style="text-align: center">sản phẩm hiện chưa có cảm nhận của khách hàng</h1>
+        ';
+    }
+
+
+    if(isset($_GET['post_comment']) && ($_GET['post_comment'] != '')) {
+
+        if(isset($_SESSION['user']) && $_SESSION['user'] != '') {
+
+            if(isset($_POST['comment_content']) && ($_POST['comment_content'] != '')) {
+
+                $currentDateTime = date( 'H:i:s d/m/Y');
+
+                echo $currentDateTime;
+
+                $post_comment = post_comment_by_id_product(null, $_POST['comment_content'], $_SESSION['user']['id'], $idproduct, $currentDateTime);
+
+                header('Location: index.php?act=product&idproduct='.$idproduct);
+
+            }
+
+
+        }
+
+    }
 
 ?>
 
@@ -344,7 +412,7 @@
 </section>
 
 
-<form method="post" action="index.php?act=post_comment&id=<?=$idproduct?>" class="form-comment flex">
+<form method="post" action="index.php?act=product&idproduct=<?=$idproduct?>&post_comment=true" class="form-comment flex">
 
     <div class="non-comment flex close">
 
@@ -354,44 +422,106 @@
 
     <div class="heading">
 
-        <div class="left">
-
-            <div class="des">
-                Bình Luận
-            </div>
-
-            <div class="vector">
-                <img src="assets/img/product/Vector 2.svg" alt="" class="img-full">
-            </div>
-
+        <div class="des">
+            Bình Luận
+        </div>
+        <div class="vector">
+            <img src="assets/img/product/Vector 2.svg" alt="" class="img-full">
         </div>
 
-        <div class="right">
-            <div class="avatar">
+    </div>
 
-            </div>
+    <div class="comment flex">
 
-            <div class="name">
+        <?=$comment_html?>
 
-            </div>
-        </div>
+<!--        <div class="comment-content flex">-->
+<!---->
+<!--            <div class="left flex">-->
+<!---->
+<!--                <div class="flex">-->
+<!--                    <div class="avatar flex">-->
+<!--                        <i class="fa-solid fa-user"></i>-->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="name flex">-->
+<!--                        <p>-->
+<!--                            Nguyễn Tiến-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!---->
+<!--                <i class="date-time">-->
+<!--                    11:17 4/10/2023-->
+<!--                </i>-->
+<!---->
+<!---->
+<!--            </div>-->
+<!---->
+<!--            <div class="right">-->
+<!--                Trong cơ sở dữ liệu, "onDelete: Cascade" là một thuộc tính được sử dụng để xác định hành vi xóa dữ liệu liên quan đến một thực thể khi thực thể đó bị xóa.-->
+<!---->
+<!--                Khi một quan hệ liên quan được định nghĩa giữa hai thực thể trong cơ sở dữ liệu, ví dụ như quan hệ cha-con (parent-child) hoặc quan hệ tham chiếu (reference relationship), thuộc tính "onDelete: Cascade" có thể được sử dụng để đảm bảo rằng khi thực thể cha (parent entity) bị xóa, tất cả các thực thể con (child entities) liên quan sẽ cũng bị xóa theo.-->
+<!--            </div>-->
+<!---->
+<!--        </div>-->
+<!--        <div class="comment-content flex">-->
+<!---->
+<!--            <div class="left flex">-->
+<!---->
+<!--                <div class="flex">-->
+<!--                    <div class="avatar flex">-->
+<!--                        <i class="fa-solid fa-user"></i>-->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="name flex">-->
+<!--                        <p>-->
+<!--                            Nguyễn Tiến-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!---->
+<!--                <i class="date-time">-->
+<!--                    11:17 4/10/2023-->
+<!--                </i>-->
+<!---->
+<!---->
+<!--            </div>-->
+<!---->
+<!--            <div class="right">-->
+<!--                Trong cơ sở dữ liệu, "onDelete: Cascade" là một thuộc tính được sử dụng để xác định hành vi xóa dữ liệu liên quan đến một thực thể khi thực thể đó bị xóa.-->
+<!---->
+<!--                Khi một quan hệ liên quan được định nghĩa giữa hai thực thể trong cơ sở dữ liệu, ví dụ như quan hệ cha-con (parent-child) hoặc quan hệ tham chiếu (reference relationship), thuộc tính "onDelete: Cascade" có thể được sử dụng để đảm bảo rằng khi thực thể cha (parent entity) bị xóa, tất cả các thực thể con (child entities) liên quan sẽ cũng bị xóa theo.-->
+<!--            </div>-->
+<!---->
+<!--        </div>-->
 
     </div>
 
     <div class="flex">
 
-        <textarea name="comment_content"> </textarea>
+        <div class="infor flex">
 
-        <div class="infor">
+            <div class="avatar flex">
+                <i class="fa-solid fa-user"></i>
+            </div>
 
+            <div class="name flex">
+                <p>
+                    <?=$_SESSION['user']['name']?>
+                </p>
+            </div>
 
         </div>
 
+        <textarea placeholder="Hãy cho chúng tôi biết cảm nghĩ của bạn sau khi sử dụng sản phẩm" name="comment_content"></textarea>
+
     </div>
 
-    <div class="button">
-        <input type="submit" value="gửi comment">
-    </div>
+    <input class="button" type="submit" value="Gửi nhận xét">
+
 
 </form>
 
