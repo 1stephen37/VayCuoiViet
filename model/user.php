@@ -64,6 +64,11 @@ function get_all_user(){
     return $kq;
 }
 
+//function get_user_by_id($id) {
+//    $sql = "SELECT * FROM user WHERE `id` = (?)";
+//
+//}
+
 function getuserinfo($user,$pass){
     $conn=connectdb();
     $sql="SELECT * FROM user WHERE user='".$user."' AND pass='".$pass."'";

@@ -56,10 +56,16 @@
                     <link rel="stylesheet" type="text/css" href="css/order.css">
                 ';
                 break;
+            case 'setting':
+                echo '
+                     <title>Thông Tin</title>
+                     <link rel="stylesheet" type="text/css" href="css/setting.css">
+                ';
+                break;
             default:
                 echo '
                     <title>bảng điều khiển</title>
-                    <link rel="stylesheet" type="text/css" href="../assets/css/admin.css">
+                    <link rel="stylesheet" type="text/css" href="../assets/css/account.css">
                 ';
                 break;
 
@@ -68,6 +74,7 @@
     }
 
     ?>
+
 
     <link rel="stylesheet" type="text/css" href="../assets/css/pop-up/form.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/pop-up/sign-in.css">

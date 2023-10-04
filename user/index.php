@@ -13,9 +13,13 @@
 
     require_once '../model/donhang.php';
 
+    require_once '../model/comment.php';
+
     require_once '../view/user_src/head.php';
 
     require_once '../view/user_src/header.php';
+
+    require_once 'layout_top.php';
 
     if(isset($_GET['account']) && ($_GET['account']) != '') {
 
@@ -33,6 +37,9 @@
                 break;
             }
 
+            case 'setting' :
+                require 'setting.php';
+                break;
             default: {
                 require_once 'default.php';
                 break;
@@ -45,6 +52,8 @@
     } else {
         require_once 'default.php';
     }
+
+    require_once 'layout_bot.php';
 
     require_once '../view/user_src/footer.php';
 

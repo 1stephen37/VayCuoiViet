@@ -44,8 +44,6 @@ button_sign.addEventListener('click', function () {
 const Catalog = document.querySelector('.filter .type .input select');
 
 function open_cata () {
-    // console.log(Catalog.value);
-    // alert();
     window.open(`index.php?act=dress&danhmuc=${Catalog.value}`, '_self');
 }
 
@@ -61,15 +59,7 @@ mobile_icon.addEventListener('click', function () {
     }
 });
 
-const main_img = document.querySelector(".section1 .left .main-img img");
 
-const sub_img = document.querySelectorAll(".section1 .left .sub-img .img img");
-
-for(sub of sub_img) {
-    sub.addEventListener('click', function() {
-        main_img.src = sub.src;
-    });
-}
 
 
 
