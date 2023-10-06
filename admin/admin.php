@@ -5,8 +5,8 @@
     //
     //                };
 
-    if($_SESSION['user']) {
-        echo($_SESSION['user']['name']);
+    if($_SESSION['admin']) {
+        echo($_SESSION['admin']['name']);
     }
 
     ?>

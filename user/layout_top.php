@@ -23,42 +23,55 @@
 
     <div class="left flex">
 
-        <div class="admin-link">
+        <a class="admin-link" href="index.php?act=account&account=index">
             <i class="fa-solid fa-sliders"></i>
-            <a href="index.php?acount=index">
-
+            <span>
                 bảng điều khiển
-            </a>
-        </div>
+            </span>
+        </a>
 
-        <div class="admin-link">
-            <i class="fa-solid fa-bag-shopping"></i>
-            <a href="index.php?account=order">
-                đơn hàng
-            </a>
-        </div>
-
-        <div class="admin-link">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <a href="index.php?account=cart">
-                giỏ hàng
-            </a>
-        </div>
-
-
-        <div class="admin-link">
+        <a class="admin-link" href="index.php?act=account&account=setting">
             <i class="fa-solid fa-user"></i>
-            <a href="index.php?act=account&account=setting">
+            <span>
                 tài khoản
-            </a>
-        </div>
+            </span>
+        </a>
 
-        <div class="admin-link">
+        <a class="admin-link" href="index.php?account=cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>
+                giỏ hàng
+            </span>
+        </a>
+
+        <a class="admin-link" href="index.php?account=order">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>
+                đơn hàng
+            </span>
+        </a>
+
+        <a class="admin-link" href="index.php?account=order">
+            <i class="fa-solid fa-pen-clip"></i>
+            <span>
+                đánh giá
+            </span>
+        </a>
+
+        <a class="admin-link" href="index.php?account=history">
+            <i class="fa-solid fa-clock"></i>
+            <span>
+                lịch sử
+            </span>
+        </a>
+
+
+        <a class="admin-link" href="../index.php?act=logout">
             <i class="fa-solid fa-right-from-bracket"></i>
-            <a href="../index.php?act=logout">
+            <span>
                 đăng xuất
-            </a>
-        </div>
+            </span>
+        </a>
 
     </div>
 

@@ -1,3 +1,11 @@
+<?php
+
+    $spHot = '';
+
+
+
+?>
+
 <section class="banner flex">
 
     <div class="title">
@@ -67,24 +75,7 @@
 
             <div class="img">
 
-                <?php
 
-                $hot = get_hot_sp('special');
-//
-//                $output = '';
-//
-                foreach ($hot as $item) {
-//                    $output .= '<img src="upload/'.$item['img'].'" alt="" class="img-full">';
-                    $img = 'upload/'.$item['img'];
-                };
-//
-//                echo $output ;
-
-
-
-                ?>
-
-                <img src="<?=$img?>" alt="" class="img-full">
 
             </div>
 
@@ -144,17 +135,6 @@
         <div class="background"></div>
 
         <div class="img">
-
-            <?php
-
-                $output = '';
-
-                foreach ($hot as $item) {
-                    $output .= '<img src="upload/'.$item['img'].'" alt="" class="img-full">';
-                };
-
-                echo $output ;
-            ?>
 
 <!--            <img src="assets/img/section/product1.svg" alt="" class="img-full">-->
         </div>

@@ -99,7 +99,7 @@
 
     </div>
 
-    <div id="search-input" class="search flex close">
+    <form id="search-input" class="search flex close">
 
         <div class="input">
             <input placeholder="Tìm kiếm sản phẩm" class="img-full" name="search_content" type="text">
@@ -109,7 +109,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
 
-    </div>
+    </form>
 
     <div id="sub-menu" class="sub-menu flex">
         <a href="index.php?act=dress">Mua - Thuê váy cưới</a>

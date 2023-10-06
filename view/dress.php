@@ -18,6 +18,7 @@ if(isset($_GET['page']) && ($_GET['page'] > 0) ) {
 $sp = getall_sp($danhmuc, $page);
 $all_cata = getall_dm();
 
+
 //var_dump($sp);
 
 if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
@@ -73,13 +74,9 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 
     $count = count_product_byCata($danhmuc);
 
-    $count_page = 0;
+    $count_page = ceil(($count['COUNT(id)']/12));
 
-    if($count['COUNT(id)'] < 12)  {
-        $count_page = 1;
-    } else if($count['COUNT(id)'] > 12 && $count['COUNT(id)'] < 24 ) {
-        $count_page = 2;
-    }
+    echo $count_page;
 
     $page_link = '';
 
@@ -174,6 +171,8 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 
                 $img = getImage($id);
 
+                var_dump($img);
+
                 $output .= '
         <div class="box">
 
@@ -207,7 +206,9 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
     }
 
     if($output == '') {
-        $output = "<h1>rất tiếc ! chúng tôi không tìm thấy sản phẩm mang tên :" . $key_word . "</h1>";
+        $title = "<h1>rất tiếc ! chúng tôi không tìm thấy sản phẩm mang tên :" . $key_word . "</h1>";
+    } else {
+        $title = "";
     }
 
 
@@ -310,6 +311,8 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 
 </section>
 
+<?=$title?>
+
 <section class="box-sp grid">
 
     <?=$output?>
@@ -351,9 +354,22 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 <!--    </div>-->
 <!---->
 
+    <?php
+        if(($page - 1) <= 1 ) {
+            $page = 1;
+        }
+        if(($page + 1) >= $count_page) {
+            $page = $count_page;
+        }
+    ?>
+
+    <a href="<?php echo 'index.php?act=dress&danhmuc='.$danhmuc.'&page='.($page-1).''?>" class="cricle">
+        <i class="fa-solid fa-chevron-left"></i>
+    </a>
+
     <?=$page_link?>
 
-    <a href="<?php echo 'index.php?act=dress&danhmuc='.$danhmuc.'&page='.$i.''?>" class="cricle">
+    <a href="<?php echo 'index.php?act=dress&danhmuc='.$danhmuc.'&page='.($page+1).''?>" class="cricle">
         <i class="fa-solid fa-chevron-right"></i>
     </a>
 

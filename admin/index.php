@@ -19,6 +19,8 @@
 
     require_once '../view/admin_src/header.php';
 
+    require_once 'layout_top.blade.php';
+
     if(isset($_GET['act']) && ($_GET['act']) ) {
 
         $page = $_GET['act'];
@@ -45,13 +47,8 @@
                 break;
             }
 
-            case 'index': {
-                require_once '../view/admin.php';
-                break;
-            }
-
             default: {
-                require_once '../view/admin.php';
+                require_once 'admin.php';
                 break;
             }
         }
@@ -60,6 +57,8 @@
     } else {
         require_once '../view/admin.php';
     }
+
+    require_once 'layout_bot.blade.php';
 
     require_once '../view/admin_src/footer.php';
     require_once '../view/admin_src/foot.php';

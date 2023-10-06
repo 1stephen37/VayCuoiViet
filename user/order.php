@@ -1,82 +1,10 @@
-<section class="banner flex">
+<?php
 
-    <div class="heading">
+$order = get_all_ordert($_SESSION['user']['id']);
 
-        <div class="des">
+var_dump($order);
 
-            Tài Khoản của bạn
-
-        </div>
-
-        <div class="vector">
-
-            <img src="../assets/img/cart/Vector 1.svg" alt="" class="img-full">
-
-        </div>
-
-    </div>
-
-
-</section>
-
-<section class="section1 flex">
-
-    <div class="left flex">
-
-        <div class="admin-link">
-            <i class="fa-solid fa-sliders"></i>
-            <a href="index.php?acount=index">
-
-                bảng điều khiển
-            </a>
-        </div>
-
-        <div class="admin-link">
-            <i class="fa-solid fa-bag-shopping"></i>
-            <a href="index.php?act=account&account=order">
-                đơn hàng
-            </a>
-        </div>
-
-        <div class="admin-link">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <a href="index.php?act=account&account=cart">
-                giỏ hàng
-            </a>
-        </div>
-
-        <div class="admin-link">
-            <i class="fa-solid fa-location-dot"></i>
-            <a href="index.php?act=account&account=adress">
-                địa chỉ
-            </a>
-        </div>
-
-        <div class="admin-link">
-            <i class="fa-solid fa-user"></i>
-            <a href="index.php?act=account&account=setting">
-                tài khoản
-            </a>
-        </div>
-
-        <div class="admin-link">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <a href="../index.php?act=logout">
-                đăng xuất
-            </a>
-        </div>
-
-    </div>
-
-    <div class="right">
-
-       <?php
-
-            $order = get_all_ordert($_SESSION['user']['id']);
-
-            var_dump($order);
-
-            $view = '';
+$view = '';
 
 //       foreach ($order as $item) {
 //           extract($item);
@@ -117,45 +45,37 @@
 //
 //       }
 
-       ?>
+?>
 
-        <div class="display-cata flex">
+<div class="display-cata flex">
 
-            <div class="nav flex">
+    <div class="nav flex">
 
-                <div class="name">
-                    tên
-                </div>
+        <div class="name">
+            tên
+        </div>
 
-                <div class="img">
-                    ảnh
-                </div>
+        <div class="img">
+            ảnh
+        </div>
 
-                <div class="price">
-                    giá
-                </div>
+        <div class="price">
+            giá
+        </div>
 
-                <div class="size">
-                    kích cỡ
-                </div>
-
-
-                <div class="action flex">
-
-                    hành động
-
-                </div>
-
-            </div>
+        <div class="size">
+            kích cỡ
+        </div>
 
 
+        <div class="action flex">
+
+            hành động
 
         </div>
 
     </div>
 
-</section>
 
 
-
-
+</div>

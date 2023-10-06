@@ -88,8 +88,20 @@ mobile_icon.addEventListener('click', function () {
 });
 
 
+function check_search(content_keyword) {
+    if(content_keyword.value == '') {
+        content_keyword.focus();
+        content_keyword.value = '';
+        // content_keyword.placeholder = "bạn phải nhập mới có thể tìm";
+    } else {
+        const str = "index.php?act=dress&keyword=" + content_keyword.value;
+        window.open(str, "_self");
+    }
+}
 
-
+btn_search.addEventListener('click', function() {
+    check_search(content_keyword);
+});
 
 
 
