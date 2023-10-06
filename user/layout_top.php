@@ -51,7 +51,7 @@
             </span>
         </a>
 
-        <a class="admin-link" href="index.php?account=order">
+        <a class="admin-link" href="index.php?account=comment">
             <i class="fa-solid fa-pen-clip"></i>
             <span>
                 đánh giá

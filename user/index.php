@@ -3,8 +3,6 @@
     session_start();
     ob_start();
 
-    require_once '../model/connectdb.php';
-
     require_once '../model/danhmuc.php';
 
     require_once '../model/sanpham.php';
@@ -31,14 +29,15 @@
                 require_once 'order.php';
                 break;
             }
-
             case 'cart': {
                 require_once 'cart.php';
                 break;
             }
-
             case 'setting' :
                 require 'setting.php';
+                break;
+            case 'comment' :
+                require 'comment.php';
                 break;
             default: {
                 require_once 'default.php';

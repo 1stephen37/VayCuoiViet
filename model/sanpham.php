@@ -69,33 +69,15 @@ function get_hot_sp($hot){
 //     return $kq;
 // }
 
-function getall_sp($iddm, $page) {
-    switch ($page) {
-        case 1: {
-            $number = 0;
-            break;
-        }
-        case 2: {
-            $number = 12;
-            break;
-        }
-        default: {
-            $number = 0;
-            break;
-        }
-    }
-    $sql = "SELECT * FROM product WHERE";
-    if($iddm>0){
-        $sql.=" `id_cata`=".$iddm . " LIMIT " . $number . ",12";
-        // iddm='".$iddm."'"
-    }
-//    if($view==1){
-//        $sql.=" order by view desc";
-//    }else{
-//        $sql.=" order by id desc";
-//    }
-    return getAll($sql);
+function get_sp_page($iddm, $page) {
+    $start = ($page - 1) * 12;
+
+    $sql = "SELECT * FROM product WHERE `id_cata` = (?) ORDER BY `id` ASC LIMIT $start,12";
+
+    return pdo_query($sql, $iddm);
+
 }
+
 
 function search_product_name($name) {
     $sql = "SELECT * FROM `product` WHERE `name` LIKE CONCAT('%', ?, '%')";
@@ -131,13 +113,13 @@ function getImage($id_product) {
 }
 
 function getImage_full($id_product) {
-    $sql = "SELECT * FROM img where id_product=" . $id_product;
-    return getAll($sql);
+    $sql = "SELECT * FROM img where id_product= (?)";
+    return pdo_query($sql, $id_product);
 }
 
 function get_detail($id) {
-    $sql = "SELECT * FROM product WHERE id=" . $id;
-    return getOne($sql);
+    $sql = "SELECT * FROM product WHERE id= (?)";
+    return pdo_query_one($sql, $id);
 }
 
 ?>

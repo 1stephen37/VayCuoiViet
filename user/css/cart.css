@@ -42,6 +42,7 @@
 }
 
 .section1 .left .admin-link {
+    display: block;
     width: 80%;
     height: 6rem;
     font-size: 2rem;
@@ -50,13 +51,14 @@
     cursor: pointer;
     padding: 0 2rem;
     box-shadow: 1px 1px 1px #000;
+    text-decoration: none;
 }
 
 .section1 .left .admin-link:nth-child(3) {
     background: var(--primary-color);
 }
 
-.section1 .left .admin-link:nth-child(3) a {
+.section1 .left .admin-link:nth-child(3) span {
     color: #fff;
 }
 
@@ -64,11 +66,17 @@
     background: var(--primary-color);
 }
 
-.section1 .left .admin-link:hover a {
+.section1 .left .admin-link:hover span {
     color: #fff;
 }
 
 .section1 .left .admin-link a {
+    text-decoration: none;
+    color: #000;
+    line-height: 6rem;
+}
+
+.section1 .left .admin-link span {
     text-decoration: none;
     color: #000;
     line-height: 6rem;
@@ -91,6 +99,34 @@
 
 .section1 .right {
     font-size: 2rem;
+}
+
+.section1 .right .form_update {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.section1 .right .form_update .icon {
+    width: 15rem;
+    height: 15rem;
+    justify-content:center;
+    align-items:center;
+    margin: 0 auto 3rem auto;
+    border-radius: 10rem;
+    border: 1px solid #000;
+
+}
+
+.section1 .right .form_update .icon .icon_icon {
+    font-size: 4rem;
+}
+
+.section1 .right .form_update .button {
+
+}
+
+.section1 .right .icon .img {
+
 }
 
 .section1 .right .heading {

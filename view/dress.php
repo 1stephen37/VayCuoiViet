@@ -15,7 +15,7 @@ if(isset($_GET['page']) && ($_GET['page'] > 0) ) {
 }
 
 
-$sp = getall_sp($danhmuc, $page);
+$sp = get_sp_page($danhmuc, $page);
 $all_cata = getall_dm();
 
 

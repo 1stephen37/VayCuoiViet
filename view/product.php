@@ -118,8 +118,6 @@
 
                 $currentDateTime = date( 'H:i:s d/m/Y');
 
-                echo $currentDateTime;
-
                 $post_comment = post_comment_by_id_product(null, $_POST['comment_content'], $_SESSION['user']['id'], $idproduct, $currentDateTime);
 
                 header('Location: index.php?act=product&idproduct='.$idproduct);
@@ -182,7 +180,6 @@
     <div class="right">
 
         <div class="heading">
-<!--            NIKINI - 22PM409-->
             <?=$name?>
         </div>
 
@@ -217,8 +214,8 @@
         <div class="price sell">
             Giá may:
             <span>
-                        22.000.000
-                    </span>
+                <?=number_format(intval($price), 0,',','.'); ?>
+            </span>
             vnd
         </div>
 
@@ -318,7 +315,7 @@
             </div>
 
             <div class="des">
-                Trắng kem
+                <?=$color?>
             </div>
 
         </div>
@@ -330,7 +327,7 @@
             </div>
 
             <div class="des">
-                Áo cưới công chúa
+                <?=$style?>
             </div>
 
         </div>
@@ -342,7 +339,7 @@
             </div>
 
             <div class="des">
-                M
+                <?=$size?>
             </div>
 
         </div>
@@ -354,7 +351,7 @@
             </div>
 
             <div class="des">
-                Cườm, Lụa Satin, Ren lông mi
+                <?=$Material?>
             </div>
 
         </div>
@@ -366,7 +363,7 @@
             </div>
 
             <div class="des">
-                Cổ thuyền
+                <?=$Antique_style?>
             </div>
 
         </div>
@@ -378,7 +375,7 @@
             </div>
 
             <div class="des">
-                Tay dài
+                <?=$Hand_style?>
             </div>
 
         </div>
@@ -390,7 +387,7 @@
             </div>
 
             <div class="des">
-                Thắt dây
+                <?=$Back_style?>
             </div>
 
         </div>
@@ -402,7 +399,7 @@
             </div>
 
             <div class="des">
-                1M
+                <?=$Long_tail?>
             </div>
 
         </div>

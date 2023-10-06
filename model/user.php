@@ -29,13 +29,10 @@
 // }
 
 function checkuser($email,$pass){
-    $conn=connectdb();
-    $stmt = $conn->prepare("SELECT * FROM user WHERE Email='".$email."' AND PassWord ='".$pass."'");
-    $stmt->execute();
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $kq = '';
-    if($stmt->rowCount() == 1) {
-        $kq=$stmt->fetch();
+    $sql = "SELECT * FROM user WHERE Email='".$email."' AND PassWord ='".$pass."'";
+    $kq = pdo_query_one($sql);
+
+    if(is_array($kq) ) {
         return $kq;
     } else {
         return 0;

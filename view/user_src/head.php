@@ -38,22 +38,10 @@
                     <link rel="stylesheet" type="text/css" href="css/cart.css">
                 ';
                 break;
-            case 'user':
+            case 'comment':
                 echo '
-                     <title>Người Dùng</title>
-                    <link rel="stylesheet" type="text/css" href="css/user.css">
-                ';
-                break;
-            case 'brand':
-                echo '
-                     <title>Thương Hiệu</title>
-                    <link rel="stylesheet" type="text/css" href="css/brand.css">
-                ';
-                break;
-            case 'order':
-                echo '
-                     <title>Đơn hàng</title>
-                    <link rel="stylesheet" type="text/css" href="css/order.css">
+                     <title>Đánh Giá</title>
+                    <link rel="stylesheet" type="text/css" href="css/comment.css">
                 ';
                 break;
             case 'setting':

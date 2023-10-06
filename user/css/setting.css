@@ -101,6 +101,34 @@
     font-size: 2rem;
 }
 
+.section1 .right .form_update {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.section1 .right .form_update .icon {
+    width: 15rem;
+    height: 15rem;
+    justify-content:center;
+    align-items:center;
+    margin: 0 auto 3rem auto;
+    border-radius: 10rem;
+    border: 1px solid #000;
+
+}
+
+.section1 .right .form_update .icon .icon_icon {
+    font-size: 4rem;
+}
+
+.section1 .right .form_update .button {
+
+}
+
+.section1 .right .icon .img {
+
+}
+
 .section1 .right .heading {
     font-size: 3rem;
     text-transform: capitalize;

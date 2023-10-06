@@ -54,11 +54,11 @@
     text-decoration: none;
 }
 
-.section1 .left .admin-link:nth-child(4) {
+.section1 .left .admin-link:nth-child(5) {
     background: var(--primary-color);
 }
 
-.section1 .left .admin-link:nth-child(4) span {
+.section1 .left .admin-link:nth-child(5) span {
     color: #fff;
 }
 
@@ -82,7 +82,7 @@
     line-height: 6rem;
 }
 
-.section1 .left .admin-link:nth-child(4) i {
+.section1 .left .admin-link:nth-child(5) i {
     font-size: 2rem;
     color: #fff;
 }
