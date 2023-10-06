@@ -32,7 +32,7 @@
     const form_container = document.querySelector('#form .container');
 
     form_container.addEventListener("click", function(event) {
-        event.stopPropagation()
+        event.stopPropagation();
     });
 
     const width_mobile = screen.availWidth;

@@ -24,8 +24,7 @@
 
 .section1 {
     width: var(--width-web);
-    margin: 0 auto;
-    margin-top: 10rem;
+    margin: var(--margin-section-desktop);
     height: 100rem;
     justify-content: space-between;
     gap: 3.6rem;
@@ -38,13 +37,15 @@
 }
 
 .section1 .left .main-img {
-    width: 100%;
-    height: auto;
+    min-width: 100%;
+    min-height: 87.3rem;
     cursor: pointer;
     border-radius: 1rem;
 }
 
 .section1 .left .main-img img {
+    width: auto;
+    height: auto;
     border-radius: 1rem;
     box-shadow: 0 0 1px #000;
 }
@@ -134,7 +135,7 @@
 
 .section1 .right .cart .button { 
     width: auto;
-    heigh: auto;
+    height: auto;
 }
 
 .section1 .right .cart .button a {
@@ -435,8 +436,7 @@
 .section3 .button {
     width: 18rem;
     height: 6.4rem;
-    margin: 0 auto;
-    margin-top: 5rem;
+    margin: 5rem auto 0 auto;
     text-align: center;
     background: var(--primary-color);
     color: #fff;

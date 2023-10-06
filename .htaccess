@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /assignment/
+#    RewriteCond %{REQUEST_FILENAME}
+
+    RewriteRule ^dress$ index.php?act=dress [L]
+
+
+</IfModule>

@@ -1,26 +1,5 @@
 <?php
 
-if(isset($_GET['danhmuc']) && ($_GET['danhmuc'] > 0) ) {
-    $danhmuc = $_GET['danhmuc'];
-} else {
-    $danhmuc = 1;
-}
-
-$_SESSION['danhmuc'] = $danhmuc;
-
-if(isset($_GET['page']) && ($_GET['page'] > 0) ) {
-    $page = $_GET['page'];
-} else {
-    $page = 1;
-}
-
-
-$sp = get_sp_page($danhmuc, $page);
-$all_cata = getall_dm();
-
-
-//var_dump($sp);
-
 if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 
 //                            unset($_SESSION['cart']);
@@ -37,8 +16,8 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 
         $check = true;
 
-        extract($in4);
         $i = 0;
+
         if(isset($_SESSION['cart']) && ($_SESSION['cart'] != '')) {
 
             foreach ($_SESSION['cart'] as $item) {
@@ -58,17 +37,44 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
 
         if ($check) {
             $_SESSION['cart'][] = [
-                'id' => $id,
-                'price' => $price,
-                'name' => $name,
-                'id_cata' => $id_cata,
-                'size' => $size,
+                'id' => $in4['id'],
+                'price' => $in4['price'],
+                'name' => $in4['name'],
+                'id_cata' => $in4['id_cata'],
+                'size' => $in4['size'],
                 'count' => $count
             ];
         }
 
+        header('location: index.php?act=dress&danhmuc='.$_SESSION['s_$danhmuc'] .'&page='.$_SESSION['s_$page'] );
+
     }
 }
+
+if(isset($_GET['danhmuc']) && ($_GET['danhmuc'] > 0) ) {
+    $danhmuc = $_GET['danhmuc'];
+} else {
+    $danhmuc = 1;
+}
+
+$_SESSION['danhmuc'] = $danhmuc;
+
+if(isset($_GET['page']) && ($_GET['page'] > 0) ) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+
+$_SESSION['s_$danhmuc'] = $danhmuc;
+$_SESSION['s_$page'] = $page;
+
+
+$sp = get_sp_page($danhmuc, $page);
+$all_cata = getall_dm();
+
+
+
+
 
 
 
@@ -112,7 +118,7 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
                     </a>
                     <form action="index.php?act=dress&buyid='.$id.'" method="post">
                         <input type="text" name="count_product" value="1" value="" hidden>
-                        <input type="submit" name="contact_btn" class="addCart" value="Liên hệ">                            
+                        <input type="submit" class="addCart" value="Liên hệ">                            
                     </form>
                 </span>
             </div>
@@ -147,7 +153,7 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
                     <a href="index.php?act=product&idproduct='.$id.'" class="view">
                         chi tiết
                     </a>
-                    <form action="index.php?act=dress&buyid='.$id.'" method="post">
+                    <form class="contact_form_disable" action="index.php?act=dress&buyid='.$id.'" method="post">
                         <input type="text" name="count_product" value="1" value="" hidden>
                         <input type="submit" name="contact_btn" class="addCart" value="Liên hệ">                            
                     </form>
@@ -170,8 +176,6 @@ if(isset($_POST['buy_btn']) && ($_POST['buy_btn'])) {
                 extract($item);
 
                 $img = getImage($id);
-
-                var_dump($img);
 
                 $output .= '
         <div class="box">

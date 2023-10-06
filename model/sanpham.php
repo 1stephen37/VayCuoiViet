@@ -42,12 +42,8 @@ function edit_product($name,$price,$idCata,$detail,$size,$id) {
 // }
 
 function getonesp($id){
-    $conn=connectdb();
-    $stmt = $conn->prepare("SELECT * FROM product WHERE id=".$id);
-    $stmt->execute();
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $kq=$stmt->fetch();
-    return $kq;
+    $sql = "SELECT * FROM product WHERE id= (?)";
+    return pdo_query_one($sql, $id);
 }
 
 function get_hot_sp($hot){

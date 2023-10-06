@@ -89,7 +89,7 @@
 
 
                 <i class="date-time">
-                    '.$date.'
+                    '.$datetime.'
                 </i>
 
 
@@ -109,6 +109,16 @@
         ';
     }
 
+//    date_default_timezone_set('Asia/Ho_Chi_Minh');
+//    $currentDateTime = date( 'H:i:s d/m/Y');
+//
+//    echo $currentDateTime;
+
+
+//echo date_default_timezone_get();
+
+//echo $currentDateTime;
+
 
     if(isset($_GET['post_comment']) && ($_GET['post_comment'] != '')) {
 
@@ -116,9 +126,13 @@
 
             if(isset($_POST['comment_content']) && ($_POST['comment_content'] != '')) {
 
-                $currentDateTime = date( 'H:i:s d/m/Y');
+                date_default_timezone_set('Asia/Ho_Chi_Minh');
 
-                $post_comment = post_comment_by_id_product(null, $_POST['comment_content'], $_SESSION['user']['id'], $idproduct, $currentDateTime);
+                $timestamp = strtotime('2023-10-06 16:16:22');
+                $formattedDateTime = date('Y-m-d H:i:s', $timestamp);
+
+
+                $post_comment = post_comment_by_id_product(null, $_POST['comment_content'], $_SESSION['user']['id'], $idproduct,  $formattedDateTime);
 
                 header('Location: index.php?act=product&idproduct='.$idproduct);
 
@@ -148,7 +162,7 @@
     <div class="left flex">
 
         <div class="main-img">
-            <img src="upload/<?=$imgs[0]['name']?>" alt="" class="img-full">
+            <img src="upload/<?=$imgs[0]['name']?>" alt="hình đại diện sản phẩm lớn">
         </div>
 
         <div class="close" id="mirror" style="background: url('upload/<?=$imgs[0]['name']?>')"></div>
@@ -431,69 +445,6 @@
     <div class="comment flex">
 
         <?=$comment_html?>
-
-<!--        <div class="comment-content flex">-->
-<!---->
-<!--            <div class="left flex">-->
-<!---->
-<!--                <div class="flex">-->
-<!--                    <div class="avatar flex">-->
-<!--                        <i class="fa-solid fa-user"></i>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="name flex">-->
-<!--                        <p>-->
-<!--                            Nguyễn Tiến-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!---->
-<!---->
-<!--                <i class="date-time">-->
-<!--                    11:17 4/10/2023-->
-<!--                </i>-->
-<!---->
-<!---->
-<!--            </div>-->
-<!---->
-<!--            <div class="right">-->
-<!--                Trong cơ sở dữ liệu, "onDelete: Cascade" là một thuộc tính được sử dụng để xác định hành vi xóa dữ liệu liên quan đến một thực thể khi thực thể đó bị xóa.-->
-<!---->
-<!--                Khi một quan hệ liên quan được định nghĩa giữa hai thực thể trong cơ sở dữ liệu, ví dụ như quan hệ cha-con (parent-child) hoặc quan hệ tham chiếu (reference relationship), thuộc tính "onDelete: Cascade" có thể được sử dụng để đảm bảo rằng khi thực thể cha (parent entity) bị xóa, tất cả các thực thể con (child entities) liên quan sẽ cũng bị xóa theo.-->
-<!--            </div>-->
-<!---->
-<!--        </div>-->
-<!--        <div class="comment-content flex">-->
-<!---->
-<!--            <div class="left flex">-->
-<!---->
-<!--                <div class="flex">-->
-<!--                    <div class="avatar flex">-->
-<!--                        <i class="fa-solid fa-user"></i>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="name flex">-->
-<!--                        <p>-->
-<!--                            Nguyễn Tiến-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!---->
-<!---->
-<!--                <i class="date-time">-->
-<!--                    11:17 4/10/2023-->
-<!--                </i>-->
-<!---->
-<!---->
-<!--            </div>-->
-<!---->
-<!--            <div class="right">-->
-<!--                Trong cơ sở dữ liệu, "onDelete: Cascade" là một thuộc tính được sử dụng để xác định hành vi xóa dữ liệu liên quan đến một thực thể khi thực thể đó bị xóa.-->
-<!---->
-<!--                Khi một quan hệ liên quan được định nghĩa giữa hai thực thể trong cơ sở dữ liệu, ví dụ như quan hệ cha-con (parent-child) hoặc quan hệ tham chiếu (reference relationship), thuộc tính "onDelete: Cascade" có thể được sử dụng để đảm bảo rằng khi thực thể cha (parent entity) bị xóa, tất cả các thực thể con (child entities) liên quan sẽ cũng bị xóa theo.-->
-<!--            </div>-->
-<!---->
-<!--        </div>-->
 
     </div>
 
