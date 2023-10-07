@@ -10,6 +10,10 @@
         return pdo_execute($sql, $id, $data, $id_user, $id_product, $date_time);
     }
 
+    function get_all_comments(){
+        $sql = "SELECT * FROM `comment` WHERE 1";
+        return pdo_query($sql);
+    }
 
 
 

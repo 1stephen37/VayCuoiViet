@@ -1,18 +1,23 @@
 <?php
 function themdm($name, $detail) {
-    $sql = "INSERT INTO `catalog` (`id`, `name`, `detail`, `count`) VALUES (NULL, '".$name."', '".$detail."', '');";
-    return handle($sql);
+    $sql = "INSERT INTO `catalog` (`id`, `name`, `detail`) VALUES (NULL, (?), (?))";
+    return pdo_execute($sql, $name, $detail);
+}
+
+function get_all_danhmuc() {
+    $sql = "SELECT * FROM catalog WHERE 1";
+    return pdo_query($sql);
 }
 
 function deldm($id) {
-    $sql = "DELETE FROM `catalog` WHERE id=".$id;
+    $sql = "DELETE FROM `catalog` WHERE id = (?)";
     // use exec() because no results are returned
-    return handle($sql);
+    return pdo_execute($sql, $id);
 }
 
 function updatedm($id,$name, $detail){
-    $sql = "UPDATE `catalog` SET `name` = '$name', `detail` = '$detail' WHERE `id` = $id";
-    return handle($sql);
+    $sql = "UPDATE `catalog` SET `name` = (?), `detail` = (?) WHERE `id` = (?)";
+    return pdo_execute($sql, $name, $detail, $id);
 }
 
 function getonedm($id){
@@ -26,8 +31,8 @@ function getall_dm(){
 }
 
 function check_foregin($id_cata) {
-    $sql = "SELECT * FROM `product` WHERE `id_cata` = ".$id_cata;
-    $kq = getAll($sql);
+    $sql = "SELECT * FROM `product` WHERE `id_cata` = (?)";
+    $kq = pdo_query($sql, $id_cata);
     return count($kq);
 }
 

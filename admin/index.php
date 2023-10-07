@@ -5,9 +5,9 @@
 
     ob_start();
 
-    require_once '../model/connectdb.php';
-
     require_once '../model/danhmuc.php';
+
+    require_once '../model/comment.php';
 
     require_once '../model/sanpham.php';
 
@@ -26,27 +26,21 @@
         $page = $_GET['act'];
 
         switch ($page) {
-
-            case 'danhmuc': {
+            case 'danhmuc':
                 require_once 'catalog/index.php';
                 break;
-            }
-
-            case 'sanpham': {
+            case 'sanpham':
                 require_once 'product/index.php';
                 break;
-            }
-
-            case 'user': {
+            case 'user':
                 require_once 'user/index.php';
                 break;
-            }
-
-            case 'order': {
+            case 'order':
                 require_once 'order/index.php';
                 break;
-            }
-
+            case 'comment':
+                require_once 'comment/index.php';
+                break;
             default: {
                 require_once 'admin.php';
                 break;
@@ -55,7 +49,7 @@
 
 
     } else {
-        require_once '../view/admin.php';
+        require_once 'admin.php';
     }
 
     require_once 'layout_bot.blade.php';

@@ -14,11 +14,6 @@
             giá
         </div>
 
-        <div class="size">
-            kích cỡ
-        </div>
-
-
         <div class="action flex">
 
             hành động
@@ -72,51 +67,15 @@
 
     </div>
             
-            ';
+        ';
 
         }
-
 
 
     ?>
 
     <?=$view?>
 
-<!--    <div class="product flex">-->
-<!---->
-<!--        <div class="name">-->
-<!--            MALLORIE - 23LP518-->
-<!--        </div>-->
-<!---->
-<!--        <div class="img">-->
-<!--            MALLORIE - 23LP518-->
-<!--        </div>-->
-<!---->
-<!--        <div class="price">-->
-<!--            22000000-->
-<!--        </div>-->
-<!---->
-<!--        <div class="small flex">-->
-<!---->
-<!---->
-<!--            <div class="size">-->
-<!--                M-->
-<!--            </div>-->
-<!---->
-<!--            <div class="action flex">-->
-<!---->
-<!--                <div class="edit">-->
-<!--                    Sửa-->
-<!--                </div>-->
-<!--                /-->
-<!--                <div class="remove">-->
-<!--                    Xóa-->
-<!--                </div>-->
-<!---->
-<!--            </div>-->
-<!--        </div>-->
-<!---->
-<!--    </div>-->
 
     <a class="add_btn" href="index.php?act=sanpham&sanpham=add">
         thêm

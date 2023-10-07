@@ -44,10 +44,10 @@
                     <link rel="stylesheet" type="text/css" href="css/user.css">
                 ';
                 break;
-            case 'brand':
+            case 'comment':
                 echo '
-                     <title>Thương Hiệu</title>
-                    <link rel="stylesheet" type="text/css" href="css/brand.css">
+                     <title>Đánh giá</title>
+                    <link rel="stylesheet" type="text/css" href="css/comment.css">
                 ';
                 break;
             case 'order':
