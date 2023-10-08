@@ -221,6 +221,13 @@
     color: var(--primary-color);
 }
 
+.notice_nothing {
+    text-align: center;
+    margin: 5rem 0;
+    font-size: var(--font-size-heading);
+}
+
+
 @media (max-width: 46.23em) {
     .banner {
         font-size: 4rem;
@@ -314,7 +321,6 @@
     .page .cricle:nth-child(6){
         display: none;
     }
-
 
 }
 

@@ -219,14 +219,12 @@
 
 </div>
 
-<div id="sorry" class="sorry ">
+<div id="sorry" class="sorry flex close ">
 
     <div class="container">
 
         <div class="heading">
-
             Chúng tôi xin lỗi vì sự bất tiện này !
-
         </div>
 
         <div class="des">

@@ -115,6 +115,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/pop-up/sign-in.css">
     <link rel="stylesheet" type="text/css" href="assets/css/pop-up/sign-up.css">
     <link rel="stylesheet" type="text/css" href="assets/css/pop-up/miss_pass.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/panel.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/keyframe.css">
     <link rel="stylesheet" type="text/css" href="assets/icon/fontawesome-free-6.4.0-web/css/all.min.css">

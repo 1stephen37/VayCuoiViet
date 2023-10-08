@@ -56,6 +56,16 @@ function get_product_by_view3() {
     return pdo_query($sql);
 }
 
+function product_view_Plus($view, $idproduct) {
+    $sql = "UPDATE `product` SET `views` = (?) WHERE `product`.`id` = (?)";
+    return pdo_execute($sql, $view, $idproduct);
+}
+
+function get_view_product($idproduct) {
+    $sql = "SELECT views FROM `product` WHERE id = (?)";
+    return pdo_query_value($sql, $idproduct);
+}
+
 
 // function getall_sp(){
 //     $conn=connectdb();

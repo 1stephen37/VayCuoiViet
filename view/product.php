@@ -2,6 +2,12 @@
 
     $idproduct = $_GET['idproduct'];
 
+    $view = get_view_product($idproduct);
+
+    $viewPlus = (int)$view + 1;
+
+    product_view_Plus($viewPlus, $idproduct);
+
     $detail = get_detail($idproduct);
 
     $imgs = getImage_full($idproduct);

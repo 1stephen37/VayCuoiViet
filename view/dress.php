@@ -102,7 +102,7 @@ $all_cata = getall_dm();
             $img = getImage($id);
 
             $output .= '
-        <div class="box">
+                <div class="box">
     
             <div class="img">
                 <img src="upload/'.$img['name'].'" alt="" class="img-full">
@@ -204,7 +204,7 @@ $all_cata = getall_dm();
     }
 
     if($output == '') {
-        $title = "<h1>rất tiếc ! chúng tôi không tìm thấy sản phẩm mang tên :" . $key_word . "</h1>";
+        $title = "<h1 class='notice_nothing'>rất tiếc ! chúng tôi không tìm thấy sản phẩm mang tên :" . $key_word . "</h1>";
     } else {
         $title = "";
     }

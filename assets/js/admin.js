@@ -87,6 +87,9 @@ mobile_icon.addEventListener('click', function () {
     }
 });
 
+const content_keyword = document.querySelector("input[name = 'search_content']");
+
+const btn_search = document.getElementById('btn_search');
 
 function check_search(content_keyword) {
     if(content_keyword.value == '') {
@@ -94,7 +97,7 @@ function check_search(content_keyword) {
         content_keyword.value = '';
         // content_keyword.placeholder = "bạn phải nhập mới có thể tìm";
     } else {
-        const str = "index.php?act=dress&keyword=" + content_keyword.value;
+        const str = "../index.php?act=dress&keyword=" + content_keyword.value;
         window.open(str, "_self");
     }
 }
@@ -102,6 +105,19 @@ function check_search(content_keyword) {
 btn_search.addEventListener('click', function() {
     check_search(content_keyword);
 });
+
+
+const sorry = document.getElementById('sorry');
+
+const sorry_container = document.querySelector('#sorry .container');
+
+
+console.log(sorry);
+
+function sorry_panel() {
+    sorry.classList.remove('close');
+}
+
 
 
 

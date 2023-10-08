@@ -35,7 +35,7 @@
             </a>
         </div>
 
-        <div onclick="show();" id="search" class="icon">
+        <div id="search" class="icon">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
 
@@ -47,22 +47,23 @@
 
     <div class="mobile-menu flex close"></div>
 
-    <div id="search-input" class="search flex close">
+    <form id="search-input" class="search flex close">
 
         <div class="input">
-            <input placeholder="Tìm kiếm sản phẩm" class="img-full" name="search" type="text">
+            <input placeholder="Tìm kiếm sản phẩm" class="img-full" name="search_content" type="text">
         </div>
 
-        <div class="icon">
+        <div id="btn_search" class="icon">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
 
-    </div>
+    </form>
+
 
     <div id="sub-menu" class="sub-menu flex">
         <a href="../index.php?act=dress">Mua - Thuê váy cưới</a>
-        <a href="">Makeup</a>
-        <a href="">Quay phim - chụp ảnh</a>
+        <a onclick="sorry_panel();" href="">Makeup</a>
+        <a onclick="sorry_panel();" href="">Quay phim - chụp ảnh</a>
     </div>
 
 </header>

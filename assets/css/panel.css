@@ -1,0 +1,468 @@
+.form {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    display: flex;
+    /* z-index: -1; */
+    /* display: none; */
+}
+
+.form .container {
+    width: 80rem;
+    height: 80rem;
+    background: var(--primary-color);
+    /* z-index: 1; */
+    border-radius: 1rem;
+    padding: 5rem 0;
+}
+
+.form .container > .heading {
+    font-size: 4rem;
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
+    font-family: great;
+}
+
+.form .container .content {
+    width: 72rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+    justify-content: space-between;
+}
+
+.form .container .content .left {
+    width: 34rem;
+    border-radius: 1rem;
+}
+
+.form .container .content .left img {
+    border-radius: 1rem;
+}
+
+.form .container .content .right {
+    width: 33rem;
+    height: 100%;
+}
+
+.form .container .content .right .heading {
+    text-align: center;
+    font-size: 4rem;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+.form .container .content .right .input {
+    height: 4rem;
+    width: 30rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.form .container .content .right .input input {
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+    color: rgba(0,0,0,0.5);
+    outline: none;
+}
+
+.form .container .content .right .select {
+    width: 17rem;
+    height: 4rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.form .container .content .right .select select {
+    border-radius: 2rem;
+    text-align: center;
+    outline: none;
+    font-size: 2rem;
+    color: rgba(0,0,0,0.5);
+}
+
+.form .container .content .right .price {
+    margin: 0 auto;
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.form .container .button {
+    width: 22.2rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+    height: 5.5rem;
+    background: #fff;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 5.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.miss_pass {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    display: flex;
+    /* z-index: -1; */
+    /* display: none; */
+}
+
+.miss_pass .container {
+    width: 40rem;
+    height: 30rem;
+    background: #fff;
+    /* z-index: 1; */
+    border-radius: 1rem;
+    padding: 5rem 0;
+}
+
+.miss_pass .container .heading {
+    font-size: var(--font-size-heading);
+    font-family: great;
+    width: 20rem;
+    margin: 0 auto;
+    position: relative;
+    color: #000;
+    height: 6rem;
+    background: rgba(1, 67, 90, 0.10);
+    border-radius: 1rem;
+    text-align: center;
+    line-height: 6rem;
+}
+
+.miss_pass .container .heading .vector {
+    position: absolute;
+    bottom: 1rem;
+    left: 3rem;
+    height: 2rem;
+    width: 13rem;
+}
+
+.miss_pass .container .input {
+    margin: 4rem auto 0 auto;
+    width: 25rem;
+    height: 5rem;
+}
+
+.miss_pass .container .input input {
+    font-size: 2rem;
+    border-radius: 1rem;
+    background: rgba(0,0,0,0.1);
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.miss_pass .container .button {
+    width: 10rem;
+    background: var(--primary-color);
+    color: #fff;
+    margin: 4rem auto 0 auto;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.sign-in {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    display: flex;
+}
+
+.sign-in .container {
+    width: 96rem;
+    height: 90rem;
+    border-radius: 2rem;
+    background-color: #fff;
+}
+
+.sign-in .container .heading {
+    width: 50rem;
+    height: 10rem;
+    margin: 2rem auto 0 auto;
+    color: #000;
+    font-size: 4rem;
+    text-align: center;
+    font-family: great;
+    line-height: 10rem;
+    text-transform: capitalize;
+    background: rgba(1, 67, 90, 0.10);
+    border-radius: 2rem;
+    position: relative;
+}
+
+.sign-in .container .heading .vector {
+    width: 20rem;
+    position: absolute;
+    top: 3rem;
+    left: 15rem;
+}
+
+.sign-in .container .content {
+    width: 80%;
+    height: 53rem;
+    margin: 0 auto;
+    margin-top: 4rem;
+    justify-content: space-between;
+}
+
+.sign-in .container .content .left {
+    width: 30rem;
+}
+
+.sign-in .container .content .right {
+    width: 37rem;
+    position: relative;
+}
+
+.sign-in .container .content .right form {
+    flex-direction: column;
+    gap: 4.5rem;
+
+}
+
+.sign-in .container .content .right form .input label {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.sign-in .container .content .right form .input {
+    flex-direction: column;
+    gap: 3rem;
+
+}
+
+.sign-in .container .content .right form .input input {
+    font-size: 2rem;
+    border-radius: 2rem;
+    width: 37rem;
+    height: 7.5rem;
+    background: rgba(204, 204, 204, 0.40);
+    outline: none;
+    border: none;
+    text-align: center;
+}
+
+.sign-in .container .content .right form>input {
+    width: 18rem;
+    height: 6.5rem;
+    border-radius: 2rem;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.sign-in .container .content .right .quest {
+    color: #01435A;
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.sign-in .container .content .right .miss {
+    color: #01435A;
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    bottom: 1rem;
+    left: -35rem;
+}
+
+.sign-in .container .sub-heading {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.sign-in .container .social {
+    width: 38rem;
+    height: 5.6rem;
+    margin: 0 auto;
+    margin-top: 4rem;
+    gap: 5rem;
+}
+
+/* .sign-in .container .heading {
+
+} */
+
+.sign-up {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    display: flex;
+}
+
+.sign-up .container {
+    width: 96rem;
+    height: 90rem;
+    border-radius: 2rem;
+    background-color: #fff;
+}
+
+.sign-up .container .heading {
+    width: 50rem;
+    height: 10rem;
+    margin: 2rem auto 0 auto;
+    color: #000;
+    font-size: 4rem;
+    text-align: center;
+    font-family: great;
+    line-height: 10rem;
+    text-transform: capitalize;
+    background: rgba(1, 67, 90, 0.10);
+    border-radius: 2rem;
+    position: relative;
+}
+
+.sign-up .container .heading .vector {
+    width: 18rem;
+    position: absolute;
+    top: 3rem;
+    left: 16rem;
+}
+
+.sign-up .container .content {
+    width: 80%;
+    height: 53rem;
+    margin: 4rem auto 0 auto;
+    justify-content: space-between;
+}
+
+.sign-up .container .content .left {
+    width: 30rem;
+}
+
+.sign-up .container .content .right {
+    width: 37rem;
+
+}
+
+.sign-up .container .content .right form {
+    flex-direction: column;
+    gap: 4.5rem;
+
+}
+
+.sign-up .container .content .right form .input {
+    margin-top: 2rem;
+}
+
+.sign-up .container .content .right form .input label {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.sign-up .container .content .right form .input {
+    flex-direction: column;
+    gap: 3rem;
+
+}
+
+.sign-up .container .content .right form .input input {
+    font-size: 2rem;
+    border-radius: 2rem;
+    width: 37rem;
+    height: 7.5rem;
+    background: rgba(204, 204, 204, 0.40);
+    outline: none;
+    border: none;
+    text-align: center;
+}
+
+.sign-up .container .content .right form>input {
+    width: 18rem;
+    height: 6.5rem;
+    border-radius: 2rem;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.sign-up .container .content .right .quest {
+    color: #01435A;
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.sign-up .container .sub-heading {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.sign-up .container .social {
+    width: 38rem;
+    height: 5.6rem;
+    margin: 0 auto;
+    margin-top: 4rem;
+    gap: 5rem;
+}
+
+/* .sign-up .container .heading {
+
+} */
+
+.sorry {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content:center;
+    align-items:center;
+    background: rgba(0,0,0,0.5);
+}
+
+.sorry .container {
+    width: 30%;
+    height: auto;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+}
+
+.sorry .container .heading {
+    font-size: var(--font-size-heading);
+    margin: 1rem auto;
+}
+
+.sorry .container .des {
+    font-size: 2rem;
+}
