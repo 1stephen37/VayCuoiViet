@@ -110,6 +110,7 @@
 
     ?>
 
+    <link rel="stylesheet" type="text/css" href="assets/css/pop-up/sorry.css">
     <link rel="stylesheet" type="text/css" href="assets/css/pop-up/form.css">
     <link rel="stylesheet" type="text/css" href="assets/css/pop-up/sign-in.css">
     <link rel="stylesheet" type="text/css" href="assets/css/pop-up/sign-up.css">

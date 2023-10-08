@@ -1,8 +1,36 @@
 <?php
 
-    $spHot = '';
+    $spHot = get_product_hot();
 
+    $img_hot = getImage($spHot['id']);
 
+    $listView = get_product_by_view3();
+
+//    var_dump($listView);
+
+//    echo count($listView);
+
+    $listView_html = '';
+
+    foreach ($listView as $product) {
+
+        extract($product);
+
+        $img_view = getImage($id);
+
+        $listView_html .= '
+        <div class="box-3">
+
+            <div class="img">
+                <img src="upload/'.$img_view['name'].'" alt="" class="img-full">
+                <a href="index.php?act=dress" class="effect"></a>
+            </div>
+            <div class="name">
+                '.$name.'
+            </div>
+        </div>
+        ';
+    }
 
 ?>
 
@@ -103,7 +131,7 @@
 
     <div class="des name flex">
         <div class="des">
-            DIOR - 23LP512
+            <?=$spHot['name']?>
         </div>
         <div class="vector">
             <img src="assets/img/section/Vector 3.svg" alt="" class="img-full">
@@ -112,7 +140,7 @@
 
     <div class="des price">
         <div class="des">
-            Giá may: 28,000,000 ₫
+            Giá may: <?=number_format($spHot['price'],0,',')?> ₫
         </div>
 
         <div class="vector">
@@ -122,7 +150,7 @@
 
     <div class="des sell">
         <div class="des">
-            Giá thuê: 5,000,000 ₫
+            Giá thuê: <?=number_format($spHot['price'] * 0.2,0,',')?> ₫
         </div>
 
         <div class="vector">
@@ -136,7 +164,8 @@
 
         <div class="img">
 
-<!--            <img src="assets/img/section/product1.svg" alt="" class="img-full">-->
+            <img src="upload/<?=$img_hot['name']?>" alt="" class="img-full">
+
         </div>
 
     </div>
@@ -159,41 +188,32 @@
 
     <div class="box grid">
 
-        <div class="box-3">
+        <?=$listView_html?>
 
-            <div class="img">
-                <img src="assets/img/section/product2.svg" alt="" class="img-full">
-                <a href="index.php?act=dress" class="effect"></a>
-            </div>
-            <div class="name">
-                DIOR - 23LP512
-            </div>
-        </div>
-
-        <div class="box-3">
-
-            <div class="img">
-                <img src="assets/img/section/product3.svg" alt="" class="img-full">
-                <a href="index.php?act=dress" class="effect"></a>
-            </div>
-
-            <div class="name">
-                DIOR - 23LP512
-            </div>
-        </div>
-
-        <div class="box-3">
-
-            <div class="img">
-                <img src="assets/img/section/product4.svg" alt="" class="img-full">
-                <a href="index.php?act=dress" class="effect"></a>
-            </div>
-
-            <div class="name">
-                DIOR - 23LP512
-            </div>
-
-        </div>
+<!--        <div class="box-3">-->
+<!---->
+<!--            <div class="img">-->
+<!--                <img src="assets/img/section/product3.svg" alt="" class="img-full">-->
+<!--                <a href="index.php?act=dress" class="effect"></a>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="name">-->
+<!--                DIOR - 23LP512-->
+<!--            </div>-->
+<!--        </div>-->
+<!---->
+<!--        <div class="box-3">-->
+<!---->
+<!--            <div class="img">-->
+<!--                <img src="assets/img/section/product4.svg" alt="" class="img-full">-->
+<!--                <a href="index.php?act=dress" class="effect"></a>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="name">-->
+<!--                DIOR - 23LP512-->
+<!--            </div>-->
+<!---->
+<!--        </div>-->
 
     </div>
 

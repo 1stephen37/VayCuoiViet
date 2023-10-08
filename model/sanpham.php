@@ -46,13 +46,14 @@ function getonesp($id){
     return pdo_query_one($sql, $id);
 }
 
-function get_hot_sp($hot){
-    $conn=connectdb();
-    $stmt = $conn->prepare("SELECT * FROM product WHERE $hot= 1");
-    $stmt->execute();
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $kq=$stmt->fetchALL();
-    return $kq;
+function get_product_hot(){
+    $sql = "SELECT * FROM `product` WHERE 1 ORDER BY views DESC LIMIT 1";
+    return pdo_query_one($sql);
+}
+
+function get_product_by_view3() {
+    $sql = "SELECT * FROM `product` WHERE 1 ORDER BY views DESC LIMIT 1,3";
+    return pdo_query($sql);
 }
 
 
@@ -103,15 +104,6 @@ function get_Page() {
     $sql = "SELECT * FROM product where 1";
 }
 
-function getImage($id_product) {
-    $sql = "SELECT * FROM img where id_product= (?) LIMIT 1";
-    return pdo_query_one($sql, $id_product);
-}
-
-function getImage_full($id_product) {
-    $sql = "SELECT * FROM img where id_product= (?)";
-    return pdo_query($sql, $id_product);
-}
 
 function get_detail($id) {
     $sql = "SELECT * FROM product WHERE id= (?)";

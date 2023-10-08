@@ -218,3 +218,21 @@
     </form>
 
 </div>
+
+<div id="sorry" class="sorry ">
+
+    <div class="container">
+
+        <div class="heading">
+
+            Chúng tôi xin lỗi vì sự bất tiện này !
+
+        </div>
+
+        <div class="des">
+            Chức năng bạn đang truy cập hiện tại đang bảo trì
+        </div>
+
+    </div>
+
+</div>

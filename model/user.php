@@ -51,14 +51,8 @@ function Newuser($user,$pass){
 }
 
 function get_all_user(){
-    $conn=connectdb();
     $sql= "SELECT * FROM user";
-    echo $sql;
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $kq=$stmt->fetchAll();
-    return $kq;
+    return pdo_query($sql);
 }
 
 //function get_user_by_id($id) {

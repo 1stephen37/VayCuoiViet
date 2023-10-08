@@ -20,11 +20,11 @@ foreach ($users as $user){
             </div>
     
             <div class="email">
-                '.$Email.'
+                '.$email.'
             </div>
     
             <div class="phone">
-                '.$Phone.'
+                '.$phone.'
             </div>
     
         </div>

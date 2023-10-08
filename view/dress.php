@@ -72,12 +72,6 @@ $_SESSION['s_$page'] = $page;
 $sp = get_sp_page($danhmuc, $page);
 $all_cata = getall_dm();
 
-
-
-
-
-
-
     $count = count_product_byCata($danhmuc);
 
     $count_page = ceil(($count['COUNT(id)']/12));
@@ -325,56 +319,37 @@ $all_cata = getall_dm();
 
 <section class="page flex">
 
-<!--    <a href="index.php?act=dress&page=1" class="cricle">-->
-<!--        1-->
-<!--    </a>-->
-<!---->
-<!--    <a href="index.php?act=dress&page=2" class="cricle">-->
-<!--        2-->
-<!--    </a>-->
-<!---->
-<!--    <div class="cricle">-->
-<!--        3-->
-<!--    </div>-->
-<!---->
-<!--    <div class="cricle">-->
-<!--        4-->
-<!--    </div>-->
-<!---->
-<!--    <div class="cricle">-->
-<!--        ...-->
-<!--    </div>-->
-<!---->
-<!--    <div class="cricle">-->
-<!--        14-->
-<!--    </div>-->
-<!---->
-<!--    <div class="cricle">-->
-<!--        15-->
-<!--    </div>-->
-<!---->
-<!--    <div class="cricle">-->
-<!--        16-->
-<!--    </div>-->
-<!---->
+<!--    --><?php
+//        if(($page - 1) <= 1 ) {
+//            $page = 1;
+//        }
+//
+//    ?>
 
     <?php
-        if(($page - 1) <= 1 ) {
-            $page = 1;
-        }
-        if(($page + 1) >= $count_page) {
-            $page = $count_page;
+        if(!($page == 1)) {
+            echo '
+                  <a href="index.php?act=dress&danhmuc='.$danhmuc.'&page='.($page-1).'" class="cricle">
+                        <i class="fa-solid fa-chevron-left"></i>
+                  </a>
+            ';
         }
     ?>
 
-    <a href="<?php echo 'index.php?act=dress&danhmuc='.$danhmuc.'&page='.($page-1).''?>" class="cricle">
-        <i class="fa-solid fa-chevron-left"></i>
-    </a>
-
     <?=$page_link?>
 
-    <a href="<?php echo 'index.php?act=dress&danhmuc='.$danhmuc.'&page='.($page+1).''?>" class="cricle">
-        <i class="fa-solid fa-chevron-right"></i>
-    </a>
+    <?php
+        if($page != $count_page) {
+            echo '
+                <a href="index.php?act=dress&danhmuc='.$danhmuc.'&page='.($page+1).'" class="cricle">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            ';
+        } else {
+            echo '';
+        }
+    ?>
+
+
 
 </section>

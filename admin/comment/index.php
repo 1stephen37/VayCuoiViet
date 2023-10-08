@@ -2,14 +2,12 @@
 
     $comment = get_all_comments();
 
-    var_dump($comment);
-
     $comment_html = '';
 
     foreach ($comment as $binhluan) {
         extract($binhluan);
 
-        $comment_html = '
+        $comment_html .= '
     <div class="flex-items flex">
 
         <div class="name_product">
@@ -42,19 +40,20 @@
 
         <div class="name_product">
 
-            Tên sản phẩm
+            sản phẩm
 
         </div>
 
         <div class="name_user">
 
-            Tên người dùng
+            người dùng
 
         </div>
 
         <div class="content">
             nội dung
         </div>
+
 
     </div>
 

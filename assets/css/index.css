@@ -260,6 +260,10 @@
     position: relative;
 }
 
+.section3 .box .box-3 .img img {
+    border-radius:1rem;
+}
+
 .section3 .box .box-3 .img:hover .effect {
     position: absolute;
     background: rgba(0,0,0,0.5);
