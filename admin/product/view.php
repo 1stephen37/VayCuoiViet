@@ -24,12 +24,14 @@
 
     <?php
 
-        $product = getall_sp(1, 1);
+        $product = get_all_products();
 
         $view = '';
 
         foreach ($product as $item) {
             extract($item);
+
+            $img_product = getImage($id);
 
             $view .= '
     <div class="product flex">
@@ -39,7 +41,7 @@
         </div>
 
         <div class="img">
-            <img src="../upload/'.$img.'" alt="" class="img-full">
+            <img src="../upload/'.$img_product['name'].'" alt="" class="img-full">
         </div>
 
         <div class="price">

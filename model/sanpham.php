@@ -41,6 +41,11 @@ function edit_product($name,$price,$idCata,$detail,$size,$id) {
 //     $stmt->execute();
 // }
 
+function get_all_products() {
+    $sql = "SELECT * FROM product WHERE 1";
+    return pdo_query($sql);
+}
+
 function getonesp($id){
     $sql = "SELECT * FROM product WHERE id= (?)";
     return pdo_query_one($sql, $id);

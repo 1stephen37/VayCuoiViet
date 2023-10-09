@@ -5,6 +5,8 @@
 
     ob_start();
 
+    require_once '../model/img.php';
+
     require_once '../model/danhmuc.php';
 
     require_once '../model/comment.php';

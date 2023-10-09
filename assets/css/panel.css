@@ -466,3 +466,164 @@
 .sorry .container .des {
     font-size: 2rem;
 }
+
+.question {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content:center;
+    align-items:center;
+    background: rgba(0,0,0,0.5);
+}
+
+.question .container {
+    background:var(--primary-color);
+    color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 40%;
+    height: auto;
+}
+
+.question .container .heading {
+    font-size: var(--font-size-heading);
+    text-align: center;
+
+}
+
+.question .container .des {
+    font-size: 2rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.question .container .button-flex {
+    justify-content: center;
+    gap: 5rem;
+    margin: 3rem auto 0 auto;
+}
+
+.question .container .button-flex .button {
+    width: 10rem;
+    text-align: center;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 1rem 0;
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+.question .container .button-flex .button:hover {
+    transition: background 1s, color 1s;
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.information {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content:center;
+    align-items:center;
+    background: rgba(0,0,0,0.5);
+}
+
+.information .container {
+    background: var(--primary-color);
+    width: 60rem;
+    border-radius: 1rem;
+    padding: 3rem 0;
+    height: 84rem;
+}
+
+.information .container .heading {
+    position: relative;
+    width: 37rem;
+    margin: 0 auto;
+    font-size: 4rem;
+    font-family: great, 'sans-serif';
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.information .container .heading .vector {
+    position: absolute;
+    bottom: -3.5rem;
+    left: 2.5rem;
+    width: 30rem;
+}
+
+.information .container .logo {
+    width: 20rem;
+    height: auto;
+    margin: 3rem auto 0 auto;
+}
+
+.information .container .form_information {
+    flex-direction: column;
+    gap: 3rem;
+    width: 30rem;
+    margin: 3rem auto;;
+}
+
+.information .container .form_information input[name='submit_btn_information'] {
+    width: 22rem;
+    font-size: 2rem;
+    border-radius:1rem;
+    height: 5.5rem;
+    margin: 2rem auto;
+    cursor: pointer;
+}
+
+.information .container .form-group:nth-child(5) {
+    width: 20rem;
+    margin: 0 auto;
+    height: auto;
+}
+
+.information .container .form-group:nth-child(5) select {
+    font-size: 2rem;
+    width: 20rem;
+    text-align: center;
+    border-radius: 1rem;
+    height: 4.3rem;
+}
+
+
+.information .container .form-group:nth-child(6) {
+    width: 18rem;
+    margin: 0 auto;
+    height: auto;
+}
+
+.information .container .form-group:nth-child(6) select {
+    font-size: 2rem;
+    width: 18rem;
+    text-align: center;
+    border-radius: 1rem;
+    height: 4.3rem;
+}
+
+
+.information .container .form-group input {
+    width: 30rem;
+    height: 4rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.information .container .form-group .input input {
+
+}
+
+.information .container .form_information .total {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}

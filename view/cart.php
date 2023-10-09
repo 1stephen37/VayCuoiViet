@@ -57,7 +57,10 @@
                     if(count($_SESSION['cart']) == 0 ) {
                         header('location: index.php?act=dress');
                         unset($_SESSION['cart']);
+                    } else {
+                        header('location: index.php?act=cart');
                     }
+
 
                 }
 
@@ -74,11 +77,11 @@
                     if(count($_SESSION['cart']) == 0 ) {
                         header('location: index.php?act=dress');
                         unset($_SESSION['cart']);
+                    } else {
+                        header('location: index.php?act=cart');
                     }
 
 
-                } else {
-//                    header('location: index.php?act=dress');
                 }
 
                 if(isset($_GET['countUp']) && ($_GET['countUp'] >= 0)) {
@@ -86,6 +89,8 @@
                     $up = $_GET['countUp'];
 
                     $_SESSION['cart'][$up]['count'] += 1;
+
+                    header('location: index.php?act=cart');
 
                 }
 
@@ -160,10 +165,10 @@
                     $i++;
                 }
 
-                $btn = '<a href="index.php?act=pay" class="right">Thanh toán</a>';
+                $btn = '<a class="right">Thanh toán</a>';
             } else {
                 $list = '';
-                $btn = '<a href="#" class="right">Thanh toán</a>';
+                $btn = '<a class="right">Thanh toán</a>';
             }
 
 

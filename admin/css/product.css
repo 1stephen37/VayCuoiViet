@@ -100,26 +100,28 @@
 }
 
 .section1 .display-cata .nav {
-    justify-content: center;
+    justify-content: space-around;
     font-size: 3rem;
     text-transform: capitalize;
-    gap: 7.5rem;
+    /*gap: 7.5rem;*/
 }
 
 .section1 .display-cata .product {
     font-size: 2rem;
-    gap: 3.5rem;
+    gap: 8rem;
+    padding: 0 5rem;
     height: auto;
 }
 
 .section1 .display-cata .product .name {
-    width: 10rem;
+    width: 15rem;
     height: auto;
+    text-align: center;
 }
 
 .section1 .display-cata .product .img {
-    width: 12rem;
-    height: 15rem;
+    width: 10rem;
+    height: 16rem;
     border-radius: 1rem;
 }
 
@@ -128,9 +130,11 @@
 }
 
 .section1 .display-cata .product .small {
-    gap: 15rem;
+    /*gap: 15rem;*/
     justify-content: center;
     text-align: center;
+    flex-direction: column;
+    align-items: center;
     /*align-items: center;*/
 }
 

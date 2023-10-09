@@ -234,3 +234,115 @@
     </div>
 
 </div>
+
+<div id="question" class="question flex close">
+
+    <div class="container">
+
+        <div class="heading">
+            Bạn có muốn đăng nhập không ?
+        </div>
+
+        <div class="des">
+            trở thành hội viên của chúng tôi sẽ có rất nhiều ưu đãi đặc biệt dành cho khách hàng thân thiết
+        </div>
+
+       <div class="button-flex flex">
+
+           <div class="button">
+               có
+           </div>
+
+           <div class="button">
+               không
+           </div>
+
+       </div>
+
+
+
+    </div>
+
+</div>
+
+<div id="information" class="information flex">
+
+    <div class="container">
+
+        <div class="heading">
+
+            <div class="des">
+                Thông tin đặt hàng
+            </div>
+
+            <div class="vector">
+                <img src="assets/img/popup/Vector 7.svg" alt="" class="img-full">
+            </div>
+
+        </div>
+
+        <div class="logo">
+
+            <img src="assets/img/logo/logo.svg" alt="log" class="img-full">
+
+        </div>
+
+        <form action="" class="form_information flex">
+            
+            <div class="form-group">
+                <label for="name_information">
+                    <input name="name_information" placeholder="tên anh/chị đặt hàng" type="text">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="address_information">
+                    <input name="address_information" placeholder="địa chỉ giao hàng" type="text">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="phone_information">
+                    <input name="phone_information" placeholder="số điện thoại của anh/chị" type="text">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="email_information">
+                    <input name="email_information" placeholder="Email của anh/chị" type="text">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="delivery_information">
+                    <select name="delivery_information">
+                        <option value="fast">Giao nhanh</option>
+                        <option value="fast">Giao tiết kiệm</option>
+                        <option value="fast">Giao hỏa tốc</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="delivery_information">
+                    <select name="pay_information">
+                        <option value="fast">Tiền mặt</option>
+                        <option value="fast">Giao tiết kiệm</option>
+                        <option value="fast">Giao hỏa tốc</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="total">
+                Tổng tạm tính: 28,000,000 đ
+            </div>
+
+            <input name="submit_btn_information" type="submit" value="Xác nhận đơn hàng">
+            
+        </form>
+
+
+
+    </div>
+
+</div>

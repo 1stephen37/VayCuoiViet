@@ -1,6 +1,8 @@
 
 <?php
 
+$output = '';
+
 if(isset($_GET['sanpham']) && ($_GET['sanpham'] != '') ){
 
     $product = $_GET['sanpham'];
@@ -20,9 +22,6 @@ if(isset($_GET['sanpham']) && ($_GET['sanpham'] != '') ){
         }
 
         case 'edit': {
-
-
-
             require_once 'edit.php';
             break;
         }
@@ -58,21 +57,100 @@ if(isset($_GET['sanpham']) && ($_GET['sanpham'] != '') ){
 
 
         default: {
-            require_once 'view.php';
+            $output = view();
             break;
         }
     }
 
 
 } else {
-    require_once 'view.php';
+    $output = view();
+}
+
+function view(){
+
+    $kq = '
+    <div class="display-cata flex">
+
+    <div class="nav flex">
+
+        <div class="name">
+            tên
+        </div>
+
+        <div class="img">
+            ảnh
+        </div>
+
+        <div class="action flex">
+
+            hành động
+
+        </div>
+
+    </div>
+    ';
+
+    $product = get_all_products();
+
+
+    foreach ($product as $item) {
+        extract($item);
+
+        $img_product = getImage($id);
+
+        $kq .= '
+            <div class="product flex">
+
+                <div class="name">
+                    '.$name.'
+                </div>
+            
+                <div class="img">
+                    <img src="../upload/'.$img_product['name'].'" alt="" class="img-full">
+                </div>
+               
+                <div class="small flex">
+                    
+                    <a href="index.php?act=sanpham&sanpham=edit&edit='.$id.'" class="edit">xem chi tiết</a>
+            
+                    <div class="action flex">
+                      
+                        <a href="index.php?act=sanpham&sanpham=edit&edit='.$id.'" class="edit">
+                            Sửa
+                        </a>
+                        /
+                        <a href="index.php?act=sanpham&sanpham=remove&remove='.$id.'" class="remove">
+                            Xóa
+                        </a>
+            
+                    </div>
+                    
+                </div>
+
+            </div>
+        
+    ';
+
+    }
+
+
+
+
+
+        $kq .= '<a class="add_btn" href="index.php?act=sanpham&sanpham=add">thêm</a>
+        </div>';
+
+        return $kq;
+
 }
 
 
 
 
 
-
 ?>
+
+<?=$output?>
 
 

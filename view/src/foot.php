@@ -41,6 +41,11 @@ if(isset($_GET['act']) && ($_GET['act'] != '')) {
                          <script type="text/javascript" src="assets/js/miss_pass.js"></script>   
             ';
             break;
+        case 'cart':
+            echo '
+                         <script type="text/javascript" src="assets/js/cart.js"></script>   
+            ';
+            break;
         default:
             break;
 
