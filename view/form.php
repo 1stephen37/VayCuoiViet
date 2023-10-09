@@ -54,7 +54,7 @@
 
 </div>
 
-<div id="sign-in" class="sign-in ">
+<div id="sign-in" class="sign-in close">
 
     <div class="container">
 
@@ -132,7 +132,7 @@
 
 </div>
 
-<div id="sign-up" class="sign-up close">
+<div id="sign-up" class="sign-up ">
 
     <div class="container">
 
@@ -158,39 +158,41 @@
                 <form method="POST" action="index.php?act=signup" class="form-sign-in flex">
 
                     <div class="input flex">
-                        <label for="">Tài Khoản</label>
-
-                        <input name="user_name_sign_up" id="user_name_sign_up" placeholder="Nhập tài khoản của bạn" type="text">
+                        <label for="">Email</label>
+                        <input name="user_name_sign_up" id="user_name_sign_up" placeholder="Nhập địa chỉ email của bạn" type="text">
+                        <span class="error-message"></span>
                     </div>
 
                     <div class="input flex">
                         <label for="">Mật Khẩu</label>
-
                         <input name="pass_name_sign_up" id="pass_name_sign_up" placeholder="Nhập mật khẩu của bạn" type="text">
+                        <span class="error-message"></span>
                     </div>
 
-                    <input name="sign-in" id="user_password_sign_up" onclick="return chek_form_sign_up();" type="submit" value="Đăng kí">
+                    <input name="sign-in" id="user_password_sign_up" type="submit" value="Đăng kí">
 
                 </form>
-
 
             </div>
 
 
         </div>
 
-        <div class="sub-heading">
-            Liên kết với mạng xã hội :
+        <div class="other_login flex">
+
+            <div class="sub-heading">
+                Liên kết với mạng xã hội :
+            </div>
+
+            <div class="social flex">
+
+                <img src="assets/img/popup/gg.svg" alt="" class="img-full">
+                <img src="assets/img/popup/fb.svg" alt="" class="img-full">
+
+            </div>
+
         </div>
 
-        <div class="social flex">
-
-            <img src="assets/img/popup/gg.svg" alt="" class="img-full">
-            <img src="assets/img/popup/fb.svg" alt="" class="img-full">
-            <img src="assets/img/popup/insta.svg" alt="" class="img-full">
-            <img src="assets/img/popup/linked.svg" alt="" class="img-full">
-
-        </div>
 
     </div>
 

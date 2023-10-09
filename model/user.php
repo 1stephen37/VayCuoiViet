@@ -41,9 +41,8 @@ function checkuser($email,$pass){
 }
 
 function Newuser($user,$pass){
-    $conn=connectdb();
     if(checkuser($user,$pass) == 0) {
-        $stmt = $conn->exec("INSERT INTO `user` (`id`, `UserName`, `PassWord`, `Name`, `Email`, `Phone`, `Active`, `role`, `address`) VALUES (NULL, '".$user."', '".$pass."', '', '', '', '1', '0', '');");
+        $stmt = pdo_execute("INSERT INTO `user` (`id`, `UserName`, `PassWord`, `Name`, `Email`, `Phone`, `Active`, `role`, `address`) VALUES (NULL, '(?)', '(?)', '', '', '', '1', '0', '')",$user, $pass);
     } else {
         $stmt = false;
     }

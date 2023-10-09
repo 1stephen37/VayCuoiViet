@@ -44,7 +44,6 @@ const sign_in_container = document.querySelector('.sign-in .container');
 button_sign.addEventListener('click', function () {
     sign_in_form.classList.remove('close');
 });
-
 sign_in_form.addEventListener('click', function () {
     sign_in_form.classList.add('close');
 });

@@ -158,6 +158,8 @@
                             $Newuser = $_POST['user_name_sign_up'];
                             $Newpass = $_POST['pass_name_sign_up'];
 
+                            $hashedPassword = password_hash($Newpass, PASSWORD_DEFAULT);
+
                             $ceateUser = Newuser($Newuser, $Newpass);
 
                             if($ceateUser) {

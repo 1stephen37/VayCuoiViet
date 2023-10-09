@@ -74,6 +74,10 @@ if(isset($_GET['act']) && ($_GET['act'] != '')) {
 
 ?>
 
+    <div id="root_script">
+
+    </div>
+
 <script>
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -87,29 +91,22 @@ if(isset($_GET['act']) && ($_GET['act'] != '')) {
                 Validator.isEmail('#email_sign_in', 'bạn phải nhập đúng email'),
                 Validator.isRequired('#user_password_sign_in', 'vui lòng nhập mật khẩu của bạn'),
                 Validator.minLength('#user_password_sign_in', 6, 'mật khẩu phải dài hơn 6 kì tự'),
-                // Validator.isConfirmed('#password_confirmation', function () {
-                //     return document.querySelector('#form-1 #password').value;
-                // }, 'Mật khẩu nhập lại không chính xác')
-            ]
-            // onSubmit: function (data) {
-            //     // Call API
-            //     console.log(data);
-            // }
+            ],
+            onSubmit: '#form-sign-in'
         });
 
 
         Validator({
-            form: '#form-2',
-            formGroupSelector: '.form-group',
-            errorSelector: '.form-message',
+            form: '#sign-up',
+            formGroupSelector: '.input',
+            errorSelector: '.error-message',
             rules: [
-                Validator.isEmail('#email'),
-                Validator.minLength('#password', 6),
+                Validator.isRequired('#user_name_sign_up', 'vui lòng nhập email của bạn'),
+                Validator.isEmail('#user_name_sign_up', 'vui lòng nhập email chính xác'),
+                Validator.isRequired('#pass_name_sign_up', 'vui lòng nhập mật khẩu của bạn'),
+                Validator.minLength('#pass_name_sign_up', 6, 'mật khẩu phải dài hơn 6 kí tự'),
             ],
-            onSubmit: function (data) {
-                // Call API
-                console.log(data);
-            }
+            onSubmit: '.form-sign-in'
         });
     });
 

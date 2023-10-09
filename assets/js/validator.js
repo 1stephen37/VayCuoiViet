@@ -97,7 +97,14 @@ function Validator(options) {
                 }
                 // Trường hợp submit với hành vi mặc định
                 else {
-                    formElement.submit();
+
+                    const submit = formElement.querySelector(options.onSubmit);
+
+                    submit.submit();
+
+                    // console.log(formElement);
+                    // formElement.submit();
+                    // return true;
                 }
             }
         }
