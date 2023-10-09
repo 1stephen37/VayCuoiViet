@@ -25,7 +25,7 @@
     text-align: center;
     color: #fff;
     text-transform: capitalize;
-    font-family: great;
+    font-family: great, 'sans-serif';
 }
 
 .form .container .content {
@@ -235,7 +235,7 @@
 
 .sign-in .container .content .right form {
     flex-direction: column;
-    gap: 4.5rem;
+    gap: 3.5rem;
 
 }
 
@@ -252,13 +252,22 @@
 
 .sign-in .container .content .right form .input input {
     font-size: 2rem;
-    border-radius: 2rem;
+    border-radius: 3rem;
     width: 37rem;
     height: 7.5rem;
     background: rgba(204, 204, 204, 0.40);
     outline: none;
-    border: none;
     text-align: center;
+    border: 2px solid var(--primary-color);
+}
+
+.sign-in .container .content .right form .input .error-message {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.sign-in .container .content .right form .invalid input {
+    border: 2px solid red;
 }
 
 .sign-in .container .content .right form>input {
@@ -293,18 +302,26 @@
     left: -35rem;
 }
 
-.sign-in .container .sub-heading {
+.sign-in .container .other_login {
+    margin: 10rem auto 0 auto;
+    gap: 2rem;
+    width: 57rem;
+}
+
+.sign-in .container .other_login .sub-heading {
     font-size: 4rem;
     text-align: center;
-    margin-top: 2.5rem;
 }
 
 .sign-in .container .social {
-    width: 38rem;
+    width: auto;
     height: 5.6rem;
-    margin: 0 auto;
-    margin-top: 4rem;
-    gap: 5rem;
+    gap: 2rem;
+}
+
+.sign-in .container .social img {
+    width:auto;
+    height:auto;
 }
 
 /* .sign-in .container .heading {

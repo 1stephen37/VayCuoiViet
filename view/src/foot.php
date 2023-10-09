@@ -53,6 +53,9 @@ if(isset($_GET['act']) && ($_GET['act'] != '')) {
 
 }
 
+        echo '
+            <script type="text/javascript" src="assets/js/validator.js"></script>
+        ';
 //        if(isset($_SESSION['user']) && $_SESSION['user'] != '') {
 //            echo '<script type="text/javascript" src="assets/js/login.js"></script>';
 //        } else {
@@ -70,6 +73,47 @@ if(isset($_GET['act']) && ($_GET['act'] != '')) {
 
 
 ?>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Mong muốn của chúng ta
+        Validator({
+            form: '#sign-in',
+            formGroupSelector: '.input',
+            errorSelector: '.error-message',
+            rules: [
+                Validator.isRequired('#email_sign_in', 'vui lòng nhập email của bạn'),
+                Validator.isEmail('#email_sign_in', 'bạn phải nhập đúng email'),
+                Validator.isRequired('#user_password_sign_in', 'vui lòng nhập mật khẩu của bạn'),
+                Validator.minLength('#user_password_sign_in', 6, 'mật khẩu phải dài hơn 6 kì tự'),
+                // Validator.isConfirmed('#password_confirmation', function () {
+                //     return document.querySelector('#form-1 #password').value;
+                // }, 'Mật khẩu nhập lại không chính xác')
+            ]
+            // onSubmit: function (data) {
+            //     // Call API
+            //     console.log(data);
+            // }
+        });
+
+
+        Validator({
+            form: '#form-2',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isEmail('#email'),
+                Validator.minLength('#password', 6),
+            ],
+            onSubmit: function (data) {
+                // Call API
+                console.log(data);
+            }
+        });
+    });
+
+</script>
 
 
 

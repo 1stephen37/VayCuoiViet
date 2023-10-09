@@ -54,7 +54,7 @@
 
 </div>
 
-<div id="sign-in" class="sign-in close ">
+<div id="sign-in" class="sign-in ">
 
     <div class="container">
 
@@ -81,18 +81,19 @@
 
                     <div class="input flex">
                         <label for="user_name">Email</label>
-
                         <input id="email_sign_in" name="email_sign_in" placeholder="Nhập tài khoản của bạn" type="text">
+                        <span class="error-message"></span>
                     </div>
+
 
                     <div class="input flex">
                         <label for="user_password">Mật Khẩu</label>
-
                         <input id="user_password_sign_in" name="user_password_sign_in" placeholder="Nhập mật khẩu của bạn" type="password">
+                        <span class="error-message"></span>
                     </div>
 
 
-                    <input onclick="return chek_form_sign_in();" name="sign_in_submit" type="submit" value="Đăng nhập">
+                    <input name="sign_in_submit" type="submit" value="Đăng nhập">
 
 
                 </form>
@@ -110,18 +111,22 @@
 
         </div>
 
-        <div class="sub-heading">
-            Hoặc đăng nhập bằng:
+        <div class="other_login flex">
+
+            <div class="sub-heading">
+                Hoặc đăng nhập bằng:
+            </div>
+
+            <div class="social flex">
+
+                <img src="assets/img/popup/gg.svg" alt="" class="img-full">
+                <img src="assets/img/popup/fb.svg" alt="" class="img-full">
+
+            </div>
+
         </div>
 
-        <div class="social flex">
 
-            <img src="assets/img/popup/gg.svg" alt="" class="img-full">
-            <img src="assets/img/popup/fb.svg" alt="" class="img-full">
-            <img src="assets/img/popup/insta.svg" alt="" class="img-full">
-            <img src="assets/img/popup/linked.svg" alt="" class="img-full">
-
-        </div>
 
     </div>
 
@@ -265,7 +270,7 @@
 
 </div>
 
-<div id="information" class="information flex">
+<div id="information" class="information flex close">
 
     <div class="container">
 
