@@ -525,14 +525,15 @@
 }
 
 .question .container .heading {
-    font-size: var(--font-size-heading);
+    font-size: 4rem;
     text-align: center;
-
+    font-family: great,'sans-serif';
+    /*margin: 1rem 0;*/
 }
 
 .question .container .des {
     font-size: 2rem;
-    margin: 1rem 0;
+    margin: 2rem 0;
     text-align: center;
 }
 
@@ -543,12 +544,12 @@
 }
 
 .question .container .button-flex .button {
-    width: 10rem;
+    width: 15rem;
     text-align: center;
     border-radius: 1rem;
     cursor: pointer;
     font-size: 2rem;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     background-color: #fff;
     color: var(--primary-color);
 }

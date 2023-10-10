@@ -35,6 +35,7 @@ if(isset($_GET['act']) && ($_GET['act'] != '')) {
     }
 
 }
+echo '<script type="text/javascript" src="../assets/js/validator.js"></script>';
 
 echo '<script type="text/javascript" src="../assets/js/admin.js"></script>';
 

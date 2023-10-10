@@ -21,10 +21,21 @@
     color: #fff;
     font-size: 2.4rem;
     padding: 2rem 5rem;
-    border-radius: 2rem;
+    border-radius: 2.5rem;
     margin: 0 auto;
     width: auto;
     cursor: pointer;
+    border: 1px solid #fff;
+    /*box-shadow: 0 0 1px 1px #fff;*/
+}
+
+.banner .button:hover {
+    transition: background 1.5s ease-in-out, color 1.5s ease-in-out, border 1s ease-in-out,
+    border-radius 1s ease-in-out;
+    background: #ccc;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 3rem;
 }
 
 .banner .sub-banner {
@@ -54,7 +65,7 @@
 
 .section1 .left .heading {
     font-size: 4rem;
-    font-family: great;
+    font-family: great, 'sans-serif', serif;
     text-align: center;
     height: auto;
     text-transform: capitalize;
@@ -70,19 +81,24 @@
 .section1 .left .button {
     font-size: 2.4rem;
     background: var(--primary-color);
-    width: 21rem;
-    padding: 2rem 5rem;
+    width: 20rem;
+    padding: 2rem 4rem;
     border-radius: 2rem;
+    text-align: center;
     color: #fff;
     height: auto;
     margin: 3rem auto 0 auto;
+    border: 1px solid #fff;
 }
 
-/*.section1 .left .button:hover {*/
-/*    color: #000;*/
-/*    background: #ccc;*/
-    /*opacity: 0.9;*/
-/*}*/
+.section1 .left .button:hover {
+    transition: background 1.5s ease-in-out, color 1.5s ease-in-out, border 1s ease-in-out,
+    border-radius 1s ease-in-out;
+    background: #ccc;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 3rem;
+}
 
 .section1 .right {
     width: 51.3%;
@@ -126,7 +142,8 @@
 
 .section2 .left .button {
     font-size: 2.4rem;
-    padding: 2rem 5rem;
+    padding: 2rem 4rem;
+    text-align: center;
     background: var(--primary-color);
     width: 21rem;
     height: 6.8rem;
@@ -135,6 +152,16 @@
     border-radius: 2rem;
     color: #fff;
     cursor: pointer;
+    border: 1px solid #fff;
+}
+
+.section2 .left .button:hover {
+    transition: background 1.5s ease-in-out, color 1.5s ease-in-out, border 1s ease-in-out,
+    border-radius 1s ease-in-out;
+    background: #ccc;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 3rem;
 }
 
 .section2 .left .sub-des {
@@ -284,27 +311,36 @@
 
 .section3 .button {
     width: 18.7rem;
-    margin: 0 auto;
-    margin-top: 4.5rem;
+    margin: 4.5rem auto 0 auto;
+    /*margin-top: 4.5rem;*/
     font-size: 2rem;
     padding: 2rem 4rem;
     color: #fff;
     border-radius: 2rem;
     background: var(--primary-color);
     cursor: pointer;
+    border: 1px solid #fff;
+}
+
+.section3 .button:hover {
+    transition: background 1.5s ease-in-out, color 1.5s ease-in-out, border 1s ease-in-out,
+    border-radius 1s ease-in-out;
+    background: #ccc;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 3rem;
 }
 
 .section4 {
     width: 61.5%;
-    margin: 0 auto;
-    margin-top: 10rem;
+    margin: var(--margin-section-desktop);
     height: 90rem;
 }
 
 .section4 .heading {
     width: 47rem;
     font-size: 4rem;
-    font-family: great;
+    font-family: great, 'sans serif', serif;
     position: relative;
 }
 
@@ -354,24 +390,34 @@
     font-size: 2rem;
     border-radius: 2rem;
     width: 18.7rem;
-    margin: 0 auto;
-    margin-top: 4rem;
+    margin: 4rem auto 0 auto;
+    text-align: center;
+    /*margin-top: 4rem;*/
     background: var(--primary-color);
     padding: 2rem 4rem;
-    text-align: center;
     color: #fff;
+    cursor:pointer;
+    border: 1px solid #fff;
+}
+
+.section4 .button:hover {
+    transition: background 1.5s ease-in-out, color 1.5s ease-in-out, border 1s ease-in-out,
+    border-radius 1s ease-in-out;
+    background: #ccc;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 3rem;
 }
 
 .section5 {
     width: 61.5%;
-    margin: 0 auto;
-    margin-top: 10rem;
+    margin: var(--margin-section-desktop);
     height: 86rem;
 }
 
 .section5 .heading {
     font-size: 4rem;
-    font-family: great;
+    font-family: great, 'sans-serif';
     width: 17rem;
     position: relative;
     text-transform: capitalize;
@@ -410,23 +456,30 @@
     font-size: 2rem;
     border-radius: 2rem;
     width: 18.7rem;
-    margin: 0 auto;
-    margin-top: 4rem;
+    margin: 4rem auto 0 auto;
     background: var(--primary-color);
     padding: 2rem 4rem;
     text-align: center;
     color: #fff;
 }
 
+.section5 .button:hover {
+    transition: background 1.5s ease-in-out, color 1.5s ease-in-out, border 1s ease-in-out,
+    border-radius 1s ease-in-out;
+    background: #ccc;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 3rem;
+}
+
 .section6 {
     width: 61.5%;
-    margin: 0 auto;
-    margin-top: 10rem;
+    margin: var(--margin-section-desktop);
 }
 
 .section6 .heading {
     font-size: 4rem;
-    font-family: great;
+    font-family: great, 'sans-serif';
     text-transform: capitalize;
     text-align: center;
     width: 49rem;
@@ -454,8 +507,7 @@
 
 .section7 {
     width: 61.5%;
-    margin: 0 auto;
-    margin-top: 10rem;
+    margin: var(--margin-section-desktop);
     flex-direction: column;
     align-items: center;
     gap: 4rem;
@@ -465,7 +517,7 @@
 
 .section7 .heading {
     font-size: 4rem;
-    font-family: great;
+    font-family: great, 'sans-serif', serif;
     text-align: center;
     width: 88rem;
     position: relative;
@@ -484,6 +536,7 @@
     width: 40rem;
     height: 8rem;
     border-radius: 30px;
+    position: relative;
 }
 
 .section7 .input input {
@@ -491,9 +544,27 @@
     color: rgba(0,0,0,0.5);
     text-align: center;
     border-radius: 30px;
-    border: none;
-    outline: 0.1px solid rgba(0,0,0,0.3);
+    border: 1px solid var(--primary-color);
+    /*outline: 2px solid var(--primary-color);*/
     background-color: #EAEAEA;
+}
+
+.section7 .invalid input {
+    border: 1px solid red;
+}
+
+.section7 .invalid .error-message {
+    font-size: 1.8rem;
+    text-align: center;
+    position: absolute;
+    bottom: -3.6rem;
+    left: 0;
+    width: 40rem;
+    color: red;
+}
+
+.section7 .input input:focus {
+    outline: 1px solid var(--primary-color);
 }
 
 .section7 .button {
@@ -501,9 +572,20 @@
     background: var(--primary-color);
     color: #fff;
     padding: 2rem 3rem;
-    border-radius: 20px;
+    border-radius: 2rem;
     cursor: pointer;
+    border: 1px solid #fff;
 }
+
+.section7 .button:hover {
+    transition: background 1.5s ease-in-out, color 1.5s ease-in-out, border 1s ease-in-out,
+    border-radius 1s ease-in-out;
+    background: #ccc;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 3rem;
+}
+
 
 @media (max-width: 46.23em) {
     .banner {

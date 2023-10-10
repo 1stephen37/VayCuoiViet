@@ -120,55 +120,63 @@
                         require_once 'view/reset_pass.php';
                         break;
                     case 'login':
+                        $email = $_POST['email_sign_in'];
+                        $pass = $_POST['user_password_sign_in'];
 
-                        if(isset($_POST['sign_in_submit']) && $_POST['sign_in_submit']) {
+                        $in4 = checkuser($email,$pass);
 
-                            $email = $_POST['email_sign_in'];
-                            $pass = $_POST['user_password_sign_in'];
+                        echo '3112312';
 
-                            $in4 = checkuser($email,$pass);
-
-                            if($in4 == 0) {
-                                require_once 'view/error.php';
-                            } else if($in4) {
+                        if($in4 == 0) {
+                            require_once 'view/error.php';
+                        } else if($in4) {
 //                                $_SESSION['user_name'] = $in4['id'];
 //                                $_SESSION['user_passWord'] = $in4['PassWord'];
 //                                $_SESSION['Name'] = $in4['Name'];
 //                                $_SESSION['role'] = $in4['role'];
 
-                                if($in4['role'] == 1) {
-                                    $_SESSION['admin'] = $in4;
-                                    header('location: admin/index.php?act=admin');
-                                } else {
-                                    $_SESSION['user'] = $in4;
-                                    header('location: user/index.php');
-                                }
+                            if($in4['role'] == 1) {
+                                $_SESSION['admin'] = $in4;
+                                header('location: admin/index.php?act=admin');
+                            } else {
+                                $_SESSION['user'] = $in4;
+                                header('location: user/index.php');
                             }
-
-//                            require_once 'view/' . $_GET['act'] . '.php';
-//
-//                            require_once 'view/check.php';
-
                         }
                         break;
                     case 'signup':
 
-                        if(isset($_POST['sign-in']) && $_POST['sign-in']) {
+                        $NewEmail = $_POST['Email_sign_up'];
+                        $Newpass = $_POST['pass_name_sign_up'];
 
-                            $Newuser = $_POST['user_name_sign_up'];
-                            $Newpass = $_POST['pass_name_sign_up'];
+                        $check = checkEmail($NewEmail);
+
+
+                        if(!($check)) {
 
                             $hashedPassword = password_hash($Newpass, PASSWORD_DEFAULT);
 
-                            $ceateUser = Newuser($Newuser, $Newpass);
+                            $ceateUser = Newuser($hashedPassword, $NewEmail);
 
-                            if($ceateUser) {
-                                header( 'location:index.php?act=index');
+                            var_dump($ceateUser);
+
+                            if($ceateUser == NULL) {
+                                header( 'location:user/index.php');
                             } else {
                                 header( 'location:index.php?act=error');
                             }
 
+                        } else {
+                            header('Location:index.php?act=error');
                         }
+
+//                        if($check != '') {
+//
+//
+
+//                        }
+
+
 
                         break;
 

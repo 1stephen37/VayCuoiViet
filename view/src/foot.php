@@ -83,7 +83,7 @@ if(isset($_GET['act']) && ($_GET['act'] != '')) {
     document.addEventListener('DOMContentLoaded', function () {
         // Mong muốn của chúng ta
         Validator({
-            form: '#sign-in',
+            form: '#form-sign-in',
             formGroupSelector: '.input',
             errorSelector: '.error-message',
             rules: [
@@ -97,17 +97,30 @@ if(isset($_GET['act']) && ($_GET['act'] != '')) {
 
 
         Validator({
-            form: '#sign-up',
+            form: '#form-sign-up',
             formGroupSelector: '.input',
             errorSelector: '.error-message',
             rules: [
-                Validator.isRequired('#user_name_sign_up', 'vui lòng nhập email của bạn'),
-                Validator.isEmail('#user_name_sign_up', 'vui lòng nhập email chính xác'),
+                Validator.isRequired('#Email_sign_up', 'vui lòng nhập email của bạn'),
+                Validator.isEmail('#Email_sign_up', 'vui lòng nhập email chính xác'),
                 Validator.isRequired('#pass_name_sign_up', 'vui lòng nhập mật khẩu của bạn'),
                 Validator.minLength('#pass_name_sign_up', 6, 'mật khẩu phải dài hơn 6 kí tự'),
             ],
             onSubmit: '.form-sign-in'
         });
+
+        Validator({
+            form: '#form_number',
+            formGroupSelector: '.input',
+            errorSelector: '.error-message',
+            rules: [
+                Validator.isRequired('#phone_number', 'vui lòng nhập số điện thoại của bạn'),
+                Validator.minLength('#phone_number', 10, 'số điện thoại phải có 10 số'),
+                Validator.maxLength('#phone_number', 10, 'số điện thoại phải có 10 số')
+            ],
+            onSubmit: '.form-sign-in'
+        });
+
     });
 
 </script>

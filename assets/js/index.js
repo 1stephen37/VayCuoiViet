@@ -1,57 +1,63 @@
-     // const wedding_img = document.querySelector('.section3 .box .box-3 .img');
+ // const wedding_img = document.querySelector('.section3 .box .box-3 .img');
 
-    
-    // console.log(wedding_img);
-    
-    // wedding_img.addEventListener('hover', function () {
-    //     const effect = document.createElement('.section3 .box .box-3 .img .effect');
-    //     effect.addEventListener('click', function () { 
-    //         window.open('product.html', '_self');
-    //     });
-    // });
 
-    const btn_form = document.querySelector('.section2 .left .button');
+// console.log(wedding_img);
 
-    const img_form = document.querySelector('.section2 .right');
+// wedding_img.addEventListener('hover', function () {
+//     const effect = document.createElement('.section3 .box .box-3 .img .effect');
+//     effect.addEventListener('click', function () {
+//         window.open('product.html', '_self');
+//     });
+// });
 
-    const showForm = function () { 
-        form.classList.remove('close');
-    }
+const btn_form = document.querySelector('.section2 .left .button');
 
-    const hideForm = function () { 
-        form.classList.add('close');
-    }
+const img_form = document.querySelector('.section2 .right');
 
-    img_form.addEventListener('click', showForm);
-    btn_form.addEventListener('click', showForm);
+const showForm = function () {
+    form.classList.remove('close');
+}
 
-    const form = document.querySelector('#form');
+const hideForm = function () {
+    form.classList.add('close');
+}
 
-    form.addEventListener('click', hideForm );
+img_form.addEventListener('click', showForm);
+btn_form.addEventListener('click', showForm);
 
-    const form_container = document.querySelector('#form .container');
+const form = document.querySelector('#form');
 
-    form_container.addEventListener("click", function(event) {
-        event.stopPropagation();
-    });
+form.addEventListener('click', hideForm );
 
-    const width_mobile = screen.availWidth;
+const form_container = document.querySelector('#form .container');
 
-    if(width_mobile <= 740) {
-        resize_write_section2();
-    } else {
+form_container.addEventListener("click", function(event) {
+    event.stopPropagation();
+});
 
-    }
+const width_mobile = screen.availWidth;
 
-    function resize_write_section2() {
-        const container = document.querySelector('.section2 .right');
+if(width_mobile <= 740) {
+    resize_write_section2();
+} else {
 
-        const output = '    <div class="heading flex">\n' +
-            '                   sản phẩm nổi bật nhất trong tháng\n' +
-            '                       <img src="assets/img/section/Vector 1.svg" alt="" class="img-full">\n' +
-            '                      </div>';
+}
 
-        container.innerHTML = output;
-        console.log(width_mobile);
-    }
+function resize_write_section2() {
+    const container = document.querySelector('.section2 .right');
+
+    const output = '    <div class="heading flex">\n' +
+        '                   sản phẩm nổi bật nhất trong tháng\n' +
+        '                       <img src="assets/img/section/Vector 1.svg" alt="" class="img-full">\n' +
+        '                      </div>';
+
+    container.innerHTML = output;
+    console.log(width_mobile);
+}
+
+const button_now = document.querySelector('.banner .button');
+
+button_now.addEventListener('click', () => {
+    window.open('index.php?act=dress', '_self');
+})
 

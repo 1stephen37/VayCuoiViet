@@ -132,7 +132,7 @@
 
 </div>
 
-<div id="sign-up" class="sign-up ">
+<div id="sign-up" class="sign-up close">
 
     <div class="container">
 
@@ -155,11 +155,11 @@
 
             <div class="right">
 
-                <form method="POST" action="index.php?act=signup" class="form-sign-in flex">
+                <form id="form-sign-up" method="POST" action="index.php?act=signup" class="form-sign-up flex">
 
                     <div class="input flex">
-                        <label for="">Email</label>
-                        <input name="user_name_sign_up" id="user_name_sign_up" placeholder="Nhập địa chỉ email của bạn" type="text">
+                        <label for="Email_sign_up">Email</label>
+                        <input name="Email_sign_up" id="Email_sign_up" placeholder="Nhập địa chỉ email của bạn" type="text">
                         <span class="error-message"></span>
                     </div>
 
@@ -251,17 +251,17 @@
         </div>
 
         <div class="des">
-            trở thành hội viên của chúng tôi sẽ có rất nhiều ưu đãi đặc biệt dành cho khách hàng thân thiết
+            Sẽ có những ưu đãi dành cho khách hàng thân thiết của chúng tôi và nhiều hơn thế nữa - hãy đăng nhập để có trải nghiệm tốt nhất
         </div>
 
        <div class="button-flex flex">
 
-           <div class="button">
-               có
+           <div onclick="showForm_information();" class="button">
+               Tiếp tục mua
            </div>
 
-           <div class="button">
-               không
+           <div onclick="showForm_login();" class="button">
+               Đăng nhập
            </div>
 
        </div>
@@ -294,7 +294,7 @@
 
         </div>
 
-        <form action="" class="form_information flex">
+        <form action="index.php?act=pay" class="form_information flex">
             
             <div class="form-group">
                 <label for="name_information">
@@ -347,8 +347,6 @@
             <input name="submit_btn_information" type="submit" value="Xác nhận đơn hàng">
             
         </form>
-
-
 
     </div>
 

@@ -98,12 +98,8 @@ function Validator(options) {
                 // Trường hợp submit với hành vi mặc định
                 else {
 
-                    const submit = formElement.querySelector(options.onSubmit);
-
-                    submit.submit();
-
                     // console.log(formElement);
-                    // formElement.submit();
+                    formElement.submit();
                     // return true;
                 }
             }
@@ -173,6 +169,15 @@ Validator.minLength = function (selector, min, message) {
     };
 }
 
+Validator.maxLength = function (selector, max, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            return value.length === max ? undefined :  message || `Vui lòng nhập tối đa ${max} kí tự`;
+        }
+    };
+}
+
 Validator.isConfirmed = function (selector, getConfirmValue, message) {
     return {
         selector: selector,
@@ -180,4 +185,13 @@ Validator.isConfirmed = function (selector, getConfirmValue, message) {
             return value === getConfirmValue() ? undefined : message || 'Giá trị nhập vào không chính xác';
         }
     }
+}
+
+Validator.isPhoneNumber = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            return value ? undefined :  message || 'Số điện thoại phải là 1 dãy số';
+        }
+    };
 }

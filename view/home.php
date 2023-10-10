@@ -344,7 +344,7 @@
 
 </section>
 
-<section class="section7 flex">
+<form id="form_number" action="index.php" method="post" class="section7 flex">
 
     <div class="heading">
         <div class="des">
@@ -359,11 +359,11 @@
     </div>
 
     <div class="input">
-        <input name="phone_number" class="img-full" placeholder="số điện thoại của bạn" type="text">
+        <label for="phone_number" class="close"></label>
+        <input id="phone_number" name="phone_number" class="img-full" placeholder="số điện thoại của bạn" type="text">
+        <span class="error-message"></span>
     </div>
 
-    <div class="button">
-        Gửi
-    </div>
+    <input type="submit" value="Gửi" class="button">
 
-</section>
+</form>

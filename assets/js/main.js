@@ -92,70 +92,12 @@ function show() {
     console.log("13123");
 }
 
-function chek_form_sign_in() {
-
-    const email_sign_in = document.getElementById('email_sign_in');
-
-    const user_password_sign_in = document.getElementById('user_password_sign_in');
-
-    if (email_sign_in.value === '') {
-        email_sign_in.placeholder = 'Bạn phải nhập tài khoản';
-        email_sign_in.focus();
-        return false;
-    }
-
-    // if(email_sign_in.value == 'admin') {
-    //     alert('user_name  goi');
-    //     return false;
-    // }
-
-    if (user_password_sign_in.value == 'admin123' && email_sign_in.value == 'admin') {
-        // window.open('index.php?act=admin', '_self');
-        alert('10 diem lun goi');
-    }
-
-    if (user_password_sign_in.value === '') {
-        user_password_sign_in.placeholder = 'Bạn phải nhập mật khẩu';
-        user_password_sign_in.focus();
-        return false;
-    }
-
-    return true;
-
-}
-
-function chek_form_sign_up() {
-
-    const user_name_sign_up = document.getElementById('user_name_sign_up');
-
-    const user_password_sign_up = document.getElementById('user_password_sign_in');
-
-    if (user_name_sign_up.value === '') {
-        user_name_sign_up.placeholder = 'Bạn phải nhập tài khoản';
-        user_name_sign_up.focus();
-        return false;
-    }
-
-    if (user_password_sign_up.value === '') {
-        user_password_sign_up.placeholder = 'Bạn phải mật khẩu';
-        user_password_sign_up.focus();
-        return false;
-    }
-
-    return true;
-
-}
-
 const Catalog = document.querySelector('.filter .type .input select');
 
 function open_cata() {
     // console.log(Catalog.value);
     // alert();
     window.open(`index.php?act=dress&danhmuc=${Catalog.value}`, '_self');
-}
-
-function check_form_order() {
-
 }
 
 const mobile_icon = document.querySelector("header .nav .icon-mobile");
@@ -212,6 +154,10 @@ console.log(sorry);
 function sorry_panel() {
     sorry.classList.remove('close');
 }
+
+sorry.addEventListener('click',function() {
+    sorry.classList.add('close');
+})
 
 
 
