@@ -6,7 +6,7 @@
     background: linear-gradient(83deg, rgba(1, 67, 90, 0.40) 0%, rgba(1, 67, 90, 0.05) 100%);   
     justify-content: center;
     align-items: center;
-    font-family: great;
+    font-family: great, 'sans-serif';
     text-transform: capitalize;
     flex-direction: column;
     position: relative;

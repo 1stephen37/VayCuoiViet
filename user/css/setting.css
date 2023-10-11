@@ -123,6 +123,15 @@
     font-size: 4rem;
 }
 
+.section1 .right .form_update .icon .icon_img {
+    width: 15rem;
+    height: 15rem;
+}
+
+.section1 .right .form_update .icon .icon_img img {
+    border-radius: 10rem;
+}
+
 .section1 .right .form_update .input {
     gap: 2rem;
 }

@@ -99,4 +99,14 @@ function check_user($email) {
     return pdo_query_one($sql,$email);
 }
 
+function update_user($name, $img, $email,$phone, $address, $id) {
+    $sql = "UPDATE `user` SET `name` = (?), `img` = (?), `email` = (?), `phone` = (?) , `address` = (?) WHERE `user`.`id` = (?)";
+    return pdo_execute($sql, $name, $img, $email, $phone, $address, $id);
+}
+
+function get_user_by_id($id) {
+    $sql = "SELECT * FROM `user` WHERE `id` = (?)";
+    return pdo_query_one($sql, $id);
+}
+
 ?>
