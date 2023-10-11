@@ -57,6 +57,13 @@
         </div>
 
         <div class="admin-link">
+            <i class="fa-solid fa-pen-clip"></i>
+            <a href="index.php?act=statistical">
+                thống kê
+            </a>
+        </div>
+
+        <div class="admin-link">
             <i class="fa-solid fa-right-from-bracket"></i>
             <a href="../index.php?act=logout">
                 đăng xuất

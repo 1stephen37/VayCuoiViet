@@ -45,9 +45,32 @@ echo '<script type="text/javascript" src="../assets/js/admin.js"></script>';
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<script>
+    // Lấy tham chiếu đến đối tượng canvas
+    var ctx = document.getElementById('myChart').getContext('2d');
 
+    // Tạo dữ liệu cho biểu đồ
+    var data = {
+        labels: ['Thể loại 1', 'Thể loại 2', 'Thể loại 3'],
+        datasets: [{
+            label: 'Dữ liệu',
+            data: [10, 20, 30],
+            backgroundColor: ['red', 'blue', 'green']
+        }]
+    };
 
+    // Cấu hình biểu đồ
+    var options = {};
+
+    // Tạo biểu đồ miền
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: data,
+        options: options
+    });
+</script>
 
 </body>
 </html>

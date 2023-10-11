@@ -53,7 +53,7 @@
 
 .section1 {
     width: 61.5%;
-    margin: var(--primary-color);
+    margin: var(--margin-section-desktop);
     justify-content: space-between;
 }
 

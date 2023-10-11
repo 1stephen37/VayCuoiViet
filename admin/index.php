@@ -43,6 +43,9 @@
             case 'comment':
                 require_once 'comment/index.php';
                 break;
+            case 'statistical':
+                require_once 'statistical/index.php';
+                break;
             default: {
                 require_once 'admin.php';
                 break;

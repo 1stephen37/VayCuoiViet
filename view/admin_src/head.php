@@ -56,6 +56,12 @@
                     <link rel="stylesheet" type="text/css" href="css/order.css">
                 ';
                 break;
+            case 'statistical':
+                echo '
+                     <title>Thống kê</title>
+                    <link rel="stylesheet" type="text/css" href="css/statistical.css">
+                ';
+                break;
             default:
                 echo '
                     <title>bảng điều khiển</title>
