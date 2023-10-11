@@ -59,5 +59,7 @@ const button_now = document.querySelector('.banner .button');
 
 button_now.addEventListener('click', () => {
     window.open('index.php?act=dress', '_self');
-})
+});
+
+
 

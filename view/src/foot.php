@@ -42,9 +42,13 @@ if(isset($_GET['act']) && ($_GET['act'] != '')) {
             ';
             break;
         case 'cart':
-            echo '
-                         <script type="text/javascript" src="assets/js/cart.js"></script>   
-            ';
+            if(isset($_SESSION['user']) && $_SESSION['user'] != '') {
+                echo '';
+            } else {
+                echo '
+                        <script type="text/javascript" src="assets/js/cart.js"></script>   
+                ';
+            }
             break;
         default:
             break;

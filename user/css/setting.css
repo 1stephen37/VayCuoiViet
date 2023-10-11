@@ -104,6 +104,8 @@
 .section1 .right .form_update {
     width: 80%;
     margin: 0 auto;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .section1 .right .form_update .icon {
@@ -121,8 +123,37 @@
     font-size: 4rem;
 }
 
-.section1 .right .form_update .button {
+.section1 .right .form_update .input {
+    gap: 2rem;
+}
 
+.section1 .right .form_update .input input {
+    width: 35rem;
+    height: 3.5rem;
+    font-size: 2rem;
+    margin-left: 2rem;
+}
+
+.section1 .right .form_update .button {
+    width: 15rem;
+    margin: 2rem auto 0 auto;
+    height: 5rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid #fff;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.section1 .right .form_update .button:hover {
+    transition: background 1.5s ease-in-out, color 1.5s ease-in-out, border 1s ease-in-out,
+    border-radius 1s ease-in-out;
+    background: #ccc;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 3rem;
 }
 
 .section1 .right .icon .img {

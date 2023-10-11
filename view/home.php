@@ -23,7 +23,7 @@
 
             <div class="img">
                 <img src="upload/'.$img_view['name'].'" alt="" class="img-full">
-                <a href="index.php?act=dress" class="effect"></a>
+                <a href="index.php?act=product&idproduct='.$id.'" class="effect"></a>
             </div>
             <div class="name">
                 '.$name.'
@@ -160,7 +160,7 @@
 
     <div class="right">
 
-        <div class="background"></div>
+        <a href="index.php?act=product&idproduct=<?=$spHot['id']?>" class="background"></a>
 
         <div class="img">
 

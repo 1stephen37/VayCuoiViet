@@ -74,6 +74,11 @@ btn_search.addEventListener('click', function() {
     check_search(content_keyword);
 });
 
+const button_pay = document.querySelector('.cart .button .flex-btn .right');
+
+button_pay.onclick = function() {
+  window.open('index.php?act=pay');
+};
 
 
 
