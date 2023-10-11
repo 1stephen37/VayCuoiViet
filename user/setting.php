@@ -20,7 +20,7 @@
 
 ?>
 
-<form class="form_update flex" action="index.php?account=setting&update=1" method="post" enctype="multipart/form-data">
+<form id="form_update" class="form_update flex" action="index.php?account=setting&update=1" method="post" enctype="multipart/form-data">
 
     <div class="icon flex">
 <!--        <img src="../user_img/b9a926ae7059a807f148.jpg" alt="">-->
@@ -44,7 +44,7 @@
 
         <label for="update_user_name">
             Họ và Tên
-            <input name="update_user_name" type="text" value="<?=$_SESSION['user']['name']?>">
+            <input id="update_user_name" name="update_user_name" type="text" value="<?=$_SESSION['user']['name']?>">
         </label>
 
         <span class="error-message"></span>
@@ -55,7 +55,7 @@
 
         <label for="update_user_email">
             Địa chỉ email
-            <input name="update_user_email" type="text" value="<?=$_SESSION['user']['email']?>">
+            <input id="update_user_email" name="update_user_email" type="text" value="<?=$_SESSION['user']['email']?>">
         </label>
 
         <span class="error-message"></span>
@@ -66,7 +66,7 @@
 
         <label for="update_user_email">
             Số điện thoại
-            <input name="update_user_phone" type="text" value="<?=$_SESSION['user']['phone']?>">
+            <input id="update_user_phone" name="update_user_phone" type="text" value="<?=$_SESSION['user']['phone']?>">
         </label>
 
         <span class="error-message"></span>
@@ -77,7 +77,7 @@
 
         <label for="update_user_email">
             Địa chỉ
-            <input name="update_user_address" type="text" value="<?=$_SESSION['user']['address']?>">
+            <input id="update_user_address" name="update_user_address" type="text" value="<?=$_SESSION['user']['address']?>">
         </label>
 
         <span class="error-message"></span>

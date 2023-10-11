@@ -195,3 +195,12 @@ Validator.isPhoneNumber = function (selector, message) {
         }
     };
 }
+
+Validator.isString = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            return (value >= 0 || value <= 0) ?  message || 'Giá trị nhập vào không chính xác' : undefined ;
+        }
+    }
+}

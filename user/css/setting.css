@@ -141,6 +141,22 @@
     height: 3.5rem;
     font-size: 2rem;
     margin-left: 2rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border: 1px solid var(--primary-color);
+    outline: none
+}
+
+.section1 .right .form_update .invalid input {
+    border: 1px solid red;
+}
+
+.section1 .right .form_update .input .error-message {
+    color: red;
+    display: block;
+    font-size: 1.8rem;
+    /*text-align: center;*/
+    margin: 1rem 0;
 }
 
 .section1 .right .form_update .button {
