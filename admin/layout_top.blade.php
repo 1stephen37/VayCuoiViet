@@ -57,7 +57,7 @@
         </div>
 
         <div class="admin-link">
-            <i class="fa-solid fa-pen-clip"></i>
+            <i class="fa-solid fa-database"></i>
             <a href="index.php?act=statistical">
                 thống kê
             </a>

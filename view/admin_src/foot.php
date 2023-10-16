@@ -53,11 +53,11 @@ echo '<script type="text/javascript" src="../assets/js/admin.js"></script>';
 
     // Tạo dữ liệu cho biểu đồ
     var data = {
-        labels: ['Thể loại 1', 'Thể loại 2', 'Thể loại 3'],
+        labels: ['Thể loại 1', 'Thể loại 2', 'Thể loại 3', 'Thể loại 4'],
         datasets: [{
-            label: 'Dữ liệu',
-            data: [10, 20, 30],
-            backgroundColor: ['red', 'blue', 'green']
+            label: 'Số lượng',
+            data: [10, 20, 30, 5],
+            backgroundColor: ['red', 'blue', 'green', 'yellow']
         }]
     };
 
