@@ -497,7 +497,7 @@
 
 .sorry .container .heading {
     font-size: var(--font-size-heading);
-    margin: 1rem auto;
+    margin: 0 auto 1rem auto;
 }
 
 .sorry .container .des {

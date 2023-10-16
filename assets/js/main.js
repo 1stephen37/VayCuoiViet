@@ -146,11 +146,6 @@ btn_search.addEventListener('click', function() {
 
 const sorry = document.getElementById('sorry');
 
-const sorry_container = document.querySelector('#sorry .container');
-
-
-console.log(sorry);
-
 function sorry_panel() {
     sorry.classList.remove('close');
 }

@@ -22,27 +22,37 @@
 
     }
 
-//    if(isset($_SESSION['user']) && ($_SESSION['user'])) {
-//        $login = '
-//            <div class="login">
-//            Chào '.$_SESSION['user']['name'].'
-//            </div>
-//        ';
-//    } else {
-//        $login = '';
-//    }
+    if(isset($_SESSION['user']) && ($_SESSION['user'])) {
+        $login = '
+            <div class="login">
+            Chào '.$_SESSION['user']['name'].'
+            </div>
+        ';
+    } else {
+        $login = '';
+    }
 
 ?>
 
 <section class="box-grid">
 
-        <div class="left">
+        <?=$login?>
+
+        <form class="form_left">
+
+            <input type="text">
 
 
-        </div>
+
+        </form>
 
         <div class="right">
 
+            <div class="cart">
+
+
+
+            </div>
 
         </div>
 
