@@ -1,20 +1,15 @@
 <?php
-    function taodonhang($id,$total,$name,$address,$email,$tel){
-        $conn=connectdb();
-        $sql = "INSERT INTO `order_product` (`id`, `id_user`, `total`, `name`, `email`, `phone`, `address`, `order_date`) 
-VALUES (NULL, '".$id."', '".$total."', '".$name."', '".$email."', '".$tel."', '".$address."', NULL);";
-        // use exec() because no results are returned
-        $conn->exec($sql);
-        $last_id = $conn->lastInsertId();
-        return $last_id;
+    function taodonhang($id_user,$total,$name,$address,$email,$tel,$order_date){
+        $sql = "INSERT INTO `order` (`id`, `id_user`, `total`, `name`, `email`, `phone`, `address`, `order_date`) 
+VALUES (NULL, (?), (?), (?), (?), (?), (?), (?));";
+//        $last_id = $conn->lastInsertId();
+        return pdo_execute_return_id($sql, $id_user, $total, $name, $email, $tel, $address, $order_date);
     }
 
-    function addtocart($iddh,$idpro,$thanhtien,$soluong){
-        $conn=connectdb();
+    function addtocart($id_product,$id_order,$quantity, $total){
         $sql = "INSERT INTO `detail` (`id`, `id_product`, `id_order`, `quantity`, `total`)
-VALUES (NULL, '".$idpro."', '".$iddh."', '".$soluong."', '".$thanhtien."');";
-        // use exec() because no results are returned
-        $conn->exec($sql);
+VALUES (NULL, (?), (?), (?), (?))";
+        return pdo_query($sql, $id_product, $id_order, $quantity, $total);
     }
 
     function getshowcart($iddh){

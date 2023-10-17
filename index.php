@@ -12,6 +12,8 @@
         require_once 'model/comment.php';
         require_once 'model/img.php';
 
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+
             require_once 'view/src/head.php';
 
             require_once 'view/src/header.php';
@@ -56,7 +58,6 @@
                         include_once 'view/contact.php';
                         break;
                     case 'pay':
-
                         $name_information = $_POST['name_information'];
                         $address_information = $_POST['address_information'];
                         $phone_information = $_POST['phone_information'];
@@ -64,9 +65,25 @@
                         $delivery_information = $_POST['delivery_information'];
                         $pay_information = $_POST['pay_information'];
                         $total = $_SESSION['total'];
+                        $currentDateTime = date('Y-m-d H:i:s');
+                        $timestamp = strtotime($currentDateTime);
+                        $formattedDateTime = date('Y-m-d H:i:s', $timestamp);
 
-                        echo $name_information, $address_information, $phone_information, $email_information, $delivery_information, $pay_information;
+                        $createOrder = taodonhang($_SESSION['user']['id'],$total,$name_information,$address_information,$email_information,$phone_information,$formattedDateTime);
 
+                        foreach($_SESSION['cart'] as $cart) {
+                            extract($cart);
+                            $total_product = $price * $count;
+                            $cart = addtocart($id,$createOrder,$count,$total_product);
+                        }
+
+                        header('location: user/index.php?account=order');
+
+//                        var_dump($_SESSION['cart']);
+
+
+
+//                        echo $name_information, $address_information, $phone_information, $email_information, $delivery_information, $pay_information, $total;
 
 
                         break;

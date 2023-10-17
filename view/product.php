@@ -115,16 +115,6 @@
         ';
     }
 
-//    date_default_timezone_set('Asia/Ho_Chi_Minh');
-//    $currentDateTime = date( 'H:i:s d/m/Y');
-//
-//    echo $currentDateTime;
-
-
-//echo date_default_timezone_get();
-
-//echo $currentDateTime;
-
 
     if(isset($_GET['post_comment']) && ($_GET['post_comment'] != '')) {
 
@@ -132,11 +122,10 @@
 
             if(isset($_POST['comment_content']) && ($_POST['comment_content'] != '')) {
 
-                date_default_timezone_set('Asia/Ho_Chi_Minh');
+                $currentDateTime = date('Y-m-d H:i:s');
 
-                $timestamp = strtotime('2023-10-06 16:16:22');
+                $timestamp = strtotime($currentDateTime);
                 $formattedDateTime = date('Y-m-d H:i:s', $timestamp);
-
 
                 $post_comment = post_comment_by_id_product(null, $_POST['comment_content'], $_SESSION['user']['id'], $idproduct,  $formattedDateTime);
 
@@ -148,6 +137,9 @@
         }
 
     }
+
+
+//    echo $currentDateTime;
 
 ?>
 
