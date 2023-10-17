@@ -130,7 +130,7 @@ const content_keyword = document.querySelector("input[name = 'search_content']")
 const btn_search = document.getElementById('btn_search');
 
 function check_search(content_keyword) {
-    if(content_keyword.value == '') {
+    if(content_keyword.value === '') {
         content_keyword.focus();
         content_keyword.value = '';
         // content_keyword.placeholder = "bạn phải nhập mới có thể tìm";

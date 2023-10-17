@@ -31,15 +31,20 @@
 function checkuser($email,$pass){
     $sql = "SELECT * FROM user WHERE Email='".$email."' AND PassWord ='".$pass."'";
     $kq = pdo_query_one($sql);
-
-    echo $kq;
-
     if(is_array($kq)) {
         return $kq;
     } else {
         return 0;
     }
+}
 
+function get_Password_by_email($email) {
+    if(is_array(checkEmail($email))) {
+        $sql = "SELECT `PassWord`  FROM user WHERE `Email` = (?)";
+        return pdo_query_value($sql, $email);
+    } else {
+        return 0;
+    }
 }
 
 function checkEmail($email) {
@@ -48,8 +53,8 @@ function checkEmail($email) {
 }
 
 function Newuser($pass, $email){
-    $sql = "INSERT INTO `user` (`id`, `PassWord`, `name`, `img`, `email`, `phone`, `Active`, `role`, `address`, `reset`) VALUES (NULL, '.$pass.', '', NULL, '.$email.', '', '1', '0', '', NULL);";
-    $stmt = pdo_execute($sql);
+    $sql = "INSERT INTO `user` (`id`, `PassWord`, `name`, `img`, `email`, `phone`, `Active`, `role`, `address`, `reset`) VALUES (NULL, (?), '', NULL, (?), '', '1', '0', '', NULL);";
+    $stmt = pdo_execute($sql, $pass, $email);
     return $stmt;
 }
 

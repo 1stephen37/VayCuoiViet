@@ -294,29 +294,35 @@
 
         </div>
 
-        <form action="index.php?act=pay" class="form_information flex">
+        <form action="<?php
+            if(isset($_SESSION['user']) && ($_SESSION['user'] != '')) {
+                echo 'index.php?act=pay';
+            } else {
+                echo 'index.php?act=pay_create';
+            }
+        ?>" method="post" class="form_information flex">
             
             <div class="form-group">
                 <label for="name_information">
-                    <input name="name_information" placeholder="tên anh/chị đặt hàng" type="text">
+                    <input name="name_information" placeholder="tên anh/chị đặt hàng" value="<?php echo $_SESSION['user']['name']?>" type="text">
                 </label>
             </div>
 
             <div class="form-group">
                 <label for="address_information">
-                    <input name="address_information" placeholder="địa chỉ giao hàng" type="text">
+                    <input name="address_information" placeholder="địa chỉ giao hàng" value="<?php echo $_SESSION['user']['address']?>" type="text">
                 </label>
             </div>
 
             <div class="form-group">
                 <label for="phone_information">
-                    <input name="phone_information" placeholder="số điện thoại của anh/chị" type="text">
+                    <input name="phone_information" placeholder="số điện thoại của anh/chị" value="<?php echo $_SESSION['user']['phone']?>" type="text">
                 </label>
             </div>
 
             <div class="form-group">
                 <label for="email_information">
-                    <input name="email_information" placeholder="Email của anh/chị" type="text">
+                    <input name="email_information" placeholder="Email của anh/chị" value="<?php echo $_SESSION['user']['email']?>" type="email">
                 </label>
             </div>
 
@@ -341,7 +347,11 @@
             </div>
 
             <div class="total">
-                Tổng tạm tính: 28,000,000 đ
+                Tổng tạm tính: <?php if(isset($_SESSION['cart']) && ($_SESSION['cart'] != '')){
+                    echo number_format($_SESSION['total'],0,',','.').'VNĐ';
+                } else {
+                    echo '0 VNĐ';
+                } ?>
             </div>
 
             <input name="submit_btn_information" type="submit" value="Xác nhận đơn hàng">

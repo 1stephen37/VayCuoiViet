@@ -20,7 +20,6 @@ const form_pay = document.getElementById('information');
 
 const form_pay_container = form_pay.querySelector('.information .container');
 
-console.log(form_pay_container);
 
 function showForm_information(){
     form_pay.classList.remove('close');

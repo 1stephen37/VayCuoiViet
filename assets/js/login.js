@@ -60,7 +60,7 @@ mobile_icon.addEventListener('click', function () {
 });
 
 function check_search(content_keyword) {
-    if(content_keyword.value == '') {
+    if(content_keyword.value === '') {
         content_keyword.focus();
         content_keyword.value = '';
         // content_keyword.placeholder = "bạn phải nhập mới có thể tìm";
@@ -76,9 +76,24 @@ btn_search.addEventListener('click', function() {
 
 const button_pay = document.querySelector('.cart .button .flex-btn .right');
 
-button_pay.onclick = function() {
-  window.open('index.php?act=pay');
-};
+// button_pay.onclick = function() {
+//   window.open('index.php?act=pay', '_self');
+// };
 
+const form_pay = document.getElementById('information');
+
+const form_pay_container = form_pay.querySelector('.information .container');
+
+button_pay.addEventListener('click', function(e) {
+    form_pay.classList.remove('close');
+})
+
+form_pay.addEventListener('click', function() {
+    form_pay.classList.add('close');
+})
+
+form_pay_container.addEventListener('click', function(e) {
+    e.stopPropagation();
+})
 
 

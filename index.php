@@ -57,53 +57,29 @@
                         break;
                     case 'pay':
 
-//                        if(isset($_GET['pay']) && ($_GET['pay'] != 0)) {
+                        $name_information = $_POST['name_information'];
+                        $address_information = $_POST['address_information'];
+                        $phone_information = $_POST['phone_information'];
+                        $email_information= $_POST['email_information'];
+                        $delivery_information = $_POST['delivery_information'];
+                        $pay_information = $_POST['pay_information'];
+                        $total = $_SESSION['total'];
 
-                            if(isset($_POST['payBtn']) && ($_POST['payBtn'])) {
-
-                                $id = $_SESSION['user']['id'];
-                                $total = $_SESSION['total'];
-                                $name = $_SESSION['user']['Name'];
-                                $address = $_SESSION['user']['address'];
-                                $email = $_SESSION['user']['Email'];
-                                $tel = $_SESSION['user']['Phone'];
+                        echo $name_information, $address_information, $phone_information, $email_information, $delivery_information, $pay_information;
 
 
-                                $check = taodonhang($id,$total,$name,$address,$email,$tel);
 
-                                foreach ($_SESSION['cart'] as $item) {
-                                    if(is_array($item)) {
-                                        extract($item);
-                                    }
-
-                                    $thanhtien = $price * $count;
-
-                                    addtocart($check,$id,$thanhtien,$count);
-                                }
-
-                                header("location: index.php?act=index");
-
-                            }
-
-//                            foreach ($_SESSION['cart'] as $cart) {
-//
-//                            }
-
-//                        }
-                        include_once 'view/pay.php';
                         break;
                     case 'cart':
                         include_once 'view/cart.php';
                         break;
                     case 'admin':
-                        include_once 'view/admin.php';
+                        include_once 'admin/index.php';
                         break;
                     case 'error':
                         include_once 'view/error.php';
                         break;
                     case 'miss_pass':
-//                        if(isset($_POST['missBtn']) && ($_POST['missBtn'])) {
-//                        }
                         if(isset($_POST['email_miss']) && ($_POST['email_miss'] != '')) {
 
                             $_SESSION['id_user_miss'] = check_user($_POST['email_miss']);
@@ -123,18 +99,21 @@
                         $email = $_POST['email_sign_in'];
                         $pass = $_POST['user_password_sign_in'];
 
-                        $in4 = checkuser($email,$pass);
+                        $hashedPasswordSignIn = get_Password_by_email($email);
 
-                        echo '3112312';
+                        if($hashedPasswordSignIn == 0) {
+                            header('location: index.php?act=error');
+                        }
+
+                        if(password_verify($pass, $hashedPasswordSignIn)) {
+                            $in4 = checkuser($email,$hashedPasswordSignIn);
+                        } else {
+                            $in4 = 0;
+                        }
 
                         if($in4 == 0) {
-                            require_once 'view/error.php';
+                            header('location: index.php?act=error');
                         } else if($in4) {
-//                                $_SESSION['user_name'] = $in4['id'];
-//                                $_SESSION['user_passWord'] = $in4['PassWord'];
-//                                $_SESSION['Name'] = $in4['Name'];
-//                                $_SESSION['role'] = $in4['role'];
-
                             if($in4['role'] == 1) {
                                 $_SESSION['admin'] = $in4;
                                 header('location: admin/index.php?act=admin');
@@ -151,16 +130,15 @@
 
                         $check = checkEmail($NewEmail);
 
-
                         if(!($check)) {
 
                             $hashedPassword = password_hash($Newpass, PASSWORD_DEFAULT);
 
                             $ceateUser = Newuser($hashedPassword, $NewEmail);
 
-                            var_dump($ceateUser);
-
                             if($ceateUser == NULL) {
+                                $in4 = checkuser($NewEmail,$hashedPassword);
+                                $_SESSION['user'] = $in4;
                                 header( 'location:user/index.php');
                             } else {
                                 header( 'location:index.php?act=error');
@@ -170,16 +148,7 @@
                             header('Location:index.php?act=error');
                         }
 
-//                        if($check != '') {
-//
-//
-
-//                        }
-
-
-
                         break;
-
                     case 'index':
                         include_once 'view/home.php';
                         break;
