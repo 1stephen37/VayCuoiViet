@@ -12,6 +12,11 @@ VALUES (NULL, (?), (?), (?), (?))";
         return pdo_query($sql, $id_product, $id_order, $quantity, $total);
     }
 
+    function get_order_by_id_user($id_user) {
+        $sql = "SELECT * FROM `order` WHERE `id_user` = (?)";
+        return pdo_query($sql, $id_user);
+    }
+
     function getshowcart($iddh){
         $conn=connectdb();
         $stmt = $conn->prepare("SELECT * FROM tbl_cart WHERE iddh=".$iddh);

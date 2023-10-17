@@ -16,11 +16,6 @@ if(isset($_GET['act']) && ($_GET['act'] != '')) {
     $page = $_GET['act'];
 
     switch($page) {
-//                        case 'about':
-//                            echo '
-//                    <link rel="stylesheet" type="text/css" href="assets/css/about.css">
-//                            ';
-//                            break;
         case 'index':
             echo '
                             <script type="text/javascript" src="assets/js/index.js"></script>
