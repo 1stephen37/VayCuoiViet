@@ -68,24 +68,45 @@
                         $currentDateTime = date('Y-m-d H:i:s');
                         $timestamp = strtotime($currentDateTime);
                         $formattedDateTime = date('Y-m-d H:i:s', $timestamp);
-
                         $createOrder = taodonhang($_SESSION['user']['id'],$total,$name_information,$address_information,$email_information,$phone_information,$formattedDateTime);
-
                         foreach($_SESSION['cart'] as $cart) {
                             extract($cart);
                             $total_product = $price * $count;
                             $cart = addtocart($id,$createOrder,$count,$total_product);
                         }
-
+                        unset($_SESSION['cart']);
                         header('location: user/index.php?account=order');
+                        break;
+                    case 'pay_create':
+                        $name_information = $_POST['name_information'];
+                        $address_information = $_POST['address_information'];
+                        $phone_information = $_POST['phone_information'];
+                        $email_information = $_POST['email_information'];
+                        $delivery_information = $_POST['delivery_information'];
+                        $pay_information = $_POST['pay_information'];
+                        $total = $_SESSION['total'];
 
-//                        var_dump($_SESSION['cart']);
+                        $hashedPass = password_hash('default', PASSWORD_DEFAULT);
 
+                        New_User_Active_0 ($hashedPass, $name_information, $email_information, $phone_information, $address_information);
 
+                        $in4 = checkuser($email_information,$hashedPass);
 
-//                        echo $name_information, $address_information, $phone_information, $email_information, $delivery_information, $pay_information, $total;
+                        if($in4 != 0) {
+                            $_SESSION['user'] = $in4;
+                        }
 
-
+                        $currentDateTime = date('Y-m-d H:i:s');
+                        $timestamp = strtotime($currentDateTime);
+                        $formattedDateTime = date('Y-m-d H:i:s', $timestamp);
+                        $createOrder = taodonhang($_SESSION['user']['id'],$total,$name_information,$address_information,$email_information,$phone_information,$formattedDateTime);
+                        foreach($_SESSION['cart'] as $cart) {
+                            extract($cart);
+                            $total_product = $price * $count;
+                            $cart = addtocart($id,$createOrder,$count,$total_product);
+                        }
+                        unset($_SESSION['cart']);
+                        header('location: user/index.php?account=order');
                         break;
                     case 'cart':
                         include_once 'view/cart.php';

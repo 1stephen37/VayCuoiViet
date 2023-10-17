@@ -118,9 +118,28 @@ if(isset($_GET['act']) && ($_GET['act'] != '')) {
             formGroupSelector: '.input',
             errorSelector: '.error-message',
             rules: [
+                Validator.isRequired('#Email_sign_up', 'vui lòng nhập email của bạn'),
                 Validator.isRequired('#phone_number', 'vui lòng nhập số điện thoại của bạn'),
                 Validator.minLength('#phone_number', 10, 'số điện thoại phải có 10 số'),
                 Validator.maxLength('#phone_number', 10, 'số điện thoại phải có 10 số')
+            ],
+            onSubmit: '.form-sign-in'
+        });
+
+        Validator({
+            form: '#information_form',
+            formGroupSelector: '.form-group',
+            errorSelector: '.error-message',
+            rules: [
+                Validator.isRequired('#name_information', 'vui lòng nhập tên của anh/chị'),
+                Validator.minLength('#name_information', 10, 'tên phải có tối thiểu 10 kí tự'),
+                Validator.isRequired('#address_information', 'vui lòng nhập địa chỉ của anh/chị'),
+                Validator.minLength('#address_information', 20, 'dịa chỉ phải có tối thiểu 10 kí tự'),
+                Validator.isRequired('#phone_information', 'vui lòng số điện thoại của anh/chị'),
+                Validator.minLength('#phone_information', 10, 'số điện thoại phải có 10 số'),
+                Validator.maxLength('#phone_information', 10, 'số điện thoại phải có 10 số')
+                Validator.isRequired('#email_information', 'vui lòng số địa chỉ của anh/chị'),
+                Validator.isEmail('#email_information', 'vui lòng nhập email chính xác')
             ],
             onSubmit: '.form-sign-in'
         });

@@ -300,30 +300,56 @@
             } else {
                 echo 'index.php?act=pay_create';
             }
-        ?>" method="post" class="form_information flex">
+        ?>" method="post" id="information_form" class="form_information flex">
             
             <div class="form-group">
-                <label for="name_information">
-                    <input name="name_information" placeholder="tên anh/chị đặt hàng" value="<?php echo $_SESSION['user']['name']?>" type="text">
-                </label>
+                    <input name="name_information" id="name_information" placeholder="tên anh/chị đặt hàng" value="<?php
+                        if(isset($_SESSION['user']) && ($_SESSION['user'] != '')) {
+                            echo $_SESSION['user']['name'];
+                        } else {
+                            echo null;
+                        }
+                    ?>" type="text">
+                <span class="error-message"></span>
             </div>
 
             <div class="form-group">
                 <label for="address_information">
-                    <input name="address_information" placeholder="địa chỉ giao hàng" value="<?php echo $_SESSION['user']['address']?>" type="text">
+                    <input name="address_information" id="address_information" placeholder="địa chỉ giao hàng" value="<?php
+                    if(isset($_SESSION['user']) && ($_SESSION['user'] != '')) {
+                        echo $_SESSION['user']['address'];
+                    } else {
+                        echo null;
+                    }
+                    ?>" type="text">
                 </label>
+                <span class="error-message"></span>
             </div>
 
             <div class="form-group">
                 <label for="phone_information">
-                    <input name="phone_information" placeholder="số điện thoại của anh/chị" value="<?php echo $_SESSION['user']['phone']?>" type="text">
+                    <input name="phone_information" id="phone_information" placeholder="số điện thoại của anh/chị" value="<?php
+                    if(isset($_SESSION['user']) && ($_SESSION['user'] != '')) {
+                        echo $_SESSION['user']['phone'];
+                    } else {
+                        echo null;
+                    }
+                    ?>" type="text">
                 </label>
+                <span class="error-message"></span>
             </div>
 
             <div class="form-group">
                 <label for="email_information">
-                    <input name="email_information" placeholder="Email của anh/chị" value="<?php echo $_SESSION['user']['email']?>" type="email">
+                    <input name="email_information" id="email_information" placeholder="Email của anh/chị" value="<?php
+                    if(isset($_SESSION['user']) && ($_SESSION['user'] != '')) {
+                        echo $_SESSION['user']['email'];
+                    } else {
+                        echo null;
+                    }
+                    ?>" type="email">
                 </label>
+                <span class="error-message"></span>
             </div>
 
             <div class="form-group">

@@ -54,8 +54,13 @@ function checkEmail($email) {
 
 function Newuser($pass, $email){
     $sql = "INSERT INTO `user` (`id`, `PassWord`, `name`, `img`, `email`, `phone`, `Active`, `role`, `address`, `reset`) VALUES (NULL, (?), '', NULL, (?), '', '1', '0', '', NULL);";
-    $stmt = pdo_execute($sql, $pass, $email);
-    return $stmt;
+    return pdo_execute($sql, $pass, $email);
+}
+
+function New_User_Active_0 ($passWord, $name, $email, $phone, $address) {
+    $sql = "INSERT INTO `user` (`id`, `PassWord`, `name`, `img`, `email`, `phone`, `Active`, `role`, `address`, `reset`)
+VALUES (NULL, (?), (?), NULL, (?), (?), '0', '0', (?), NULL);";
+    return pdo_execute($sql, $passWord, $name, $email, $phone, $address);
 }
 
 function get_all_user(){
