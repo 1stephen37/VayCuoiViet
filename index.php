@@ -154,7 +154,7 @@
                         } else if($in4) {
                             if($in4['role'] == 1) {
                                 $_SESSION['admin'] = $in4;
-                                header('location: admin/index.php?act=admin');
+                                header('location: admin/index.php');
                             } else {
                                 $_SESSION['user'] = $in4;
                                 header('location: user/index.php');

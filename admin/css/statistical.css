@@ -94,27 +94,19 @@
     width: 65%;
 }
 
-.section1 .right .flex-container {
+.section1 .right .statistical {
     width: 100%;
-    height: auto;
     flex-direction: column;
-    gap: 2rem;
-
+    gap: 1rem;
+    /*grid-template-columns: 1fr 1fr 1fr 1fr 1fr;*/
 }
 
-.section1 .right .flex-container .flex-heading {
-    font-size: var(--font-size-heading);
-    justify-content: space-between;
+.section1 .right .statistical .statistical-nav {
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.section1 .right .flex-container .flex-items {
+.section1 .right .statistical div {
     font-size: 2rem;
-    padding: 0 2rem;
-    gap: 15rem;
-    height: auto;
 }
 
-.section1 .right .flex-container .flex-items div {
-    min-width: 15rem;
-    height: auto;
-}

@@ -59,31 +59,5 @@ foreach ($users as $user){
 
 
 
-    <!--    <div class="user flex grid">-->
-    <!---->
-    <!--        <div class="User_name">-->
-    <!--            admin-->
-    <!--        </div>-->
-    <!---->
-    <!--        <div class="pass">-->
-    <!--            mat khau-->
-    <!--        </div>-->
-    <!---->
-    <!--        <div class="role">-->
-    <!--            vai tro-->
-    <!--        </div>-->
-    <!---->
-    <!--        <div class="email">-->
-    <!--            email-->
-    <!--        </div>-->
-    <!---->
-    <!--        <div class="phone">-->
-    <!--            so dien thoai-->
-    <!--        </div>-->
-    <!---->
-    <!--    </div>-->
-
-
-
 </div>
 

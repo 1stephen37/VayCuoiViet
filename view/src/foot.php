@@ -132,8 +132,8 @@ if(isset($_GET['act']) && ($_GET['act'] != '')) {
                 Validator.minLength('#address_information', 20, 'dịa chỉ phải có tối thiểu 10 kí tự'),
                 Validator.isRequired('#phone_information', 'vui lòng số điện thoại của anh/chị'),
                 Validator.minLength('#phone_information', 10, 'số điện thoại phải có 10 số'),
-                Validator.maxLength('#phone_information', 10, 'số điện thoại phải có 10 số')
-                Validator.isRequired('#email_information', 'vui lòng số địa chỉ của anh/chị'),
+                Validator.maxLength('#phone_information', 10, 'số điện thoại phải có 10 số'),
+                Validator.isRequired('#email_information', 'vui lòng địa chỉ email của anh/chị'),
                 Validator.isEmail('#email_information', 'vui lòng nhập email chính xác')
             ],
             onSubmit: '.form-sign-in'

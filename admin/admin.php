@@ -5,9 +5,9 @@
     //
     //                };
 
-    if($_SESSION['admin']) {
-        echo($_SESSION['admin']['name']);
-    }
+        if($_SESSION['admin']) {
+            echo($_SESSION['admin']['name']);
+        }
 
     ?>
 

@@ -7,24 +7,38 @@
     foreach ($comment as $binhluan) {
         extract($binhluan);
 
+        $userComment = get_user_by_id($id_user);
+
+        $productComment = get_product_by_id($id_product);
+
         $comment_html .= '
     <div class="flex-items flex">
 
         <div class="name_product">
 
-            '.$id.'
+            '.$productComment['name'].'
 
         </div>
 
         <div class="name_user">
 
-            Tên người dùng
+            '.$userComment['name'].'
 
         </div>
-
-        <div class="content">
-            '.$content.'
+        
+        <div class="small flex">
+        
+            <div class="content">
+                '.$content.'
+            </div>
+            
+            <a href="" class="detail">
+                chi tiết
+            </a>
+        
         </div>
+
+        
 
     </div>
             
@@ -54,6 +68,9 @@
             nội dung
         </div>
 
+        <div class="action">
+            hành động
+        </div>
 
     </div>
 

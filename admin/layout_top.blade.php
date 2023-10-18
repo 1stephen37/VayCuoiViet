@@ -1,7 +1,7 @@
 <div class="banner flex">
 
     <div class="heading">
-        chào Stephen Nguyễn !
+        chào quản trị viên !
     </div>
 
     <div class="vector">

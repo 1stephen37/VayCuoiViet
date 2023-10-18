@@ -106,14 +106,13 @@ function view(){
                     '.$name.'
                 </div>
             
-                <div class="img">
-                    <img src="../upload/'.$img_product['name'].'" alt="" class="img-full">
-                </div>
                
                 <div class="small flex">
-                    
-                    <a href="index.php?act=sanpham&sanpham=edit&edit='.$id.'" class="edit">xem chi tiết</a>
-            
+                
+                    <div class="img">
+                        <img src="../upload/'.$img_product['name'].'" alt="" class="img-full">
+                    </div>
+                   
                     <div class="action flex">
                       
                         <a href="index.php?act=sanpham&sanpham=edit&edit='.$id.'" class="edit">
@@ -134,14 +133,10 @@ function view(){
 
     }
 
+    $kq .= '<a class="add_btn" href="index.php?act=sanpham&sanpham=add">thêm</a>
+    </div>';
 
-
-
-
-        $kq .= '<a class="add_btn" href="index.php?act=sanpham&sanpham=add">thêm</a>
-        </div>';
-
-        return $kq;
+    return $kq;
 
 }
 

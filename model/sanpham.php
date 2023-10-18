@@ -1,18 +1,10 @@
 <?php
-function themsp($tensp,$img,$gia,$iddm){
-    $conn=connectdb();
-    $sql = "INSERT INTO tbl_sanpham (tensp,img,gia,iddm) VALUES ('".$tensp."','".$img."','".$gia."','".$iddm."')";
-    // use exec() because no results are returned
-    $conn->exec($sql);
-}
 
 function add_product($name,$price,$img,$idCata,$detail,$size ) {
-    $conn=connectdb();
     $sql = "
         INSERT INTO `product` (`id`, `name`, `price`, `price_sale`, `img`, `date`, `id_cata`, `special`, `views`, `des`, `detail`, `size`, `id_brand`) VALUES (NULL, '".$name."', '".$price."', '0', '".$img."', NULL, '".$idCata."', '0', '', '".$detail."', '".$size."', 'M', '');
     ";
-    // use exec() because no results are returned
-    $conn->exec($sql);
+    return pdo_execute($sql);
 }
 
 function edit_product($name,$price,$idCata,$detail,$size,$id) {
@@ -23,23 +15,6 @@ function edit_product($name,$price,$idCata,$detail,$size,$id) {
     // execute the query
     $stmt->execute();
 }
-
-
-// function deldm($id){
-//     $conn=connectdb();
-//     $sql = "DELETE FROM tbl_sanpham WHERE id=".$id;
-//     // use exec() because no results are returned
-//     $conn->exec($sql);
-// }
-
-// function updatedm($id,$tendm){
-//     $conn=connectdb();
-//     $sql = "UPDATE tbl_sanpham SET tendm='".$tendm."' WHERE id=".$id;
-//     // Prepare statement
-//     $stmt = $conn->prepare($sql);
-//     // execute the query
-//     $stmt->execute();
-// }
 
 function get_all_products() {
     $sql = "SELECT * FROM product WHERE 1";
@@ -71,15 +46,10 @@ function get_view_product($idproduct) {
     return pdo_query_value($sql, $idproduct);
 }
 
-
-// function getall_sp(){
-//     $conn=connectdb();
-//     $stmt = $conn->prepare("SELECT * FROM tbl_sanpham order by id desc");
-//     $stmt->execute();
-//     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-//     $kq=$stmt->fetchAll();
-//     return $kq;
-// }
+function get_product_by_id($idproduct) {
+    $sql = "SELECT * FROM `product` WHERE id = (?)";
+    return pdo_query_one($sql, $idproduct);
+}
 
 function get_sp_page($iddm, $page) {
     $start = ($page - 1) * 12;

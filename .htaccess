@@ -1,9 +1,12 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /assignment/
-#    RewriteCond %{REQUEST_FILENAME}
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
 
-    RewriteRule ^dress$ index.php?act=dress [L]
+    RewriteRule ^home/dress$ index.php?act=dress [L]
+    RewriteRule ^home/about$ index.php?act=thuvien [L]
+#    RewriteRule ^dress$ index.php?act=dress [L]
 
 
 </IfModule>

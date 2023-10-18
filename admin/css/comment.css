@@ -110,11 +110,25 @@
 .section1 .right .flex-container .flex-items {
     font-size: 2rem;
     padding: 0 2rem;
-    gap: 15rem;
+    gap: 4rem;
     height: auto;
 }
 
 .section1 .right .flex-container .flex-items div {
     min-width: 15rem;
     height: auto;
+}
+
+.section1 .right .flex-container .flex-items .small {
+    gap: 8rem;
+}
+
+.section1 .right .flex-container .flex-items .small a {
+    display: block;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.section1 .right .flex-container .flex-items .content {
+    max-width: 15rem;
 }

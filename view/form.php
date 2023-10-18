@@ -165,7 +165,7 @@
 
                     <div class="input flex">
                         <label for="">Mật Khẩu</label>
-                        <input name="pass_name_sign_up" id="pass_name_sign_up" placeholder="Nhập mật khẩu của bạn" type="text">
+                        <input name="pass_name_sign_up" id="pass_name_sign_up" placeholder="Nhập mật khẩu của bạn" type="password">
                         <span class="error-message"></span>
                     </div>
 
@@ -220,7 +220,7 @@
 
         </div>
 
-        <input value="Gửi mail" name="missBtn" onclick="return check_mail_miss();" type="submit"  class="button">
+        <input value="Gửi email" name="missBtn" onclick="return check_mail_miss();" type="submit"  class="button">
 
     </form>
 
@@ -340,7 +340,6 @@
             </div>
 
             <div class="form-group">
-                <label for="email_information">
                     <input name="email_information" id="email_information" placeholder="Email của anh/chị" value="<?php
                     if(isset($_SESSION['user']) && ($_SESSION['user'] != '')) {
                         echo $_SESSION['user']['email'];
@@ -348,7 +347,6 @@
                         echo null;
                     }
                     ?>" type="email">
-                </label>
                 <span class="error-message"></span>
             </div>
 

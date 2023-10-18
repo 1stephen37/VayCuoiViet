@@ -94,7 +94,7 @@
 
         </div>
 
-        <input name="miss_pass_re" type="text">
+        <input name="miss_pass_re"  type="password">
 
     </div>
 
@@ -104,7 +104,7 @@
             Nhập lại mật khẩu
         </div>
 
-        <input name="miss_pass_re2" type="text">
+        <input name="miss_pass_re2"  type="password">
 
     </div>
 
